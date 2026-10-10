@@ -49,9 +49,10 @@
             </button>
 
             <!-- Logo (mobile only) -->
-            <a href="/" class="xl:hidden">
-                <img class="dark:hidden" src="/images/logo/logo.svg" alt="Logo" />
-                <img class="hidden dark:block" src="/images/logo/logo-dark.svg" alt="Logo" />
+            <a href="/" class="xl:hidden flex items-center justify-center gap-3">
+                <img class="dark:hidden aspect-square w-[48px]" src="/images/logo/logo-bpk.webp" alt="Logo" />
+                <img class="hidden dark:block aspect-square w-[48px]" src="/images/logo/logo-bpk.webp" alt="Logo" />
+                <h1 class="text-xl menu-item-text capitalize font-bold">SIP BPK Lampung</h1>
             </a>
 
             <!-- Application Menu Toggle (mobile only) -->
