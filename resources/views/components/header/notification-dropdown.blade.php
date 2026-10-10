@@ -1,4 +1,4 @@
-{{-- Lonceng notifikasi. Datanya disiapkan App\View\Components\header\NotificationDropdown.
+{{-- Lonceng notifikasi. Datanya disiapkan App\View\Components\Header\NotificationDropdown.
      Hanya berisi yang belum dibaca, dan hanya judulnya: kalimat lengkapnya ada
      di halaman notifikasi (ADR 0036). --}}
 <div class="relative" x-data="{
