@@ -70,7 +70,7 @@
                 class="hidden dark:block aspect-squate w-[48px]" src="/images/logo/logo-bpk.webp" alt="Logo"/>
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
                 class="aspect-square w-[32px]" src="/images/logo/logo-bpk.webp" alt="Logo"  />
-            <h1 x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen" class="text-xl menu-item-text capitalize font-bold">SIP BPK Lampung</h1>
+            <h1 x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen" class="dark:text-white/90 text-xl menu-item-text capitalize font-bold">SIP BPK Lampung</h1>
         </a>
     </div>
 

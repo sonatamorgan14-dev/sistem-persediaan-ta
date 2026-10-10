@@ -52,7 +52,7 @@
             <a href="/" class="xl:hidden flex items-center justify-center gap-3">
                 <img class="dark:hidden aspect-square w-[48px]" src="/images/logo/logo-bpk.webp" alt="Logo" />
                 <img class="hidden dark:block aspect-square w-[48px]" src="/images/logo/logo-bpk.webp" alt="Logo" />
-                <h1 class="text-xl menu-item-text capitalize font-bold">SIP BPK Lampung</h1>
+                <h1 class="text-xl menu-item-text capitalize font-bold dark:text-white/90">SIP BPK Lampung</h1>
             </a>
 
             <!-- Application Menu Toggle (mobile only) -->
