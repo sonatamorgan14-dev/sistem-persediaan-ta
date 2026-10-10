@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Support\NotificationScanner;
 use App\Support\Notifier;
 use App\Support\StockLedger;
-use App\View\Components\header\NotificationDropdown;
+use App\View\Components\Header\NotificationDropdown;
 
 // Nama fungsi pembantu di Pest bersifat global lintas berkas; `gudang()` dan
 // `petugasGudang()` sudah dipakai berkas uji lain.
