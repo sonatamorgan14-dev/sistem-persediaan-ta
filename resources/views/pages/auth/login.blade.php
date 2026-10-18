@@ -8,9 +8,8 @@
             <div class="mx-auto w-full max-w-md">
 
                 <div class="mb-8 flex items-center gap-3 lg:hidden">
-                    <span class="bg-brand-500 flex size-11 items-center justify-center rounded-xl text-lg font-bold text-white">
-                        SIP
-                    </span>
+                    <img src="{{ asset('images/logo/logo-bpk.webp') }}" alt="Logo BPK"
+                        class="size-11 rounded-xl bg-white object-contain p-1" />
                     <div>
                         <p class="text-sm font-semibold text-gray-800 dark:text-white/90">{{ config('app.name') }}</p>
                         <p class="text-theme-xs text-gray-500 dark:text-gray-400">BPK Perwakilan Provinsi Lampung</p>
@@ -112,9 +111,8 @@
         <div class="bg-brand-950 relative hidden w-full items-center justify-center lg:flex lg:w-1/2 dark:bg-white/5">
             <x-common.common-grid-shape />
             <div class="z-1 flex max-w-sm flex-col items-center px-6 text-center">
-                <span class="mb-6 flex size-16 items-center justify-center rounded-2xl bg-white/10 text-xl font-bold text-white">
-                    SIP
-                </span>
+                <img src="{{ asset('images/logo/logo-bpk.webp') }}" alt="Logo BPK"
+                    class="mb-6 size-16 rounded-2xl bg-white object-contain p-1" />
                 <h2 class="mb-3 text-2xl font-semibold text-white">
                     {{ config('app.name') }}
                 </h2>
