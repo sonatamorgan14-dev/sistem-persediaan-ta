@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Request;
 use App\Http\Controllers\Controller;
 use App\Enums\UserRole;
 use App\Enums\SatuanBarang;
+use App\Enums\UnitKerja;
 use App\Enums\ItemProposalStatus;
 use App\Http\Requests\Request\StorePermintaanBarangRequest;
 use App\Http\Requests\Request\StorePermintaanUmumRequest;
@@ -14,6 +15,7 @@ use App\Http\Requests\Request\MergePermintaanUmumRequest;
 use App\Http\Requests\Request\RevertRequestStatusRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use App\Models\Item;
 use App\Models\ItemProposal;
 use App\Models\Request as ModelsRequest;
@@ -104,6 +106,8 @@ class RequestController extends Controller
         $canCreateEmergency = $request->user()->hasRole(UserRole::Admin, UserRole::KasubbagUmumTi, UserRole::PengelolaGudang);
         $users = $canCreateEmergency
             ? User::query()->where('is_active', true)->orderBy('fullname')->get(['user_id', 'fullname', 'username', 'unit'])
+                // Formulir menampilkan dan mencari unit lewat labelnya.
+                ->map(fn (User $user) => [...$user->only(['user_id', 'fullname', 'username']), 'unit' => $user->unit?->label()])
             : collect();
 
         return view('pages.request.create', [
@@ -293,7 +297,7 @@ class RequestController extends Controller
         abort_unless(
             $user->isAdmin()
                 || $user->hasRole(UserRole::PengelolaGudang)
-                || $user->unit === 'Subbagian Umum dan TI',
+                || $user->unit === UnitKerja::SubbagianUmumTi,
             403,
         );
     }
@@ -363,7 +367,7 @@ class RequestController extends Controller
 
         return response()->file(Storage::disk('local')->path($notaDinas->file_path), [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="'.$notaDinas->document_number.'.pdf"',
+            'Content-Disposition' => 'inline; filename="'.$this->documentFilename('nota-dinas', $notaDinas->document_number, $request).'.pdf"',
             'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
             'Pragma' => 'no-cache',
             'Expires' => '0',
@@ -391,8 +395,16 @@ class RequestController extends Controller
 
         return response()->file(Storage::disk('local')->path($bast->file_path), [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'Content-Disposition' => 'inline; filename="'.$bast->document_number.'.docx"',
+            'Content-Disposition' => 'inline; filename="'.$this->documentFilename('bast', $bast->document_number, $request).'.docx"',
         ]);
+    }
+
+    /**
+     * Nomor naskah memuat garis miring, yang tidak sah di nama berkas.
+     */
+    private function documentFilename(string $prefix, ?string $documentNumber, ModelsRequest $request): string
+    {
+        return $prefix.'-'.Str::slug(str_replace('/', '-', $documentNumber ?? $request->request_number));
     }
 
     public function verifyNotaDinas(RequestDocument $requestDocument, string $token)
@@ -483,7 +495,11 @@ class RequestController extends Controller
         return redirect()->route('request.index')->with('status', 'Permintaan barang berhasil dibuat.');
     }
 
-    public function update(UpdatePermintaanBarangRequest $httpRequest, ModelsRequest $request)
+    public function update(
+        UpdatePermintaanBarangRequest $httpRequest,
+        ModelsRequest $request,
+        RequestWorkflowService $workflow,
+    )
     {
         if ($request->hasItemProposals()) {
             return redirect()
@@ -499,7 +515,7 @@ class RequestController extends Controller
 
         $validatedData = $httpRequest->validated();
 
-        $error = DB::transaction(function () use ($request, $validatedData): ?string {
+        $error = DB::transaction(function () use ($request, $validatedData, $workflow): ?string {
             $submittedItems = collect($validatedData['items'])
                 ->keyBy('item_id');
             $existingDetails = $request->item()->get()->keyBy('item_id');
@@ -534,7 +550,9 @@ class RequestController extends Controller
                 ]);
             }
 
+            $workflow->assignNotaDinasNumber($request, $validatedData['nd_sequence']);
             $request->update(['status' => 'processed_by_staff']);
+            app(RequestDocumentGenerator::class)->renumberNotaDinas($request);
 
             return null;
         });
@@ -545,7 +563,7 @@ class RequestController extends Controller
 
         AuditLogger::record(
             user: $httpRequest->user(),
-            activity: "Mengubah permintaan barang: {$request->request_number} (status menjadi {$request->status})",
+            activity: "Mengubah permintaan barang: {$request->request_number} (status menjadi {$request->statusLabel()})",
             module: AuditModule::Permintaan,
             event: AuditEvent::Ubah,
             subject: $request,
@@ -593,9 +611,11 @@ class RequestController extends Controller
         }
 
         try {
-            $workflow->respond($request, $user, $action);
+            $workflow->respond($request, $user, $action, $httpRequest->input('nd_sequence'));
         } catch (AuthorizationException $exception) {
             return redirect()->back()->with('error', $exception->getMessage());
+        } catch (ValidationException $exception) {
+            return redirect()->back()->with('error', $exception->validator->errors()->first());
         } catch (InsufficientStockException $exception) {
             return redirect()->back()->with(
                 'error',

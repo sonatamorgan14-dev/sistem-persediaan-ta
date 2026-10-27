@@ -9,21 +9,15 @@
             && ($isPengelolaGudang || $isAdmin)
             && ! $hasItemProposals;
         $isKasubbagKepalaUnit = $isKasubbag
-            && auth()->user()->unit === 'Subbagian Umum dan TI';
+            && auth()->user()->unit === \App\Enums\UnitKerja::SubbagianUmumTi;
         $canRespond = ($requestData->status === 'submitted' && ($isKepalaUnit || $isKasubbagKepalaUnit)) ||
                     (in_array($requestData->status, ['approved_by_head', 'in_issuance'], true) && $isPengelolaGudang) ||
                     ($isAdmin && in_array($requestData->status, ['submitted', 'approved_by_head', 'processed_by_staff', 'in_issuance'], true)) ||
                     ($isKasubbag && (in_array($requestData->status, ['processed_by_staff', 'in_issuance'], true) || $isEmergencyReadyToComplete));
         $canRespond = $canRespond && (! $hasItemProposals || ($isAdmin && $requestData->status === 'submitted'));
         $revertTo = $isAdmin ? $requestData->previousStatus() : null;
-        $statusLabels = [
-            'submitted' => 'Terkirim',
-            'approved_by_head' => 'Disetujui Kepala Unit',
-            'processed_by_staff' => 'Disetujui Staff Umum',
-            'in_issuance' => 'Dalam Proses Pengeluaran',
-            'completed' => 'Selesai',
-            'rejected' => 'Ditolak',
-        ];
+        $approveLabel = $isEmergencyReadyToComplete || $requestData->status === 'in_issuance' ? 'Selesaikan' : ($requestData->status === 'processed_by_staff' ? 'Mulai Pengeluaran' : 'Setujui');
+        $needsNdNumber = $canRespond && $requestData->status === 'approved_by_head';
     @endphp
 
 
@@ -84,13 +78,21 @@
                 @endif
 
                 @if ($canRespond)
-                    <form action="{{ route('request.respond', ['request' => $requestData, 'action' => 'approve']) }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit"
+                    @if ($needsNdNumber)
+                        <button type="button" x-data
+                            @click="$dispatch('open-nd-number-modal', @js(['id' => $requestData->request_id, 'number' => $requestData->request_number, 'preview' => $requestData->documentNumber('ND'), 'sequence' => $requestData->ndSequence(), 'label' => $approveLabel]))"
                             class="bg-success-500 hover:bg-success-600 inline-flex items-center rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
-                            {{ $isEmergencyReadyToComplete || $requestData->status === 'in_issuance' ? 'Selesaikan' : ($requestData->status === 'processed_by_staff' ? 'Mulai Pengeluaran' : 'Setujui') }}
+                            {{ $approveLabel }}
                         </button>
-                    </form>
+                    @else
+                        <form action="{{ route('request.respond', ['request' => $requestData, 'action' => 'approve']) }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit"
+                                class="bg-success-500 hover:bg-success-600 inline-flex items-center rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
+                                {{ $approveLabel }}
+                            </button>
+                        </form>
+                    @endif
 
                     @unless ($isEmergencyReadyToComplete)
                         <form action="{{ route('request.respond', ['request' => $requestData, 'action' => 'reject']) }}" method="POST" class="inline">
@@ -122,7 +124,7 @@
                         'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500' => $requestData->status === 'rejected',
                         'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500' => $requestData->status === 'completed',
                     ])>
-                        {{ $statusLabels[$requestData->status] ?? ucfirst(str_replace('_', ' ', $requestData->status)) }}
+                        {{ $requestData->statusLabel() }}
                     </span>
                 </dd>
             </div>
@@ -177,5 +179,9 @@
 
     @if ($revertTo)
         @include('pages.request._revert-status-modal')
+    @endif
+
+    @if ($needsNdNumber)
+        @include('pages.request._nd-number-modal')
     @endif
 @endsection

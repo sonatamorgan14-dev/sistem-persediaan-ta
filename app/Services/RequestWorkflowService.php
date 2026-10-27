@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\AuditEvent;
 use App\Enums\AuditModule;
 use App\Enums\MutationType;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Exceptions\InsufficientStockException;
 use App\Models\Request as ModelsRequest;
@@ -15,6 +16,7 @@ use App\Support\RequestDocumentGenerator;
 use App\Support\StockLedger;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 
 class RequestWorkflowService
@@ -24,10 +26,15 @@ class RequestWorkflowService
     ) {
     }
 
+    /**
+     * @param  string|null  $ndSequence  nomor urut Nota Dinas, wajib saat
+     *                                    menyetujui permintaan yang sudah disetujui Kepala Unit
+     */
     public function respond(
         ModelsRequest $request,
         User $actor,
         string $action,
+        ?string $ndSequence = null,
     ): ModelsRequest
     {
         if (! in_array($action, ['approve', 'reject'], true)) {
@@ -42,7 +49,11 @@ class RequestWorkflowService
 
         $this->assertCanRespond($request, $actor, $action);
 
-        DB::transaction(function () use ($request, $actor, $action): void {
+        // Permintaan yang keluar dari tahap Disetujui Kepala Unit, baik normal
+        // maupun darurat, harus sudah mendapat nomor Nota Dinas resmi.
+        $assignsNumber = $action === 'approve' && $request->status === 'approved_by_head';
+
+        DB::transaction(function () use ($request, $actor, $action, $assignsNumber, $ndSequence): void {
             if ($action === 'reject') {
                 $request->update([
                     'status' => 'rejected',
@@ -50,6 +61,10 @@ class RequestWorkflowService
                 ]);
 
                 return;
+            }
+
+            if ($assignsNumber) {
+                $this->assignNotaDinasNumber($request, $ndSequence);
             }
 
             $nextStatus = $this->nextStatus($request, $actor);
@@ -63,13 +78,17 @@ class RequestWorkflowService
 
             if ($actor->hasRole(UserRole::KepalaUnit)
                 || ($actor->hasRole(UserRole::KasubbagUmumTi)
-                    && $actor->unit === 'Subbagian Umum dan TI'
+                    && $actor->unit === UnitKerja::SubbagianUmumTi
                     && $nextStatus === 'approved_by_head')
                 || ($actor->isAdmin() && $nextStatus === 'approved_by_head')) {
                 $this->documentGenerator->approveNotaDinas($request, $actor);
             } elseif ($nextStatus === 'completed') {
                 $this->recordIssuance($request, $actor);
                 $this->documentGenerator->generateBast($request, $actor);
+            }
+
+            if ($assignsNumber) {
+                $this->documentGenerator->renumberNotaDinas($request);
             }
         });
 
@@ -81,7 +100,7 @@ class RequestWorkflowService
                 '%s permintaan barang %s (status menjadi %s)',
                 $action === 'approve' ? 'Menyetujui' : 'Menolak',
                 $request->request_number,
-                $this->labelStatus($request->status),
+                $request->statusLabel(),
             ),
             module: AuditModule::Permintaan,
             event: $action === 'approve' ? AuditEvent::Setuju : AuditEvent::Tolak,
@@ -137,8 +156,8 @@ class RequestWorkflowService
             activity: sprintf(
                 'Mengembalikan status permintaan barang %s dari %s ke %s. Alasan: %s',
                 $request->request_number,
-                $this->labelStatus($fromStatus),
-                $this->labelStatus($toStatus),
+                ModelsRequest::labelStatus($fromStatus),
+                ModelsRequest::labelStatus($toStatus),
                 $reason,
             ),
             module: AuditModule::Permintaan,
@@ -148,6 +167,38 @@ class RequestWorkflowService
         NotificationScanner::periksaPermintaan($request);
 
         return $request;
+    }
+
+    /**
+     * Menetapkan nomor Nota Dinas dari nomor urut yang diisi Pengelola Gudang.
+     * Nomor BAST ikut ditetapkan dengan nomor urut yang sama, dan keduanya
+     * dibekukan di sini supaya tidak berubah walau unit pemohon diganti.
+     *
+     * @throws ValidationException
+     */
+    public function assignNotaDinasNumber(ModelsRequest $request, ?string $sequence): void
+    {
+        $sequence = trim((string) $sequence);
+
+        if (preg_match(ModelsRequest::ND_SEQUENCE_PATTERN, $sequence) !== 1) {
+            throw ValidationException::withMessages([
+                'nd_sequence' => 'Nomor urut Nota Dinas wajib diisi berupa angka, paling banyak 6 digit.',
+            ]);
+        }
+
+        $request->loadMissing('user');
+        $ndNumber = $request->documentNumber('ND', $sequence);
+
+        if (ModelsRequest::query()->where('nd_number', $ndNumber)->whereKeyNot($request->getKey())->exists()) {
+            throw ValidationException::withMessages([
+                'nd_sequence' => "Nomor Nota Dinas {$ndNumber} sudah dipakai permintaan lain.",
+            ]);
+        }
+
+        $request->update([
+            'nd_number' => $ndNumber,
+            'bast_number' => $request->documentNumber('BAST', $sequence),
+        ]);
     }
 
     private function assertCanRespond(ModelsRequest $request, User $actor, string $action): void
@@ -165,7 +216,7 @@ class RequestWorkflowService
             $actor->hasRole(UserRole::PengelolaGudang) =>
                 in_array($request->status, ['approved_by_head', 'in_issuance'], true),
             $actor->hasRole(UserRole::KasubbagUmumTi) =>
-                ($request->status === 'submitted' && $actor->unit === 'Subbagian Umum dan TI')
+                ($request->status === 'submitted' && $actor->unit === UnitKerja::SubbagianUmumTi)
                 || in_array($request->status, ['processed_by_staff', 'in_issuance'], true)
                 || ($request->type === 'emergency' && $request->status === 'approved_by_head'),
             default => false,
@@ -200,7 +251,7 @@ class RequestWorkflowService
         }
 
         if ($actor->hasRole(UserRole::KasubbagUmumTi)
-            && $actor->unit === 'Subbagian Umum dan TI'
+            && $actor->unit === UnitKerja::SubbagianUmumTi
             && $request->status === 'submitted') {
             return 'approved_by_head';
         }
@@ -214,19 +265,6 @@ class RequestWorkflowService
         return $request->status === 'processed_by_staff'
             ? 'in_issuance'
             : 'completed';
-    }
-
-    private function labelStatus(string $status): string
-    {
-        return match ($status) {
-            'submitted' => 'Menunggu Persetujuan',
-            'approved_by_head' => 'Disetujui Kepala Unit',
-            'processed_by_staff' => 'Diproses Pengelola Gudang',
-            'in_issuance' => 'Dalam Pengeluaran Barang',
-            'completed' => 'Selesai',
-            'rejected' => 'Ditolak',
-            default => $status,
-        };
     }
 
     private function recordIssuance(ModelsRequest $request, User $actor): void
@@ -253,7 +291,7 @@ class RequestWorkflowService
                 recordedBy: $actor,
                 reference: $request,
                 referenceNumber: $referenceNumber,
-                notes: "Penyerahan ke ".($request->user?->unit ?? 'unit pemohon')." sesuai {$referenceNumber}",
+                notes: "Penyerahan ke ".($request->user?->unit?->label() ?? 'unit pemohon')." sesuai {$referenceNumber}",
             );
         }
     }

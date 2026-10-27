@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +29,7 @@ class UserFactory extends Factory
             'username' => fake()->unique()->userName(),
             'email' => fake()->unique()->safeEmail(),
             'role' => fake()->randomElement(UserRole::cases()),
-            'unit' => fake()->randomElement(['Sekretariat Perwakilan', 'Subbagian Umum dan TU', 'Subauditorat Lampung I']),
+            'unit' => fake()->randomElement(UnitKerja::cases()),
             'fullname' => fake()->name(),
             'is_active' => true,
             'email_verified_at' => now(),

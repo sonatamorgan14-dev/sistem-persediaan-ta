@@ -47,14 +47,8 @@
                 :selected="$type" placeholder="Semua tipe" />
 
             <x-form.select-field name="status" label="Status"
-                :options="[
-                    'submitted' => 'Submitted',
-                    'approved_by_head' => 'Disetujui Kepala Unit',
-                    'processed_by_staff' => 'Disetujui Staff Umum',
-                    'in_issuance' => 'Dalam Proses Pengeluaran',
-                    'completed' => 'Completed',
-                    'rejected' => 'Rejected',
-                ]" :selected="$status" placeholder="Semua status" />
+                :options="Arr::except(\App\Models\Request::STATUS_LABELS, 'merged')"
+                :selected="$status" placeholder="Semua status" />
 
             <x-form.date-picker name="date_from" label="Tanggal Mulai" placeholder="Pilih tanggal mulai"
                 :defaultDate="$dateFrom" dateFormat="Y-m-d" />
@@ -112,14 +106,7 @@
                                         'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500' => $row->status === 'rejected',
                                         'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500' => $row->status === 'completed',
                                     ])>
-                                        {{ [
-                                            'submitted' => 'Terkirim',
-                                            'approved_by_head' => 'Disetujui Kepala Unit',
-                                            'processed_by_staff' => 'Disetujui Staff Umum',
-                                            'in_issuance' => 'Dalam Proses Pengeluaran',
-                                            'completed' => 'Selesai',
-                                            'rejected' => 'Ditolak',
-                                        ][$row->status] ?? ucfirst(str_replace('_', ' ', $row->status)) }}
+                                        {{ $row->statusLabel() }}
                                     </span>
                                 </td>
                                 <td class="flex flex-wrap items-center gap-3 px-5 py-4 sm:px-6">
@@ -139,7 +126,7 @@
                                         $isEmergencyReadyToComplete = $row->type === 'emergency' && $row->status === 'approved_by_head';
                                         $hasItemProposals = $row->item->contains(fn ($detail) => $detail->item_proposal_id !== null);
                                         $isKasubbagKepalaUnit = $isKasubbag
-                                            && auth()->user()->unit === 'Subbagian Umum dan TI';
+                                            && auth()->user()->unit === \App\Enums\UnitKerja::SubbagianUmumTi;
                                         $canRespond = ($row->status === 'submitted' && ($isKepalaUnit || $isKasubbagKepalaUnit)) ||
                                                     (in_array($row->status, ['approved_by_head', 'in_issuance'], true) && $isPengelolaGudang) ||
                                                     ($isAdmin && in_array($row->status, ['submitted', 'approved_by_head', 'processed_by_staff', 'in_issuance'], true)) ||
@@ -149,14 +136,26 @@
                                     @endphp
 
                                     @if ($canRespond)
+                                        @php
+                                            $approveLabel = $isEmergencyReadyToComplete || $row->status === 'in_issuance' ? 'Selesaikan' : ($row->status === 'processed_by_staff' ? 'Mulai Pengeluaran' : 'Setujui');
+                                        @endphp
                                         <!-- Tombol Setujui -->
-                                        <form action="{{ route('request.respond', ['request' => $row, 'action' => 'approve']) }}" method="POST" class="inline">
-                                            @csrf
-                                            <button type="submit" 
+                                        @if ($row->status === 'approved_by_head')
+                                            {{-- Nota Dinas harus diberi nomor sebelum diproses lebih lanjut. --}}
+                                            <button type="button" x-data
+                                                @click="$dispatch('open-nd-number-modal', @js(['id' => $row->request_id, 'number' => $row->request_number, 'preview' => $row->documentNumber('ND'), 'sequence' => $row->ndSequence(), 'label' => $approveLabel]))"
                                                 class="text-theme-xs text-success-600 dark:text-success-500 ring-success-200 dark:ring-success-500/30 hover:bg-success-50 dark:hover:bg-success-500/10 rounded-lg px-3 py-1.5 font-medium ring-1 ring-inset transition">
-                                                {{ $isEmergencyReadyToComplete || $row->status === 'in_issuance' ? 'Selesaikan' : ($row->status === 'processed_by_staff' ? 'Mulai Pengeluaran' : 'Setujui') }}
+                                                {{ $approveLabel }}
                                             </button>
-                                        </form>
+                                        @else
+                                            <form action="{{ route('request.respond', ['request' => $row, 'action' => 'approve']) }}" method="POST" class="inline">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="text-theme-xs text-success-600 dark:text-success-500 ring-success-200 dark:ring-success-500/30 hover:bg-success-50 dark:hover:bg-success-500/10 rounded-lg px-3 py-1.5 font-medium ring-1 ring-inset transition">
+                                                    {{ $approveLabel }}
+                                                </button>
+                                            </form>
+                                        @endif
 
                                         <!-- Tombol Tolak -->
                                         @unless ($isEmergencyReadyToComplete)
@@ -205,5 +204,9 @@
 
     @if ($isAdmin)
         @include('pages.request._revert-status-modal')
+    @endif
+
+    @if ($isAdmin || $isPengelolaGudang || $isKasubbag)
+        @include('pages.request._nd-number-modal')
     @endif
 @endsection

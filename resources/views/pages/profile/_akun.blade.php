@@ -20,7 +20,7 @@
         'Jabatan' => $user->position ?? '-',
         'Nama pengguna' => $user->username,
         'Peran' => $user->role->label(),
-        'Unit kerja' => $user->unit,
+        'Unit kerja' => $user->unit?->label(),
         'Status akun' => $user->is_active ? 'Aktif' : 'Nonaktif',
         'Terdaftar sejak' => $user->created_at?->translatedFormat('d F Y') ?? '-',
         'Login terakhir' => $loginTerakhir,

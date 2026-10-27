@@ -59,6 +59,14 @@
             </div>
         @endif
 
+        @if ($isEdit)
+            {{-- Nota Dinas mendapat nomor resmi saat Pengelola Gudang memproses
+                 permintaan; nomor BAST memakai nomor urut yang sama. --}}
+            <x-form.text-field name="nd_sequence" label="Nomor Urut Nota Dinas" required inputmode="numeric"
+                :value="$request->ndSequence()" placeholder="mis. 51"
+                :help="'Nomor lengkap: '.$request->documentNumber('ND')" />
+        @endif
+
         <!-- Input Form Section -->
         <div class="grid grid-cols-1 gap-5">
             

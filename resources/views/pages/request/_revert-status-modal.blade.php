@@ -5,13 +5,7 @@
     supaya modal terbuka lagi dengan isi yang sama saat validasi gagal.
 --}}
 @php
-    $revertLabels = [
-        'submitted' => 'Terkirim',
-        'approved_by_head' => 'Disetujui Kepala Unit',
-        'processed_by_staff' => 'Disetujui Staff Umum',
-        'in_issuance' => 'Dalam Proses Pengeluaran',
-        'rejected' => 'Ditolak',
-    ];
+    $revertLabels = \App\Models\Request::STATUS_LABELS;
     $revertNotes = [
         'approved_by_head' => 'Persetujuan Nota Dinas dicabut dan dokumennya dibuat ulang tanpa tanda tangan. Tautan verifikasi QR yang lama tidak berlaku lagi.',
         'processed_by_staff' => 'Jumlah disetujui dikosongkan dan barang tambahan dari Pengelola Gudang dihapus, sehingga kuantitas bisa diubah ulang.',

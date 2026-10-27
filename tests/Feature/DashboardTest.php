@@ -10,6 +10,7 @@ use App\Enums\ProcurementRequestStatus;
 use App\Enums\ProcurementStatus;
 use App\Enums\SatuanBarang;
 use App\Enums\StockStatus;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\Item;
 use App\Models\ItemProposal;
@@ -253,9 +254,9 @@ describe('perlu ditindaklanjuti', function () {
     });
 
     it('menghitung permintaan sesuai cakupan peran, tanpa yang selesai atau ditolak', function () {
-        $kepalaUnit = penggunaDasbor(UserRole::KepalaUnit, ['unit' => 'Subauditorat Lampung I']);
-        $rekanSeunit = penggunaDasbor(UserRole::Pengguna, ['unit' => 'Subauditorat Lampung I']);
-        $unitLain = penggunaDasbor(UserRole::Pengguna, ['unit' => 'Sekretariat Perwakilan']);
+        $kepalaUnit = penggunaDasbor(UserRole::KepalaUnit, ['unit' => UnitKerja::BidangPemeriksaanLampungI]);
+        $rekanSeunit = penggunaDasbor(UserRole::Pengguna, ['unit' => UnitKerja::BidangPemeriksaanLampungI]);
+        $unitLain = penggunaDasbor(UserRole::Pengguna, ['unit' => UnitKerja::SekretariatPerwakilan]);
 
         permintaanDasbor($rekanSeunit, 'submitted');
         permintaanDasbor($rekanSeunit, 'approved_by_head');

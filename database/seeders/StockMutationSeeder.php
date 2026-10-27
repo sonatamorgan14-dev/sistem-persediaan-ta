@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\MutationType;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Exceptions\InsufficientStockException;
 use App\Models\Item;
@@ -95,7 +96,7 @@ class StockMutationSeeder extends Seeder
     {
         $seri = str_pad((string) ($index + 1), 3, '0', STR_PAD_LEFT);
         $penyedia = ['CV Sinar Jaya', 'CV Mitra Utama', 'PT Karya Mandiri', 'CV Bumi Lestari'][$index % 4];
-        $unit = ['Subbagian Umum dan TU', 'Subauditorat Lampung I', 'Sekretariat Perwakilan'][$index % 3];
+        $unit = [UnitKerja::SubbagianUmumTi, UnitKerja::BidangPemeriksaanLampungI, UnitKerja::SekretariatPerwakilan][$index % 3]->label();
 
         $dasar = [
             [MutationType::Masuk, 24, 26, "{$seri}/PPBJ/2026", 'pengadaan',
