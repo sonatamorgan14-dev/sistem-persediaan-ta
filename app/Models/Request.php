@@ -47,6 +47,7 @@ class Request extends Model
         'bast_number',
         'nd_number',
         'merged_into_request_id',
+        'rejected_from_status',
         // TODO: Tambahkan Description field di sini nanti ditambah juga di show request 
     ];
 
@@ -97,5 +98,26 @@ class Request extends Model
     public function hasItemProposals(): bool
     {
         return $this->item()->whereNotNull('item_proposal_id')->exists();
+    }
+
+    /**
+     * Status satu langkah sebelum status sekarang, tujuan Admin saat
+     * mengembalikan status. Null berarti tidak bisa dikembalikan: permintaan
+     * yang sudah selesai (stok sudah keluar dan BAST terbit), masih di tahap
+     * awal, permintaan umum, atau ditolak sebelum status asalnya dicatat.
+     */
+    public function previousStatus(): ?string
+    {
+        if ($this->type === 'umum') {
+            return null;
+        }
+
+        return match ($this->status) {
+            'approved_by_head' => 'submitted',
+            'processed_by_staff' => 'approved_by_head',
+            'in_issuance' => 'processed_by_staff',
+            'rejected' => $this->rejected_from_status,
+            default => null,
+        };
     }
 }

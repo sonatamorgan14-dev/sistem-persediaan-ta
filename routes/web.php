@@ -96,6 +96,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/permintaan/{request}/edit', [RequestController::class, 'edit'])->name('request.edit');
         Route::put('/permintaan/{request}', [RequestController::class, 'update'])->name('request.update');
         Route::post('/permintaan/{request}/respond', [RequestController::class, 'respondByRole'])->name('request.respond');
+        Route::post('/permintaan/{request}/kembalikan-status', [RequestController::class, 'revertStatus'])
+            ->middleware('role:admin')
+            ->name('request.revert-status');
         Route::delete('/permintaan/{request}/detail/{requestDetail}/proposal', [RequestController::class, 'removeRejectedProposal'])
             ->name('request.proposal-detail.remove');
     });

@@ -11,6 +11,7 @@ use App\Http\Requests\Request\StorePermintaanUmumRequest;
 use App\Http\Requests\Request\UpdatePermintaanBarangRequest;
 use App\Http\Requests\Request\UpdatePermintaanUmumRequest;
 use App\Http\Requests\Request\MergePermintaanUmumRequest;
+use App\Http\Requests\Request\RevertRequestStatusRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Models\Item;
@@ -608,5 +609,20 @@ class RequestController extends Controller
         }
 
         return redirect()->route('request.index')->with('status', 'Permintaan berhasil diproses.');
+    }
+
+    public function revertStatus(
+        RevertRequestStatusRequest $httpRequest,
+        ModelsRequest $request,
+        RequestWorkflowService $workflow,
+    )
+    {
+        try {
+            $workflow->revert($request, $httpRequest->user(), $httpRequest->validated()['reason']);
+        } catch (AuthorizationException $exception) {
+            return redirect()->back()->with('error', $exception->getMessage());
+        }
+
+        return redirect()->back()->with('status', 'Status permintaan berhasil dikembalikan.');
     }
 }
