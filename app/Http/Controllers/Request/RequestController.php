@@ -62,24 +62,21 @@ class RequestController extends Controller
             ->when($status !== '', fn ($query) => $query->where('status', $status))
             ->when($dateFrom !== '', fn ($query) => $query->whereDate('date', '>=', $dateFrom))
             ->when($dateTo !== '', fn ($query) => $query->whereDate('date', '<=', $dateTo))
-            ->when($isKepalaUnit, function ($query) use ($request) {
-                $query->whereHas('user', fn ($userQuery) => $userQuery->where('unit', $request->user()->unit));
-            })
-            ->when($isUser, fn ($query) => $query->where('user_id', $request->user()->user_id))
+            ->terlihatOleh($request->user())
             ->latest('date')
             ->latest('created_at')
             ->paginate(15)
             ->withQueryString();
 
         $summary = [
-            'pending' => ModelsRequest::where('type', '!=', 'umum')->whereIn('status', [
-                'submitted', 
-                'approved_by_head', 
+            'pending' => ModelsRequest::where('type', '!=', 'umum')->terlihatOleh($request->user())->whereIn('status', [
+                'submitted',
+                'approved_by_head',
                 'processed_by_staff',
                 'in_issuance'
             ])->count(),
-            'bulan_ini' => ModelsRequest::where('type', '!=', 'umum')->whereBetween('date', [now()->startOfMonth(), now()->endOfMonth()])->count(),
-            'selesai_bulan_ini' => ModelsRequest::where('type', '!=', 'umum')->whereIn('status', ['completed'])
+            'bulan_ini' => ModelsRequest::where('type', '!=', 'umum')->terlihatOleh($request->user())->whereBetween('date', [now()->startOfMonth(), now()->endOfMonth()])->count(),
+            'selesai_bulan_ini' => ModelsRequest::where('type', '!=', 'umum')->terlihatOleh($request->user())->whereIn('status', ['completed'])
                 ->whereBetween('date', [now()->startOfMonth(), now()->endOfMonth()])
                 ->count(),
         ];
@@ -520,6 +517,11 @@ class RequestController extends Controller
                 ->keyBy('item_id');
             $existingDetails = $request->item()->get()->keyBy('item_id');
 
+            // Hanya kuantitas barang yang diminta yang boleh diubah.
+            if ($submittedItems->keys()->diff($existingDetails->keys())->isNotEmpty()) {
+                return 'Barang yang tidak ada dalam permintaan tidak dapat ditambahkan.';
+            }
+
             foreach ($existingDetails as $itemId => $detail) {
                 $approved = (int) ($submittedItems->get($itemId)['qty'] ?? 0);
                 $item = Item::query()->lockForUpdate()->findOrFail($itemId);
@@ -533,21 +535,6 @@ class RequestController extends Controller
                 }
 
                 $detail->update(['quantity_approved' => $approved]);
-            }
-
-            foreach ($submittedItems->reject(fn (array $item): bool => $existingDetails->has($item['item_id'])) as $item) {
-                $masterItem = Item::query()->lockForUpdate()->findOrFail($item['item_id']);
-
-                if ((int) $item['qty'] > (int) $masterItem->stock_current) {
-                    return "Jumlah disetujui untuk {$masterItem->item_name} tidak boleh melebihi stok gudang.";
-                }
-
-                RequestDetail::create([
-                    'request_id' => $request->request_id,
-                    'item_id' => $item['item_id'],
-                    'quantity_requested' => 0,
-                    'quantity_approved' => $item['qty'],
-                ]);
             }
 
             $workflow->assignNotaDinasNumber($request, $validatedData['nd_sequence']);

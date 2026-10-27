@@ -58,6 +58,7 @@ class DashboardController extends Controller
             'aksesCepat' => $this->aksesCepat($user),
             'tugas' => $this->perluTindakan($user),
             'stok' => $bisaGudang || $bisaPengadaan ? $this->kondisiStok(bertaut: $bisaGudang) : null,
+            'alurPermintaan' => $this->alurPermintaan($user),
             'alur' => $bisaPengadaan ? $this->alurPengadaan() : null,
             'grafikMutasi' => $bisaGudang ? $this->grafikMutasi() : null,
             'grafikNilai' => $user->can('kelola-pengadaan') || $user->can('setujui-pengadaan')
@@ -286,6 +287,46 @@ class DashboardController extends Controller
                 ->limit(self::BARANG_KRITIS)
                 ->get(),
             'bertaut' => $bertaut,
+        ];
+    }
+
+    /**
+     * Jumlah permintaan barang di tiap tahap, dengan cakupan yang sama seperti
+     * daftar permintaan (Request::terlihatOleh): Pengguna hanya miliknya,
+     * Kepala Unit hanya unitnya. Permintaan umum dikecualikan karena punya
+     * daftarnya sendiri. Ditolak menempel pada tahap Selesai sebagai akhir
+     * yang lain: penolakan bisa terjadi di tahap mana pun, dan daftar
+     * permintaan tidak bisa menyaring menurut tahap asal penolakannya.
+     *
+     * @return array<int, array{label: string, jumlah: int, url: string, ditolak?: array{jumlah: int, url: string}}>
+     */
+    private function alurPermintaan(User $user): array
+    {
+        $jumlah = ModelsRequest::query()
+            ->where('type', '!=', 'umum')
+            ->terlihatOleh($user)
+            ->selectRaw('status, count(*) as jumlah')
+            ->groupBy('status')
+            ->pluck('jumlah', 'status');
+        $tahap = fn (string $status) => [
+            'label' => ModelsRequest::labelStatus($status),
+            'jumlah' => (int) ($jumlah[$status] ?? 0),
+            'url' => route('request.index', ['status' => $status]),
+        ];
+
+        $selesai = $tahap('completed');
+        $ditolak = $tahap('rejected');
+
+        if ($ditolak['jumlah'] > 0) {
+            $selesai['ditolak'] = ['jumlah' => $ditolak['jumlah'], 'url' => $ditolak['url']];
+        }
+
+        return [
+            $tahap('submitted'),
+            $tahap('approved_by_head'),
+            $tahap('processed_by_staff'),
+            $tahap('in_issuance'),
+            $selesai,
         ];
     }
 

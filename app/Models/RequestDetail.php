@@ -3,16 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RequestDetail extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory;
 
-     protected $primaryKey = 'request_detail_id';
-     protected $keyType = 'string';
-      public $incrementing = false;
+    // Kunci auto-increment, sesuai $table->id() di migrasi request_details.
+    protected $primaryKey = 'request_detail_id';
 
     protected $fillable = [
         'request_id',

@@ -126,6 +126,8 @@ class RequestDocumentGenerator
             'approvedBy' => $approver,
             'approvedAt' => $approvedAt,
             'qrCodeDataUri' => $qrCodeDataUri,
+            // Sebelum disetujui, nama penanda tangan diambil dari unit peminta.
+            'kepalaUnit' => $approver === null ? $request->kepalaUnit() : null,
         ])->setPaper('a4', 'portrait');
 
         Storage::disk('local')->put($document->file_path, $pdf->output());
