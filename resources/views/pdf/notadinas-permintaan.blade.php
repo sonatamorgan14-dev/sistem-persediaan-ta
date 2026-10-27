@@ -4,118 +4,149 @@
     <meta charset="UTF-8">
     <title>Nota Dinas</title>
     <style>
+        /* Margin halaman disamakan dengan DOCX (A4):
+           atas 68pt, kanan 65pt, bawah 14pt, kiri 67pt */
         @page {
-            margin: 40px 24px 28px;
+            margin: 68pt 65pt 14pt 67pt;
         }
 
         body {
             color: #000;
             font-family: "Times New Roman", Times, serif;
             font-size: 12pt;
-            line-height: 1.25;
+            line-height: 13.8pt;
             margin: 0;
+            padding: 0;
         }
 
+        /* ===== Judul ===== */
         .header-title {
             text-align: center;
             font-weight: bold;
-            font-size: 16pt;
-            text-decoration: underline;
-            margin-bottom: 4px;
+            padding-top: 4pt;
         }
 
         .header-no {
             text-align: center;
-            font-size: 13pt;
-            margin-bottom: 35px;
+            font-weight: bold;
+            margin-top: 2pt;
+            margin-bottom: 15.5pt;
         }
 
+        /* ===== Blok meta (Kepada Yth., Dari, Perihal, Tempat/Tanggal) ===== */
         .meta-table {
-            width: calc(100% - 28px);
-            margin: 0 14px 27px;
+            width: 100%;
             border-collapse: collapse;
+            margin: 0;
         }
 
         .meta-table td {
             vertical-align: top;
-            padding: 0;
-            line-height: 1.55;
+            padding: 8.9pt 0 0 0;
+            line-height: 13.8pt;
         }
 
         .meta-label {
-            width: 18%;
+            width: 90.7pt;
+            padding-left: 10.4pt !important;
         }
 
         .meta-colon {
-            width: 5%;
-            text-align: center;
-        }
-
-        .meta-value {
-            width: 77%;
+            width: 6.3pt;
+            text-align: left;
         }
 
         .separator {
             border: 0;
-            border-top: 1px solid #000;
-            margin: 0 0 27px;
+            border-top: 1.06pt solid #000;
+            height: 0;
+            margin: 5pt 0 11pt 5pt;
+            width: 453pt;
         }
 
+        /* ===== Paragraf isi ===== */
         .content {
-            text-align: justify;
-            margin: 0 0 24px;
-            text-indent: 82px;
-            line-height: 1.35;
+            text-align: left;
+            margin: 0 0 10.7pt 5pt;
+            text-indent: 36pt;
         }
 
+        .content-closing {
+            text-align: left;
+            margin: 11pt 0 20pt 5pt;
+            text-indent: 36pt;
+            line-height: 13pt;
+        }
+
+        /* ===== Tabel barang ===== */
         .item-table {
-            width: 100%;
+            width: 454pt;
+            margin: 0 0 0 5pt;
             border-collapse: collapse;
-            margin: 0 0 25px;
         }
 
-        .item-table th, .item-table td {
-            border: 1px solid black;
-            padding: 4px 7px;
-            line-height: 1.25;
+        .item-table th,
+        .item-table td {
+            border: 1pt solid #000;
+            padding: 0;
+            vertical-align: top;
+            line-height: 13pt;
         }
 
         .item-table th {
+            font-weight: bold;
             text-align: center;
-            font-weight: normal;
+            height: 20.5pt;
+        }
+
+        .item-table td {
+            height: 13.5pt;
+        }
+
+        .col-no {
+            width: 39.35pt;
+        }
+
+        .col-name {
+            width: 205pt;
+        }
+
+        .col-qty {
+            width: 209.65pt;
         }
 
         .text-center {
             text-align: center;
         }
 
-        .signature-container {
-            margin-top: 67px;
-            float: right;
-            width: 48%;
-            text-align: center;
+        .text-left-pad {
+            text-align: left;
+            padding-left: 5.5pt !important;
         }
 
-        .signature-image {
-            display: block;
-            height: 75px;
-            margin: 5px auto 3px;
-            width: 165px;
-            object-fit: contain;
+        /* ===== Tanda tangan ===== */
+        .signature-container {
+            float: right;
+            width: 181pt;
+            text-align: center;
+            font-weight: bold;
+            line-height: 13pt;
+            page-break-inside: avoid;
+        }
+
+        .signature-container .sig-head {
+            line-height: 13.8pt;
         }
 
         .verification-qr {
             display: block;
-            height: 82px;
-            position: relative;
-            left: 50px;
-            margin: 7px auto 5px;
-            width: 82px;
+            height: 62pt;
+            width: 62pt;
+            margin: 6pt auto 6.2pt;
         }
 
         .signature-name {
             font-weight: bold;
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -141,12 +172,7 @@
             <td class="meta-value">Permintaan Alat Tulis Kantor (ATK)</td>
         </tr>
         <tr>
-            <td class="meta-label">Lampiran</td>
-            <td class="meta-colon">:</td>
-            <td class="meta-value">-</td>
-        </tr>
-        <tr>
-            <td class="meta-label">Tempat, Tanggal</td>
+            <td class="meta-label">Tempat/Tanggal</td>
             <td class="meta-colon">:</td>
             <td class="meta-value">Bandar Lampung, {{ $request->date?->translatedFormat('j F Y') ?? '-' }}</td>
         </tr>
@@ -161,38 +187,38 @@
     <table class="item-table">
         <thead>
             <tr>
-                <th width="10%">No.</th>
-                <th width="65%">Nama Barang</th>
-                <th width="25%">Jumlah</th>
+                <th class="col-no">No.</th>
+                <th class="col-name">Nama Barang</th>
+                <th class="col-qty">Jumlah Barang</th>
             </tr>
         </thead>
         <tbody>
             @foreach($request->item as $index => $detail)
             <tr>
-                <td class="text-center">{{ $index + 1 }}.</td>
-                <td>{{ $detail->item?->item_name ?? $detail->itemProposal?->item_name ?? '-' }}</td>
+                <td class="text-center">{{ $index + 1 }}</td>
+                <td class="text-left-pad">{{ $detail->item?->item_name ?? $detail->itemProposal?->item_name ?? '-' }}</td>
                 <td class="text-center">{{ number_format($detail->quantity_requested, 0, ',', '.') }} {{ $detail->item?->unit?->label() ?? $detail->itemProposal?->unit?->label() ?? '' }}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
 
-    <div class="content">
+    <div class="content-closing">
         Atas perhatian dan kerjasama yang baik, kami ucapkan terima kasih.
     </div>
 
     <div class="signature-container">
         @if ($approvedBy)
-            <div>Kepala {{ $approvedBy->unit ?? '-' }},</div>
+            <div class="sig-head">Kepala {{ $approvedBy->unit ?? '-' }},</div>
             @if ($qrCodeDataUri)
-                <img class="verification-qr" src="{{ $qrCodeDataUri }}" alt="QR verifikasi persetujuan">
+                <img style="position: relative; left: 50px;" class="verification-qr" src="{{ $qrCodeDataUri }}" alt="QR verifikasi persetujuan">
             @else
                 <div class="verification-qr" aria-hidden="true"></div>
             @endif
             <div class="signature-name">{{ $approvedBy->fullname ?? '-' }}</div>
-            <div>Disetujui pada {{ $approvedAt?->translatedFormat('j F Y H:i') ?? '-' }}</div>
+            <div>NIP: {{ $approvedBy->nip ?? '-' }}</div>
         @else
-            <div>Kepala {{ $request->user?->unit ?? '-' }},</div>
+            <div class="sig-head">Kepala {{ $request->user?->unit ?? '-' }},</div>
             <div class="verification-qr" aria-hidden="true"></div>
             <div class="signature-name">-</div>
             <div>Disetujui pada -</div>
