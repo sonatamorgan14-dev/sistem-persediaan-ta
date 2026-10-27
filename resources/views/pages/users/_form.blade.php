@@ -25,8 +25,8 @@
         <x-form.text-field name="email" label="Email" type="email" :value="$user->email" required
             placeholder="nama@bpk.go.id" autocomplete="email" />
 
-        <x-form.text-field name="unit" label="Unit Kerja" :value="$user->unit" required
-            placeholder="mis. Subbagian Umum dan TU" />
+        <x-form.select-field name="unit" label="Unit Kerja" :options="\App\Enums\UnitKerja::options()"
+            :selected="$user->unit?->value" required placeholder="Pilih unit kerja" />
 
         {{-- NIP dan jabatan tercetak di blok identitas BAST pengadaan, sama
              seperti nama lengkap, sehingga hanya Admin yang mengubahnya

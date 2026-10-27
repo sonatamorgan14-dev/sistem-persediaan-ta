@@ -153,7 +153,7 @@
 <body>
 
     <div class="header-title">NOTA DINAS</div>
-    <div class="header-no">No. 51/B/ND/DJPKN-V.BLP.2/KEU.02.02/06/2026</div>
+    <div class="header-no">No. {{ $request->nd_number ?? $request->documentNumber('ND') }}</div>
 
     <table class="meta-table">
         <tr>
@@ -164,7 +164,7 @@
         <tr>
             <td class="meta-label">Dari</td>
             <td class="meta-colon">:</td>
-            <td class="meta-value">{{ $request->user?->unit ?? '-' }}</td>
+            <td class="meta-value">{{ $request->user?->unit?->label() ?? '-' }}</td>
         </tr>
         <tr>
             <td class="meta-label">Perihal</td>
@@ -181,7 +181,7 @@
     <hr class="separator">
 
     <div class="content">
-        Sehubungan dengan kebutuhan Alat Tulis Kantor (ATK) terkait pelaksanaan kegiatan perkantoran pada {{ $request->user?->unit ?? '-' }}, bersama ini kami sampaikan daftar permintaan ATK sebagai berikut:
+        Sehubungan dengan kebutuhan Alat Tulis Kantor (ATK) terkait pelaksanaan kegiatan perkantoran pada {{ $request->user?->unit?->label() ?? '-' }}, bersama ini kami sampaikan daftar permintaan ATK sebagai berikut:
     </div>
 
     <table class="item-table">
@@ -193,7 +193,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($request->item as $index => $detail)
+            {{-- Barang tambahan dari Pengelola Gudang (diminta 0) bukan bagian
+                 permintaan unit, jadi tidak ikut tercetak saat ND dinomori ulang. --}}
+            @foreach($request->item->where('quantity_requested', '>', 0)->values() as $index => $detail)
             <tr>
                 <td class="text-center">{{ $index + 1 }}</td>
                 <td class="text-left-pad">{{ $detail->item?->item_name ?? $detail->itemProposal?->item_name ?? '-' }}</td>
@@ -209,7 +211,7 @@
 
     <div class="signature-container">
         @if ($approvedBy)
-            <div class="sig-head">Kepala {{ $approvedBy->unit ?? '-' }},</div>
+            <div class="sig-head">{{ $approvedBy->unit?->jabatanKepala() ?? '-' }},</div>
             @if ($qrCodeDataUri)
                 <img style="position: relative; left: 50px;" class="verification-qr" src="{{ $qrCodeDataUri }}" alt="QR verifikasi persetujuan">
             @else
@@ -218,7 +220,7 @@
             <div class="signature-name">{{ $approvedBy->fullname ?? '-' }}</div>
             <div>NIP: {{ $approvedBy->nip ?? '-' }}</div>
         @else
-            <div class="sig-head">Kepala {{ $request->user?->unit ?? '-' }},</div>
+            <div class="sig-head">{{ $request->user?->unit?->jabatanKepala() ?? '-' }},</div>
             <div class="verification-qr" aria-hidden="true"></div>
             <div class="signature-name">{{ $kepalaUnit?->fullname ?? '-' }}</div>
             <div>NIP: {{ $kepalaUnit?->nip ?? '-' }}</div>

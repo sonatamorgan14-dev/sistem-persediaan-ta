@@ -118,7 +118,7 @@
             <td></td>
             <td class="label">Unit Kerja</td>
             <td class="titik">:</td>
-            <td>{{ $request->user?->unit ?? $kosong }}</td>
+            <td>{{ $request->user?->unit?->label() ?? $kosong }}</td>
         </tr>
     </table>
     <p class="blok">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
@@ -28,7 +29,7 @@ class UpdateUserRequest extends FormRequest
             'fullname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($id, 'user_id')],
             'role' => ['required', Rule::enum(UserRole::class)],
-            'unit' => ['required', 'string', 'max:255'],
+            'unit' => ['required', Rule::enum(UnitKerja::class)],
             'nip' => ['nullable', 'digits:18'],
             'position' => ['nullable', 'string', 'max:255'],
             // Kosongkan bila kata sandi tidak diubah.

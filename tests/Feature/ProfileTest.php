@@ -2,6 +2,7 @@
 
 use App\Enums\AuditEvent;
 use App\Enums\AuditModule;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\AuditLog;
 use App\Models\User;
@@ -66,7 +67,7 @@ describe('hak akses', function () {
 
     it('menampilkan data wewenang Admin tanpa isian untuk mengubahnya', function () {
         $user = penggunaProfil(attributes: [
-            'unit' => 'Subbagian Umum dan TU',
+            'unit' => UnitKerja::SubbagianUmumTi,
             'nip' => '198506142003121001',
             'position' => 'Pengelola Pengadaan Barang/Jasa Ahli Pertama',
         ]);
@@ -75,7 +76,7 @@ describe('hak akses', function () {
             ->get('/profil')
             ->assertOk()
             ->assertSee($user->username)
-            ->assertSee('Subbagian Umum dan TU')
+            ->assertSee('Subbagian Umum dan TI')
             ->assertSee('198506142003121001')
             ->assertSee('Pengelola Pengadaan Barang/Jasa Ahli Pertama')
             ->assertDontSee('name="nip"', false)
@@ -134,7 +135,7 @@ describe('mengganti email', function () {
         $user = penggunaProfil(UserRole::PengelolaGudang, [
             'fullname' => 'Nama Asli',
             'username' => 'nama.asli',
-            'unit' => 'Unit Asli',
+            'unit' => UnitKerja::SubbagianHukum,
             'nip' => '198506142003121001',
             'position' => 'Jabatan Asli',
         ]);
@@ -147,7 +148,7 @@ describe('mengganti email', function () {
             'position' => 'Jabatan Palsu',
             'username' => 'palsu',
             'role' => UserRole::Admin->value,
-            'unit' => 'Unit Palsu',
+            'unit' => UnitKerja::SubbagianSdm->value,
             'is_active' => 0,
             'avatar_path' => 'avatars/../../.env',
         ]);
@@ -158,7 +159,7 @@ describe('mengganti email', function () {
             ->and($user->fullname)->toBe('Nama Asli')
             ->and($user->username)->toBe('nama.asli')
             ->and($user->role)->toBe(UserRole::PengelolaGudang)
-            ->and($user->unit)->toBe('Unit Asli')
+            ->and($user->unit)->toBe(UnitKerja::SubbagianHukum)
             ->and($user->nip)->toBe('198506142003121001')
             ->and($user->position)->toBe('Jabatan Asli')
             ->and($user->is_active)->toBeTrue()

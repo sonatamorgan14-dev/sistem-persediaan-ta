@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\AuditLog;
 use App\Models\User;
@@ -17,7 +18,7 @@ function validPayload(array $overrides = []): array
         'fullname' => 'Budi Santoso',
         'email' => 'budi@bpk.go.id',
         'role' => UserRole::PengelolaGudang->value,
-        'unit' => 'Subbagian Umum dan TU',
+        'unit' => UnitKerja::SubbagianUmumTi->value,
         'password' => 'KataSandi#2026',
         'password_confirmation' => 'KataSandi#2026',
         'is_active' => 1,
@@ -63,6 +64,7 @@ describe('membuat akun', function () {
 
         expect($created)->not->toBeNull()
             ->and($created->role)->toBe(UserRole::PengelolaGudang)
+            ->and($created->unit)->toBe(UnitKerja::SubbagianUmumTi)
             ->and($created->is_active)->toBeTrue()
             ->and(Hash::check('KataSandi#2026', $created->password))->toBeTrue();
 
@@ -104,6 +106,12 @@ describe('membuat akun', function () {
         $this->actingAs(admin())
             ->post('/pengguna', validPayload(['role' => 'direktur']))
             ->assertSessionHasErrors('role');
+    });
+
+    it('menolak unit kerja di luar daftar', function () {
+        $this->actingAs(admin())
+            ->post('/pengguna', validPayload(['unit' => 'Subauditorat Lampung I']))
+            ->assertSessionHasErrors('unit');
     });
 
     it('menyimpan NIP tanpa spasi pengelompokan beserta jabatannya', function () {
@@ -337,5 +345,15 @@ describe('penyaringan daftar', function () {
         $this->actingAs($actor)->get('/pengguna?status=nonaktif')
             ->assertSee('Rudi Pengadaan')
             ->assertDontSee('Siti Gudang');
+    });
+
+    it('mencari berdasarkan nama unit kerja', function () {
+        $actor = admin(['fullname' => 'Admin Utama']);
+        User::factory()->create(['fullname' => 'Siti Hukum', 'unit' => UnitKerja::SubbagianHukum]);
+        User::factory()->create(['fullname' => 'Rudi Keuangan', 'unit' => UnitKerja::SubbagianKeuangan]);
+
+        $this->actingAs($actor)->get('/pengguna?q=bagian huk')
+            ->assertSee('Siti Hukum')
+            ->assertDontSee('Rudi Keuangan');
     });
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\AuditEvent;
 use App\Enums\AuditModule;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUserRequest;
@@ -32,9 +33,18 @@ class UserController extends Controller
         $users = User::query()
             ->when($keyword !== '', function ($query) use ($keyword) {
                 $query->where(function ($query) use ($keyword) {
-                    foreach (['fullname', 'username', 'email', 'unit'] as $column) {
+                    foreach (['fullname', 'username', 'email'] as $column) {
                         $query->orWhere($column, 'like', '%'.$keyword.'%');
                     }
+
+                    // Kolom unit menyimpan nilai enum, jadi kata kunci
+                    // dicocokkan ke labelnya.
+                    $units = array_filter(
+                        UnitKerja::cases(),
+                        fn (UnitKerja $unit) => mb_stripos($unit->label(), $keyword) !== false,
+                    );
+
+                    $query->orWhereIn('unit', array_map(fn (UnitKerja $unit) => $unit->value, $units));
                 });
             })
             ->when(UserRole::tryFrom($role), fn ($query, $role) => $query->where('role', $role))

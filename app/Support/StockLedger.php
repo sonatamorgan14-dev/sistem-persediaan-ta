@@ -35,7 +35,7 @@ use InvalidArgumentException;
  *             recordedBy: $request->user(),
  *             reference: $permintaan,              // model App\Models\Request
  *             referenceNumber: $permintaan->nd_number,
- *             notes: "Penyerahan ke {$permintaan->user->unit} sesuai ND {$permintaan->nd_number}",
+ *             notes: "Penyerahan ke {$permintaan->user->unit->label()} sesuai ND {$permintaan->nd_number}",
  *         );
  *
  *     `reference_type` diturunkan sendiri dari morph map, jadi tidak perlu

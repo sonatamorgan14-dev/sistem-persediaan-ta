@@ -22,13 +22,13 @@
         <p>Nota dinas ini tercatat sebagai dokumen yang disetujui secara digital oleh sistem.</p>
         <dl>
             <dt>Nomor dokumen</dt>
-            <dd>{{ $document->document_number }}</dd>
+            <dd>{{ $document->document_number ?? 'Belum diberi nomor' }}</dd>
             <dt>Nomor permintaan</dt>
             <dd>{{ $document->request?->request_number ?? '-' }}</dd>
             <dt>Pemohon</dt>
             <dd>{{ $document->request?->user?->fullname ?? '-' }}</dd>
             <dt>Unit</dt>
-            <dd>{{ $document->request?->user?->unit ?? '-' }}</dd>
+            <dd>{{ $document->request?->user?->unit?->label() ?? '-' }}</dd>
             <dt>Disetujui oleh</dt>
             <dd>{{ $document->approvedBy?->fullname ?? '-' }}</dd>
             <dt>Waktu persetujuan</dt>

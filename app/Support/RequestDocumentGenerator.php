@@ -24,17 +24,12 @@ class RequestDocumentGenerator
             'request_id' => $request->request_id,
             'document_type' => 'nota_dinas',
         ]);
-        $kepalaUnit = User::query()
-            ->where('role', 'kepala_unit')
-            ->where('unit', $request->user?->unit)
-            ->first();
         $document->fill([
             'user_id' => $request->user_id,
-            'document_number' => $request->request_number,
+            'document_number' => $request->nd_number,
             'file_path' => $filePath,
             'approved_by_user_id' => null,
             'approved_at' => null,
-            'kepala_unit' => $kepalaUnit,
             'verification_token_hash' => null,
         ]);
         $document->save();
@@ -47,16 +42,55 @@ class RequestDocumentGenerator
     public function approveNotaDinas(ModelsRequest $request, User $approver): RequestDocument
     {
         $request->loadMissing(['user', 'item.itemProposal']);
-        $approvedAt = now();
-        $verificationToken = Str::random(64);
         $document = RequestDocument::query()->firstOrNew([
             'request_id' => $request->request_id,
             'document_type' => 'nota_dinas',
         ]);
         $document->fill([
             'user_id' => $request->user_id,
-            'document_number' => $request->request_number,
             'file_path' => 'nota-dinas/'.$request->request_id.'.pdf',
+        ]);
+
+        return $this->issueApproval($request, $document, $approver, now());
+    }
+
+    /**
+     * Mencetak ulang Nota Dinas setelah Pengelola Gudang memberinya nomor.
+     * Persetujuan yang sudah ada dipertahankan, tetapi QR-nya diterbitkan
+     * ulang karena token lama tidak tersimpan; QR pada PDF sebelumnya tidak
+     * berlaku lagi.
+     */
+    public function renumberNotaDinas(ModelsRequest $request): RequestDocument
+    {
+        $request->loadMissing(['user', 'item.itemProposal']);
+        $document = $request->requestDocuments()
+            ->where('document_type', 'nota_dinas')
+            ->with('approvedBy')
+            ->first();
+
+        if ($document === null) {
+            return $this->generateNotaDinas($request);
+        }
+
+        if ($document->approvedBy === null) {
+            $document->update(['document_number' => $request->nd_number]);
+            $this->renderNotaDinas($request, $document, null, null, null);
+
+            return $document;
+        }
+
+        return $this->issueApproval($request, $document, $document->approvedBy, $document->approved_at ?? now());
+    }
+
+    private function issueApproval(
+        ModelsRequest $request,
+        RequestDocument $document,
+        User $approver,
+        \Illuminate\Support\Carbon $approvedAt,
+    ): RequestDocument {
+        $verificationToken = Str::random(64);
+        $document->fill([
+            'document_number' => $request->nd_number,
             'approved_by_user_id' => $approver->user_id,
             'approved_at' => $approvedAt,
             'verification_token_hash' => hash('sha256', $verificationToken),
@@ -108,7 +142,7 @@ class RequestDocumentGenerator
         ]);
         $document->fill([
             'user_id' => $request->user_id,
-            'document_number' => 'BAST-'.$request->request_number,
+            'document_number' => $request->bast_number ?? $request->documentNumber('BAST'),
             'file_path' => $filePath,
             'approved_by_user_id' => $issuer->user_id,
             'approved_at' => $issuedAt,
@@ -156,11 +190,11 @@ class RequestDocumentGenerator
                 'recipient_name' => $request->user?->fullname ?? '',
                 'recipient_nip' => $request->user?->nip ?? '',
                 'recipient_position' => $request->user?->position ?? 'Penerima Barang',
-                'recipient_unit' => $request->user?->unit ?? '',
+                'recipient_unit' => $request->user?->unit?->label() ?? '',
                 'issuer_name' => $issuer->fullname ?? '',
                 'issuer_nip' => $issuer->nip ?? '',
                 'issuer_position' => $issuer->position ?? 'Pengelola Gudang Persediaan',
-                'issuer_unit' => $issuer->unit ?? 'BPK Perwakilan Provinsi Lampung',
+                'issuer_unit' => $issuer->unit?->label() ?? 'BPK Perwakilan Provinsi Lampung',
                 'request_number' => $request->request_number,
             ]);
 

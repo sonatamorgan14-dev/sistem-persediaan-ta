@@ -45,6 +45,7 @@ class UserFormRules
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah dipakai akun lain.',
             'role.enum' => 'Peran yang dipilih tidak dikenali.',
+            'unit.enum' => 'Unit kerja yang dipilih tidak dikenali.',
             'nip.digits' => 'NIP harus 18 digit angka.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
         ];

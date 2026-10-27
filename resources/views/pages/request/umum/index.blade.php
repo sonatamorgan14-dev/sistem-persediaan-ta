@@ -100,7 +100,7 @@
                             </td>
                             <td class="px-5 py-4 sm:px-6">
                                 <span class="inline-flex max-w-[190px] rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600 dark:bg-white/[0.06] dark:text-gray-300">
-                                    {{ $request->user?->unit ?? '-' }}
+                                    {{ $request->user?->unit?->label() ?? '-' }}
                                 </span>
                             </td>
                             <td class="px-5 py-4 sm:px-6">
@@ -119,15 +119,15 @@
                             </td>
                             <td class="px-5 py-4 text-sm sm:px-6">
                                 @php
-                                    [$badgeClass, $dotClass, $statusLabel] = match ($request->status) {
-                                        'rejected' => ['bg-error-50 text-error-600 dark:bg-error-500/10 dark:text-error-400', 'bg-error-500', 'Ditolak'],
-                                        'merged' => ['bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300', 'bg-brand-500', 'Digabung'],
-                                        default => ['bg-success-50 text-success-700 dark:bg-success-500/10 dark:text-success-400', 'bg-success-500', 'Submitted'],
+                                    [$badgeClass, $dotClass] = match ($request->status) {
+                                        'rejected' => ['bg-error-50 text-error-600 dark:bg-error-500/10 dark:text-error-400', 'bg-error-500'],
+                                        'merged' => ['bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300', 'bg-brand-500'],
+                                        default => ['bg-success-50 text-success-700 dark:bg-success-500/10 dark:text-success-400', 'bg-success-500'],
                                     };
                                 @endphp
                                 <span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold {{ $badgeClass }}">
                                     <span class="size-1.5 rounded-full {{ $dotClass }}"></span>
-                                    {{ $statusLabel }}
+                                    {{ $request->statusLabel() }}
                                 </span>
                             </td>
                             <td class="px-5 py-4 text-sm sm:px-6">

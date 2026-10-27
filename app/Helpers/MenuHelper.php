@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Enums\ProcurementStatus;
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\User;
 
@@ -33,7 +34,7 @@ class MenuHelper
                     [
                         'name' => 'Buat Permintaan Umum',
                         'path' => '/permintaan-umum/create',
-                        'unit' => 'Subbagian Umum dan TI',
+                        'unit' => UnitKerja::SubbagianUmumTi,
                         'unitBypassRoles' => [UserRole::Admin, UserRole::PengelolaGudang],
                     ],
                     [

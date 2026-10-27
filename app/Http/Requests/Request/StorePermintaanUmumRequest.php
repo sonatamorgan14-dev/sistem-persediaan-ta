@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Request;
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -14,7 +15,7 @@ class StorePermintaanUmumRequest extends FormRequest
         $user = $this->user();
 
         return $user !== null
-            && ($user->unit === 'Subbagian Umum dan TI') || $user->isAdmin()
+            && ($user->unit === UnitKerja::SubbagianUmumTi) || $user->isAdmin()
                 || $user->hasRole(UserRole::PengelolaGudang);
     }
 

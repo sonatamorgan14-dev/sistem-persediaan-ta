@@ -98,7 +98,7 @@
                                     </span>
                                 </td>
                                 <td class="px-5 py-4 sm:px-6">
-                                    <p class="text-theme-sm text-gray-500 dark:text-gray-400">{{ $item->unit }}</p>
+                                    <p class="text-theme-sm text-gray-500 dark:text-gray-400">{{ $item->unit?->label() }}</p>
                                 </td>
                                 <td class="px-5 py-4 sm:px-6">
                                     <span @class([

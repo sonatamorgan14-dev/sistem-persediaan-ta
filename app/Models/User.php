@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -74,6 +75,7 @@ class User extends Authenticatable
             'is_active' => 'boolean',
             'password' => 'hashed',
             'role' => UserRole::class,
+            'unit' => UnitKerja::class,
             'last_login_at' => 'datetime',
         ];
     }

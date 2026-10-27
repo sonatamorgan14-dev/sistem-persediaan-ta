@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Request extends Model
 {
@@ -98,6 +99,64 @@ class Request extends Model
     public function hasItemProposals(): bool
     {
         return $this->item()->whereNotNull('item_proposal_id')->exists();
+    }
+
+    /**
+     * Label status, satu sumber untuk halaman, modal, dan log audit supaya
+     * tahap yang sama tidak lagi disebut dengan nama berbeda.
+     */
+    public const STATUS_LABELS = [
+        'submitted' => 'Terkirim',
+        'approved_by_head' => 'Disetujui Kepala Unit',
+        'processed_by_staff' => 'Disetujui Pengelola Gudang',
+        'in_issuance' => 'Dalam Proses Pengeluaran',
+        'completed' => 'Selesai',
+        'rejected' => 'Ditolak',
+        'merged' => 'Digabung',
+    ];
+
+    public static function labelStatus(?string $status): string
+    {
+        return self::STATUS_LABELS[$status] ?? ucfirst(str_replace('_', ' ', (string) $status));
+    }
+
+    public function statusLabel(): string
+    {
+        return self::labelStatus($this->status);
+    }
+
+    /**
+     * Nomor urut Nota Dinas yang diisi Pengelola Gudang: hanya angka.
+     */
+    public const ND_SEQUENCE_PATTERN = '/^\d{1,6}$/';
+
+    /**
+     * Nomor naskah dinas permintaan ini, mis.
+     * 51/B/ND/DJPKN-V.BLP.1.4/KEU.02.02/10/2026. `B` adalah sifat surat
+     * (biasa), `DJPKN-V` satuan kerja penerbit, dan `KEU.02.02` kode
+     * klasifikasi arsip persediaan. Kode unit mengikuti unit pemohon,
+     * sedangkan bulan dan tahun mengikuti tanggal penyusunan Nota Dinas.
+     * Tanpa nomor urut, bagian depannya dibiarkan "……".
+     *
+     * @param  'ND'|'BAST'  $kind
+     */
+    public function documentNumber(string $kind, ?string $sequence = null): string
+    {
+        return sprintf(
+            '%s/B/%s/DJPKN-V.%s/KEU.02.02/%s',
+            $sequence ?? '……',
+            $kind,
+            $this->user?->unit?->kodeNaskah() ?? 'BLP',
+            ($this->date ?? now())->format('m/Y'),
+        );
+    }
+
+    /**
+     * Nomor urut dari Nota Dinas yang sudah bernomor.
+     */
+    public function ndSequence(): ?string
+    {
+        return $this->nd_number !== null ? Str::before($this->nd_number, '/') : null;
     }
 
     /**

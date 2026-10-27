@@ -46,7 +46,7 @@
         <div class="min-w-0">
             <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">{{ $user->fullname }}</h3>
             <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400">
-                {{ '@'.$user->username }} &middot; {{ $user->unit }}
+                {{ '@'.$user->username }} &middot; {{ $user->unit?->label() }}
             </p>
             <span class="text-theme-xs mt-2 inline-flex items-center rounded-full px-2.5 py-1 font-medium {{ $user->role->badgeClass() }}">
                 {{ $user->role->label() }}

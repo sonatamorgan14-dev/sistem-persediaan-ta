@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UnitKerja;
 use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -25,7 +26,7 @@ class UserSeeder extends Seeder
                 'username' => 'admin',
                 'email' => 'admin@bpk.go.id',
                 'fullname' => 'Administrator Sistem',
-                'unit' => 'Sekretariat Perwakilan',
+                'unit' => UnitKerja::SekretariatPerwakilan,
                 'role' => UserRole::Admin,
             ],
             [
@@ -34,7 +35,7 @@ class UserSeeder extends Seeder
                 'fullname' => 'Kepala Subbagian Umum dan TI',
                 'nip' => '197803152005011002',
                 'position' => 'Kepala Subbagian Umum dan TI',
-                'unit' => 'Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::KasubbagUmumTi,
             ],
             [
@@ -43,7 +44,7 @@ class UserSeeder extends Seeder
                 'fullname' => 'Pengelola Gudang Persediaan',
                 'nip' => '199001202015031004',
                 'position' => 'Arsiparis Ahli Pertama (Pengelola Persediaan)',
-                'unit' => 'Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::PengelolaGudang,
             ],
             [
@@ -52,14 +53,14 @@ class UserSeeder extends Seeder
                 'fullname' => 'Pejabat Pengadaan Barang/Jasa',
                 'nip' => '198807112010121003',
                 'position' => 'Pengelola Pengadaan Barang/Jasa Ahli Pertama',
-                'unit' => 'Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::PejabatPengadaan,
             ],
             [
                 'username' => 'kepalaunit',
                 'email' => 'kepalaunit@bpk.go.id',
                 'fullname' => 'Kepala Unit',
-                'unit' => 'Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::KepalaUnit,
             ],
 
@@ -67,72 +68,74 @@ class UserSeeder extends Seeder
                 'username' => 'kalan',
                 'email' => 'kalan@bpk.go.id',
                 'fullname' => 'Kepala Perwakilan',
-                'unit' => 'Perwakilan',
+                'unit' => UnitKerja::KepalaPerwakilan,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasetlan',
                 'email' => 'kasetlan@bpk.go.id',
                 'fullname' => 'Kepala Sekretariat Perwakilan',
-                'unit' => 'Sekretariat Perwakilan',
+                'unit' => UnitKerja::SekretariatPerwakilan,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kabid_1',
                 'email' => 'kabid_1@bpk.go.id',
                 'fullname' => 'Kepala Bidang Pemeriksaan Lampung I',
-                'unit' => 'Bidang Pemeriksaan Lampung I',
+                'unit' => UnitKerja::BidangPemeriksaanLampungI,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kabid_2',
                 'email' => 'kabid_2@bpk.go.id',
                 'fullname' => 'Kepala Bidang Pemeriksaan Lampung II',
-                'unit' => 'Bidang Pemeriksaan Lampung II',
+                'unit' => UnitKerja::BidangPemeriksaanLampungII,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasubbag_htu',
                 'email' => 'kasubbag_htu@bpk.go.id',
-                'fullname' => 'Kasubag Humas dan TU',
-                'unit' => 'Subbagian Humas dan TU',
+                'fullname' => 'Kepala Subbagian Humas dan TU',
+                'unit' => UnitKerja::SubbagianHumasTu,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasubbag_sdm',
                 'email' => 'kasubbag_sdm@bpk.go.id',
-                'fullname' => 'Kasubag SDM',
-                'unit' => 'Subbagian SDM',
+                'fullname' => 'Kepala Subbagian SDM',
+                'unit' => UnitKerja::SubbagianSdm,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasubbag_keuangan',
                 'email' => 'kasubbag_keuangan@bpk.go.id',
-                'fullname' => 'Kasubag Keuangan',
-                'unit' => 'Subbagian Keuangan',
+                'fullname' => 'Kepala Subbagian Keuangan',
+                'unit' => UnitKerja::SubbagianKeuangan,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasubbag_umumti',
                 'email' => 'kasubbag_umumti@bpk.go.id',
-                'fullname' => 'Kasubag Umum dan TI',
-                'unit' => 'Subbagian Umum dan TI',
+                'fullname' => 'Kepala Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'kasubbag_hukum',
                 'email' => 'kasubbag_hukum@bpk.go.id',
-                'fullname' => 'Kasubag Hukum',
-                'unit' => 'Subbagian Hukum',
+                'fullname' => 'Kepala Subbagian Hukum',
+                'unit' => UnitKerja::SubbagianHukum,
                 'role' => UserRole::KepalaUnit,
             ],
             [
                 'username' => 'pengguna',
                 'email' => 'pengguna@bpk.go.id',
                 'fullname' => 'Pengguna Sistem',
-                'unit' => 'Subbagian Umum dan TI',
+                'unit' => UnitKerja::SubbagianUmumTi,
                 'role' => UserRole::Pengguna,
             ],
+
+
         ];
 
         foreach ($accounts as $account) {

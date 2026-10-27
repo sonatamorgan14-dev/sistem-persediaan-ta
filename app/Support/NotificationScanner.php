@@ -977,7 +977,7 @@ class NotificationScanner
             type: NotificationType::PermintaanDiajukan,
             dedupKey: NotificationType::PermintaanDiajukan->dedupKey($request->request_id),
             title: "Permintaan {$request->request_number} menunggu persetujuan",
-            body: "Permintaan barang dari unit {$request->user?->unit} perlu diperiksa dan disetujui.",
+            body: "Permintaan barang dari unit {$request->user?->unit?->label()} perlu diperiksa dan disetujui.",
             actionUrl: route('request.show', $request, absolute: false),
             subject: $request,
         );
@@ -988,7 +988,7 @@ class NotificationScanner
             type: NotificationType::PermintaanDiajukan,
             dedupKey: NotificationType::PermintaanDiajukan->dedupKey($request->request_id),
             title: "Permintaan {$request->request_number} menunggu persetujuan",
-            body: "Permintaan barang dari unit {$request->user?->unit} perlu diperiksa dan disetujui.",
+            body: "Permintaan barang dari unit {$request->user?->unit?->label()} perlu diperiksa dan disetujui.",
             actionUrl: route('request.show', $request, absolute: false),
             subject: $request,
         );
