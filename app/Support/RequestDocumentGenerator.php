@@ -24,12 +24,17 @@ class RequestDocumentGenerator
             'request_id' => $request->request_id,
             'document_type' => 'nota_dinas',
         ]);
+        $kepalaUnit = User::query()
+            ->where('role', 'kepala_unit')
+            ->where('unit', $request->user?->unit)
+            ->first();
         $document->fill([
             'user_id' => $request->user_id,
             'document_number' => $request->request_number,
             'file_path' => $filePath,
             'approved_by_user_id' => null,
             'approved_at' => null,
+            'kepala_unit' => $kepalaUnit,
             'verification_token_hash' => null,
         ]);
         $document->save();

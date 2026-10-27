@@ -15,6 +15,15 @@
                     ($isAdmin && in_array($requestData->status, ['submitted', 'approved_by_head', 'processed_by_staff', 'in_issuance'], true)) ||
                     ($isKasubbag && (in_array($requestData->status, ['processed_by_staff', 'in_issuance'], true) || $isEmergencyReadyToComplete));
         $canRespond = $canRespond && (! $hasItemProposals || ($isAdmin && $requestData->status === 'submitted'));
+        $revertTo = $isAdmin ? $requestData->previousStatus() : null;
+        $statusLabels = [
+            'submitted' => 'Terkirim',
+            'approved_by_head' => 'Disetujui Kepala Unit',
+            'processed_by_staff' => 'Disetujui Staff Umum',
+            'in_issuance' => 'Dalam Proses Pengeluaran',
+            'completed' => 'Selesai',
+            'rejected' => 'Ditolak',
+        ];
     @endphp
 
 
@@ -56,9 +65,17 @@
     <x-ui.flash />
 
 
-    @if ($canRespond || $canEditQuantity)
+    @if ($canRespond || $canEditQuantity || $revertTo)
         <div class="mt-6  p-5 dark:border-gray-800 dark:bg-white/[0.03]">
             <div class="flex flex-wrap items-center justify-end gap-3">
+                @if ($revertTo)
+                    <button type="button" x-data
+                        @click="$dispatch('open-revert-modal', @js(['id' => $requestData->request_id, 'number' => $requestData->request_number, 'from' => $requestData->status, 'to' => $revertTo]))"
+                        class="text-theme-sm inline-flex items-center rounded-lg px-4 py-2.5 font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-300 dark:ring-gray-700 dark:hover:bg-white/[0.03]">
+                        Kembalikan Status
+                    </button>
+                @endif
+
                 @if ($canEditQuantity)
                     <a href="{{ route('request.edit', $requestData) }}"
                         class="text-theme-sm text-warning-600 dark:text-warning-500 ring-warning-200 dark:ring-warning-500/30 hover:bg-warning-50 dark:hover:bg-warning-500/10 inline-flex items-center rounded-lg px-4 py-2.5 font-medium ring-1 ring-inset transition">
@@ -105,14 +122,7 @@
                         'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500' => $requestData->status === 'rejected',
                         'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500' => $requestData->status === 'completed',
                     ])>
-                        {{ [
-                            'submitted' => 'Terkirim',
-                            'approved_by_head' => 'Disetujui Kepala Unit',
-                            'processed_by_staff' => 'Disetujui Staff Umum',
-                            'in_issuance' => 'Dalam Proses Pengeluaran',
-                            'completed' => 'Selesai',
-                            'rejected' => 'Ditolak',
-                        ][$requestData->status] ?? ucfirst(str_replace('_', ' ', $requestData->status)) }}
+                        {{ $statusLabels[$requestData->status] ?? ucfirst(str_replace('_', ' ', $requestData->status)) }}
                     </span>
                 </dd>
             </div>
@@ -164,4 +174,8 @@
             </table>
         </div>
     </div>
+
+    @if ($revertTo)
+        @include('pages.request._revert-status-modal')
+    @endif
 @endsection

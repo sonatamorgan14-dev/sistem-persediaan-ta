@@ -164,7 +164,7 @@
         <tr>
             <td class="meta-label">Dari</td>
             <td class="meta-colon">:</td>
-            <td class="meta-value">{{ $request->user?->fullname ?? '-' }}</td>
+            <td class="meta-value">{{ $request->user?->unit ?? '-' }}</td>
         </tr>
         <tr>
             <td class="meta-label">Perihal</td>
@@ -220,8 +220,8 @@
         @else
             <div class="sig-head">Kepala {{ $request->user?->unit ?? '-' }},</div>
             <div class="verification-qr" aria-hidden="true"></div>
-            <div class="signature-name">-</div>
-            <div>Disetujui pada -</div>
+            <div class="signature-name">{{ $kepalaUnit?->fullname ?? '-' }}</div>
+            <div>NIP: {{ $kepalaUnit?->nip ?? '-' }}</div>
         @endif
     </div>
 

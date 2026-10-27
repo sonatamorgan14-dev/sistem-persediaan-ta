@@ -145,6 +145,7 @@
                                                     ($isAdmin && in_array($row->status, ['submitted', 'approved_by_head', 'processed_by_staff', 'in_issuance'], true)) ||
                                                     ($isKasubbag && (in_array($row->status, ['processed_by_staff', 'in_issuance'], true) || $isEmergencyReadyToComplete));
                                         $canRespond = $canRespond && (! $hasItemProposals || ($isAdmin && $row->status === 'submitted'));
+                                        $revertTo = $isAdmin ? $row->previousStatus() : null;
                                     @endphp
 
                                     @if ($canRespond)
@@ -167,6 +168,14 @@
                                                 </button>
                                             </form>
                                         @endunless
+                                    @endif
+
+                                    @if ($revertTo)
+                                        <button type="button" x-data
+                                            @click="$dispatch('open-revert-modal', @js(['id' => $row->request_id, 'number' => $row->request_number, 'from' => $row->status, 'to' => $revertTo]))"
+                                            class="text-theme-xs rounded-lg px-3 py-1.5 font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03]">
+                                            Kembalikan Status
+                                        </button>
                                     @endif
 
                                     @if ($hasItemProposals && ($isAdmin || $isPengelolaGudang))
@@ -193,4 +202,8 @@
             {{ $requests->links('vendor.pagination.tailadmin') }}
         </div>
     </div>
+
+    @if ($isAdmin)
+        @include('pages.request._revert-status-modal')
+    @endif
 @endsection

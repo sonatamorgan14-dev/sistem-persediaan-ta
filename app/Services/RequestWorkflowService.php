@@ -44,7 +44,10 @@ class RequestWorkflowService
 
         DB::transaction(function () use ($request, $actor, $action): void {
             if ($action === 'reject') {
-                $request->update(['status' => 'rejected']);
+                $request->update([
+                    'status' => 'rejected',
+                    'rejected_from_status' => $request->status,
+                ]);
 
                 return;
             }
@@ -82,6 +85,64 @@ class RequestWorkflowService
             ),
             module: AuditModule::Permintaan,
             event: $action === 'approve' ? AuditEvent::Setuju : AuditEvent::Tolak,
+            subject: $request,
+        );
+        NotificationScanner::periksaPermintaan($request);
+
+        return $request;
+    }
+
+    /**
+     * Admin mengembalikan permintaan satu langkah ke status sebelumnya untuk
+     * membatalkan salah klik atau salah input, sekaligus membatalkan efek
+     * samping langkah tersebut. Permintaan yang sudah selesai tidak bisa
+     * dikembalikan karena stok sudah keluar dan BAST sudah terbit.
+     */
+    public function revert(ModelsRequest $request, User $actor, string $reason): ModelsRequest
+    {
+        if (! $actor->isAdmin()) {
+            throw new AuthorizationException('Hanya Admin yang dapat mengembalikan status permintaan.');
+        }
+
+        $fromStatus = $request->status;
+        $toStatus = $request->previousStatus();
+
+        if ($toStatus === null) {
+            throw new AuthorizationException('Status permintaan ini tidak dapat dikembalikan.');
+        }
+
+        DB::transaction(function () use ($request, $fromStatus, $toStatus): void {
+            $request->update([
+                'status' => $toStatus,
+                'rejected_from_status' => null,
+            ]);
+
+            // Penolakan tidak punya efek samping, jadi pemulihannya cukup
+            // mengembalikan status.
+            if ($fromStatus === 'approved_by_head') {
+                // Nota Dinas dibuat ulang tanpa persetujuan; tautan QR lama mati.
+                $this->documentGenerator->generateNotaDinas($request);
+            } elseif ($fromStatus === 'processed_by_staff') {
+                // Kembali ke kondisi sebelum Pengelola Gudang memproses:
+                // jumlah disetujui kosong dan barang tambahan dari staf dibuang.
+                $request->item()->where('quantity_requested', 0)->delete();
+                $request->item()->update(['quantity_approved' => 0]);
+            }
+        });
+
+        $request = $request->fresh('user');
+
+        AuditLogger::record(
+            user: $actor,
+            activity: sprintf(
+                'Mengembalikan status permintaan barang %s dari %s ke %s. Alasan: %s',
+                $request->request_number,
+                $this->labelStatus($fromStatus),
+                $this->labelStatus($toStatus),
+                $reason,
+            ),
+            module: AuditModule::Permintaan,
+            event: AuditEvent::UbahStatus,
             subject: $request,
         );
         NotificationScanner::periksaPermintaan($request);

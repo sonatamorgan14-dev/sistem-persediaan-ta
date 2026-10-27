@@ -14,6 +14,7 @@
 
     <x-ui.flash />
 
+    @unless ($isHistory)
     <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
             <p class="text-sm text-gray-500 dark:text-gray-400">Menunggu diproses</p>
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+    @endunless
 
     <form id="merge-form" method="POST" action="{{ route('request.umum.merge') }}" class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-theme-xs dark:border-gray-800 dark:bg-white/[0.03]">
         @csrf
@@ -44,19 +46,34 @@
         </template>
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
             <div>
-                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">Antrean Permintaan Umum</h3>
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Permintaan ditolak tetap tersimpan sebagai riwayat.</p>
+                <h3 class="text-base font-semibold text-gray-800 dark:text-white/90">{{ $isHistory ? 'Histori Permintaan Umum' : 'Antrean Permintaan Umum' }}</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    {{ $isHistory ? 'Permintaan umum yang sudah digabung menjadi permintaan darurat.' : 'Permintaan ditolak tetap tersimpan sebagai riwayat.' }}
+                </p>
             </div>
+            @if ($isHistory)
+                <a href="{{ route('request.umum.index') }}"
+                    class="text-theme-xs rounded-lg px-3 py-1.5 font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-300 dark:ring-gray-700 dark:hover:bg-white/[0.03]">
+                    Kembali ke Antrean
+                </a>
+            @else
+                <a href="{{ route('request.umum.index', ['view' => 'histori']) }}"
+                    class="text-theme-xs rounded-lg px-3 py-1.5 font-medium text-brand-600 ring-1 ring-brand-200 ring-inset transition hover:bg-brand-50 dark:text-brand-400 dark:ring-brand-500/30 dark:hover:bg-brand-500/10">
+                    Histori
+                </a>
+            @endif
         </div>
         <div class="custom-scrollbar max-w-full overflow-x-auto">
             <table class="w-full min-w-[1100px]">
                 <thead>
                     <tr class="border-b border-gray-100 bg-gray-50/70 dark:border-gray-800 dark:bg-white/[0.02]">
-                        <th class="w-16 px-5 py-3 text-left sm:px-6">
-                            <input type="checkbox" :checked="allSelected" @change="toggleAll($event.target.checked)" aria-label="Pilih semua permintaan submitted"
-                                class="size-4 rounded border-gray-300 text-brand-500 focus:ring-brand-500">
-                        </th>
-                        @foreach (['Nomor Permintaan', 'Peminta', 'Unit', 'Barang yang Diminta', 'Tanggal', 'Status', 'Aksi'] as $heading)
+                        @unless ($isHistory)
+                            <th class="w-16 px-5 py-3 text-left sm:px-6">
+                                <input type="checkbox" :checked="allSelected" @change="toggleAll($event.target.checked)" aria-label="Pilih semua permintaan submitted"
+                                    class="size-4 rounded border-gray-300 text-brand-500 focus:ring-brand-500">
+                            </th>
+                        @endunless
+                        @foreach (['Nomor Permintaan', 'Peminta', 'Unit', 'Barang yang Diminta', 'Tanggal', 'Status', $isHistory ? 'Digabung ke' : 'Aksi'] as $heading)
                             <th class="px-5 py-3 text-left sm:px-6">
                                 <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ $heading }}</p>
                             </th>
@@ -66,11 +83,13 @@
                 <tbody>
                     @forelse ($requests as $request)
                         <tr class="border-b border-gray-100 align-top transition-colors last:border-0 hover:bg-gray-50/60 dark:border-gray-800 dark:hover:bg-white/[0.02]">
-                            <td class="px-5 py-4 sm:px-6">
-                                @if ($request->status === 'submitted')
-                                    <input type="checkbox" value="{{ $request->request_id }}" x-model="selectedRequests" class="size-4 rounded border-gray-300 text-brand-500 focus:ring-brand-500">
-                                @endif
-                            </td>
+                            @unless ($isHistory)
+                                <td class="px-5 py-4 sm:px-6">
+                                    @if ($request->status === 'submitted')
+                                        <input type="checkbox" value="{{ $request->request_id }}" x-model="selectedRequests" class="size-4 rounded border-gray-300 text-brand-500 focus:ring-brand-500">
+                                    @endif
+                                </td>
+                            @endunless
                             <td class="px-5 py-4 sm:px-6">
                                 <p class="text-sm font-semibold text-gray-800 dark:text-white/90">{{ $request->request_number }}</p>
                                 <p class="mt-1 text-xs text-gray-400">{{ $request->item->count() }} jenis barang</p>
@@ -99,13 +118,29 @@
                                 <p class="mt-1 text-xs text-gray-400">{{ $request->created_at?->format('H:i') }}</p>
                             </td>
                             <td class="px-5 py-4 text-sm sm:px-6">
-                                <span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold {{ $request->status === 'rejected' ? 'bg-error-50 text-error-600 dark:bg-error-500/10 dark:text-error-400' : 'bg-success-50 text-success-700 dark:bg-success-500/10 dark:text-success-400' }}">
-                                    <span class="size-1.5 rounded-full {{ $request->status === 'rejected' ? 'bg-error-500' : 'bg-success-500' }}"></span>
-                                    {{ $request->status === 'rejected' ? 'Ditolak' : 'Submitted' }}
+                                @php
+                                    [$badgeClass, $dotClass, $statusLabel] = match ($request->status) {
+                                        'rejected' => ['bg-error-50 text-error-600 dark:bg-error-500/10 dark:text-error-400', 'bg-error-500', 'Ditolak'],
+                                        'merged' => ['bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300', 'bg-brand-500', 'Digabung'],
+                                        default => ['bg-success-50 text-success-700 dark:bg-success-500/10 dark:text-success-400', 'bg-success-500', 'Submitted'],
+                                    };
+                                @endphp
+                                <span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold {{ $badgeClass }}">
+                                    <span class="size-1.5 rounded-full {{ $dotClass }}"></span>
+                                    {{ $statusLabel }}
                                 </span>
                             </td>
                             <td class="px-5 py-4 text-sm sm:px-6">
-                                @if ($request->status === 'submitted')
+                                @if ($isHistory)
+                                    @if ($request->mergedInto)
+                                        <a href="{{ route('request.show', $request->mergedInto) }}" class="font-medium text-brand-600 hover:underline dark:text-brand-400">
+                                            {{ $request->mergedInto->request_number }}
+                                        </a>
+                                        <p class="mt-1 text-xs text-gray-400">{{ $request->updated_at?->translatedFormat('d M Y H:i') }}</p>
+                                    @else
+                                        <span class="text-gray-400">Permintaan hasil gabungan sudah dihapus</span>
+                                    @endif
+                                @elseif ($request->status === 'submitted')
                                     <div class="flex flex-wrap gap-3">
                                         <a href="{{ route('request.umum.edit', $request) }}"
                                             class="text-theme-xs rounded-lg px-3 py-1.5 font-medium text-warning-600 ring-1 ring-warning-200 ring-inset transition hover:bg-warning-50 dark:text-warning-500 dark:ring-warning-500/30 dark:hover:bg-warning-500/10">
@@ -123,8 +158,8 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="px-5 py-10 text-center text-sm text-gray-500 dark:text-gray-400 sm:px-6">
-                                Belum ada permintaan umum.
+                            <td colspan="{{ $isHistory ? 7 : 8 }}" class="px-5 py-10 text-center text-sm text-gray-500 dark:text-gray-400 sm:px-6">
+                                {{ $isHistory ? 'Belum ada permintaan umum yang digabungkan.' : 'Belum ada permintaan umum.' }}
                             </td>
                         </tr>
                     @endforelse
@@ -142,7 +177,7 @@
         <div class="p-6 sm:p-8">
             <p class="text-sm font-medium text-brand-600">Konfirmasi penerimaan</p>
             <h3 class="mt-2 text-xl font-semibold text-gray-800 dark:text-white/90">Gabungkan permintaan terpilih?</h3>
-            <p class="mt-3 text-sm leading-6 text-gray-500 dark:text-gray-400">Barang yang sama akan dijumlahkan. Permintaan umum asal akan dihapus dan sistem membuat satu permintaan emergency berstatus submitted.</p>
+            <p class="mt-3 text-sm leading-6 text-gray-500 dark:text-gray-400">Barang yang sama akan dijumlahkan. Permintaan umum asal akan dipindahkan ke Histori dan sistem membuat satu permintaan emergency berstatus submitted.</p>
             <div class="mt-6 flex justify-end gap-3">
                 <button type="button" @click="open = false" class="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-white/[0.03]">Batal</button>
                 <button type="submit" form="merge-form" @click="open = false" class="rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600">Ya, Gabungkan</button>

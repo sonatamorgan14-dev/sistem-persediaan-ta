@@ -11,6 +11,7 @@ use App\Http\Requests\Request\StorePermintaanUmumRequest;
 use App\Http\Requests\Request\UpdatePermintaanBarangRequest;
 use App\Http\Requests\Request\UpdatePermintaanUmumRequest;
 use App\Http\Requests\Request\MergePermintaanUmumRequest;
+use App\Http\Requests\Request\RevertRequestStatusRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Models\Item;
@@ -159,15 +160,20 @@ class RequestController extends Controller
     {
         abort_unless($request->user()->hasRole(UserRole::Admin, UserRole::PengelolaGudang), 403);
 
-        $requests = ModelsRequest::with(['user', 'item.item'])
+        $isHistory = $request->query('view') === 'histori';
+
+        $requests = ModelsRequest::with(['user', 'item.item', 'mergedInto'])
             ->where('type', 'umum')
+            ->where('status', $isHistory ? '=' : '!=', 'merged')
             ->latest('date')
             ->latest('created_at')
-            ->paginate(15);
+            ->paginate(15)
+            ->withQueryString();
 
         return view('pages.request.umum.index', [
             'title' => 'Permintaan Umum',
             'requests' => $requests,
+            'isHistory' => $isHistory,
         ]);
     }
 
@@ -269,7 +275,10 @@ class RequestController extends Controller
                 'updated_at' => $now,
             ])->values()->all());
 
-            ModelsRequest::whereIn('request_id', $requests->pluck('request_id'))->delete();
+            ModelsRequest::whereIn('request_id', $requests->pluck('request_id'))->update([
+                'status' => 'merged',
+                'merged_into_request_id' => $mergedRequest->request_id,
+            ]);
 
             return $mergedRequest;
         });
@@ -600,5 +609,20 @@ class RequestController extends Controller
         }
 
         return redirect()->route('request.index')->with('status', 'Permintaan berhasil diproses.');
+    }
+
+    public function revertStatus(
+        RevertRequestStatusRequest $httpRequest,
+        ModelsRequest $request,
+        RequestWorkflowService $workflow,
+    )
+    {
+        try {
+            $workflow->revert($request, $httpRequest->user(), $httpRequest->validated()['reason']);
+        } catch (AuthorizationException $exception) {
+            return redirect()->back()->with('error', $exception->getMessage());
+        }
+
+        return redirect()->back()->with('status', 'Status permintaan berhasil dikembalikan.');
     }
 }
