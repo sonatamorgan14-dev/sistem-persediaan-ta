@@ -127,7 +127,7 @@ bukan ditegakkan sistem — konsekuensi yang diambil dengan sadar, lihat ADR 003
 | `procurement_request_details` | Rincian barang usulan; `amount_granted` merangkap keputusan per barang, `is_auto` menandai baris yang masih dikelola draf otomatis |
 | `procurements` | Realisasi pengadaan; menautkan usulan ke penyedia, atau berdiri sendiri dengan `basis_reason`/`basis_note` bila tanpa usulan (ADR 0031). `reviewed_at`/`reviewed_by`/`review_note` menampung keputusan **terakhir** Kasubbag Umum dan TI — persetujuan maupun penolakan, karena statusnya yang membedakan |
 | `procurement_details` | Rincian realisasi; `amount` dipesan, `amount_received` datang, `unit_price` harga satuan |
-| `procurement_receipts` | Peristiwa penerimaan: siapa, kapan, nomor BAST |
+| `procurement_receipts` | Peristiwa penerimaan: siapa, kapan; nomor BAST menyusul saat cetak pertama (ADR 0042) |
 | `procurement_documents` | Berkas BAST pindai dan SPK/kontrak, di disk privat |
 | `item_proposals` | Usulan barang baru; `item_id` terisi saat Pengelola Gudang mendaftarkan barangnya (ADR 0032) |
 
@@ -320,7 +320,7 @@ sudah disetujui:
 
 | Metode | URL | Nama | Keterangan |
 |---|---|---|---|
-| GET | `/pengadaan/{procurement}/penerimaan/create` | `procurement-receipts.create` | Formulir konfirmasi, saran nomor BAST berurut |
+| GET | `/pengadaan/{procurement}/penerimaan/create` | `procurement-receipts.create` | Formulir konfirmasi; tanpa nomor BAST sejak [ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md) |
 | POST | `/pengadaan/{procurement}/penerimaan` | `procurement-receipts.store` | Menjalankan `ProcurementReceiptPoster` |
 
 **Aturan.**
@@ -379,7 +379,8 @@ melampirkan bukti bukan bagian dari pemisahan tugas ADR 0016:
 |---|---|---|---|
 | GET | `/pengadaan/laporan/pdf` | `procurements.pdf` | Laporan pengadaan, mengikuti penyaring aktif |
 | GET | `/pengadaan/laporan/csv` | `procurements.csv` | Ekspor CSV, kolom identik dengan PDF |
-| GET | `/pengadaan/{procurement}/bast` | `procurements.bast` | BAST siap tanda tangan |
+| GET | `/pengadaan/{procurement}/bast` | `procurements.bast` | BAST siap tanda tangan; menolak bila nomornya belum diisi |
+| PATCH | `/pengadaan/{procurement}/bast` | `procurements.bast-number` | Mengisi/mengoreksi nomor BAST lalu membuka PDF-nya. Ditambah gate `isi-nomor-bast` — Pejabat Pengadaan dan Pengelola Gudang, bukan Kasubbag ([ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md)) |
 | POST | `/pengadaan/{procurement}/dokumen` | `procurement-documents.store` | Unggah BAST pindai, SPK/kontrak, atau foto belanja. Ditambah gate `unggah-berkas-pengadaan` — hanya Pejabat Pengadaan dan Pengelola Gudang; Kasubbag tidak melampirkan bukti ke realisasi yang ia nilai ([ADR 0041](../keputusan/0041-kasubbag-pengawas-baca-saja.md)) |
 | GET | `/pengadaan/{procurement}/dokumen/{document}/unduh` | `procurement-documents.download` | Unduhan terautentikasi; tidak ada URL berkas |
 | GET | `/pengadaan/{procurement}/dokumen/{document}/lihat` | `procurement-documents.show` | Tampil *inline* untuk JPEG/PNG/WEBP/PDF, tetap dicatat (ADR 0035) |
@@ -420,19 +421,50 @@ path sendiri.
 
 Dicetak dari sistem lalu ditandatangani, dipindai, dan diunggah kembali —
 urutan yang ditetapkan [ADR 0018](../keputusan/0018-berkas-unggahan-di-disk-privat.md).
+Sejak 24 Oktober 2026 mengikuti **format resmi Berita Acara Serah Terima Barang
+Persediaan BPK Perwakilan Provinsi Lampung**
+([ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md)).
+
+**Isi.**
+
+- **Halaman 1** menyalin format resmi persis: kop berlogo, judul, nomor,
+  tanggal terbilang dari `received_at` ("Kamis tanggal Delapan belas bulan
+  Desember tahun Dua ribu dua puluh lima (18-12-2025)"), data kedua pihak,
+  dan tanda tangan dua kolom. A4, margin 1,5 cm atas/bawah dan 2 cm kiri/kanan,
+  Times 12 pt, tanpa footer.
+- **PIHAK PERTAMA — Pelaksana Belanja**: `procurements.purchased_by` (yang
+  menandai dibelanjakan, ADR 0035), cadangannya pembuat realisasi.
+  **PIHAK KEDUA — Petugas Persediaan**: `procurement_receipts.received_by`.
+  Nama dari `fullname`, NIP dan jabatan dari `users.nip`/`users.position`
+  (diisi Admin di Manajemen Pengguna); yang kosong dicetak titik-titik.
+- **Halaman 2 — Lampiran**: nomor dan tanggal BAST, dasar realisasi, penyedia,
+  tabel barang **yang diterima** (`amount_received > 0`) dengan harga, baris
+  jumlah, catatan kekurangan kiriman, dan keterangan penerimaan.
+
+**Nomor BAST.**
+
+- Diisi saat **cetak pertama**, bukan saat penerimaan dikonfirmasi: nomornya
+  dari agenda kantor. Tombol "Cetak BAST" membuka dialog satu kolom (kosong,
+  hanya placeholder contoh), lalu PDF terbuka di tab baru.
+- Pengisi: Pejabat Pengadaan, Pengelola Gudang, Admin (`isi-nomor-bast`).
+  Kasubbag melihat "BAST dapat dicetak setelah nomornya diisi." sampai salah
+  satunya mengisi.
+- Boleh dikoreksi lewat "Ubah Nomor BAST" sampai BAST bertanda tangan
+  diunggah; terbuka lagi bila berkas itu dihapus.
+- Wajib, maksimal 100 karakter, unik di antara penerimaan; format bebas.
+  Mengisi dan mengubah mencatat audit (`Penerimaan`/`Ubah`).
 
 **Aturan.**
 
 - Seluruh angka pada BAST adalah `amount_received`, bukan `amount`
   ([ADR 0017](../keputusan/0017-jumlah-diterima-terpisah-dari-jumlah-dipesan.md)).
-- Baru terbit setelah penerimaan dikonfirmasi; sebelum itu rute menolak dengan
-  redirect berpesan.
-- Kiriman kurang tetap menghasilkan BAST, dengan satu paragraf catatan yang
-  menyebut jenis dan jumlah kekurangannya — keadaan itu justru yang paling
-  membutuhkan dokumen bertanda tangan.
-- Memuat identitas penyedia (nama, alamat, NPWP, narahubung) sebagai PIHAK
-  PERTAMA dan penerimanya sebagai PIHAK KEDUA — inilah alasan `suppliers.address`
-  wajib diisi sejak Tahap 1.
+- Baru terbit setelah penerimaan dikonfirmasi **dan** nomornya diisi; sebelum
+  itu rute menolak dengan redirect berpesan.
+- Kiriman kurang tetap menghasilkan BAST, dengan catatan kekurangan di lampiran
+  — keadaan itu justru yang paling membutuhkan dokumen bertanda tangan.
+- Mutasi stok penerimaan merujuk judul realisasi (`reference_number`), bukan
+  nomor BAST, karena nomornya baru ada sesudah mutasi tercatat. Mutasi sebelum
+  ADR 0042 tetap memuat nomor BAST lamanya.
 
 ### Laporan pengadaan
 
@@ -843,9 +875,12 @@ lapangannya lain ("Sedang Dibelanjakan", "Menunggu Dibelanjakan"), cukup ganti
 `ProcurementStatus::label()`.
 
 **Format nomor dokumen resmi BPK** untuk `procurement_receipts.bast_number`
-belum dikonfirmasi. Formulir konfirmasi penerimaan sudah menyediakan saran
-nomor berurut (`{urutan}/BAST/{tahun}`) yang boleh ditimpa bebas, tanpa
-validasi format yang dipaksakan. Urutannya dihitung ulang tiap tahun.
+terjawab sebagian oleh contoh BAST resmi: `{urut}/UP_TUP/445237/{tahun}`,
+dengan nomor urut dari agenda kantor. Karena itu sistem tidak lagi menyarankan
+nomor sama sekali — diisi manual saat cetak pertama, tanpa validasi format
+([ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md)). Yang masih
+perlu dipastikan: apakah `445237` memang kode satker yang tetap, dan bagian
+`UP_TUP` untuk mekanisme pembayaran lain.
 
 **Menutup usulan yang sudah disetujui tetapi barangnya tidak lagi dibutuhkan**
 belum ada jalannya — usulan itu hanya akan ditagih terus oleh

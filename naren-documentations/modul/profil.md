@@ -12,7 +12,7 @@ termasuk peran sub sistem Permintaan. Lihat
 | Kata sandi | Formulir, wajib kata sandi saat ini | Pemilik |
 | Email | Formulir, wajib kata sandi saat ini | Pemilik (juga Admin) |
 | Foto profil | Unggah / ganti / hapus | Pemilik; Admin hanya menghapus |
-| Nama lengkap, nama pengguna, peran, unit, status | Baca saja | Admin, lewat Manajemen Pengguna |
+| Nama lengkap, NIP, jabatan, nama pengguna, peran, unit, status | Baca saja | Admin, lewat Manajemen Pengguna (NIP dan jabatan sejak [ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md)) |
 | Terdaftar sejak, login terakhir + IP | Baca saja | Sistem |
 
 ## Rute

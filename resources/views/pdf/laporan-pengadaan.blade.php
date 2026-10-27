@@ -146,7 +146,8 @@
                         </td>
                         <td>
                             @if ($procurement->receipt)
-                                {{ $procurement->receipt->bast_number }}
+                                {{-- Nomor BAST kosong sampai BAST dicetak (ADR 0042). --}}
+                                {{ $procurement->receipt->bast_number ?? '-' }}
                                 <br><em style="font-size: 8px; color: #667085;">{{ $procurement->receipt->received_at->format('d/m/Y') }}</em>
                             @else
                                 &mdash;

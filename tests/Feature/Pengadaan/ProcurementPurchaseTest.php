@@ -154,7 +154,6 @@ describe('proses belanja sebelum ditandai', function () {
         $this->actingAs($this->gudang)
             ->from($this->url)
             ->post("{$this->url}/penerimaan", [
-                'bast_number' => '001/BAST/'.now()->year,
                 'received_at' => now()->toDateString(),
                 'received' => [$detail->procurement_detail_id => 10],
             ])
@@ -341,7 +340,6 @@ describe('menandai sudah dibelanjakan', function () {
 
         $this->actingAs($this->gudang)
             ->post("{$this->url}/penerimaan", [
-                'bast_number' => '001/BAST/'.now()->year,
                 'received_at' => now()->toDateString(),
                 'received' => [$detail->procurement_detail_id => 10],
             ])

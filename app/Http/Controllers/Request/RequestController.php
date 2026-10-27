@@ -381,8 +381,8 @@ class RequestController extends Controller
         abort_unless($bast && Storage::disk('local')->exists($bast->file_path), 404);
 
         return response()->file(Storage::disk('local')->path($bast->file_path), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="'.$bast->document_number.'.pdf"',
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'Content-Disposition' => 'inline; filename="'.$bast->document_number.'.docx"',
         ]);
     }
 

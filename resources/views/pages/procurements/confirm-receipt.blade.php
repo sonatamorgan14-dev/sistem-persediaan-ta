@@ -15,8 +15,6 @@
             @csrf
 
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <x-form.text-field name="bast_number" label="Nomor BAST" :value="$saranNomorBast" required />
-
                 <x-form.text-field name="received_at" label="Tanggal Diterima" type="date"
                     :value="now()->toDateString()" required />
             </div>

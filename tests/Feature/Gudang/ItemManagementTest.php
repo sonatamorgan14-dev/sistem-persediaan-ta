@@ -124,7 +124,7 @@ describe('membuat barang', function () {
 
     it('menolak satuan di luar daftar', function () {
         $this->actingAs(pengelolaGudang())
-            ->post('/barang', itemPayload(['unit' => 'karung']))
+            ->post('/barang', itemPayload(['unit' => 'ember']))
             ->assertSessionHasErrors('unit');
     });
 

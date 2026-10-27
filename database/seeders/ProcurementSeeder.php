@@ -112,7 +112,6 @@ class ProcurementSeeder extends Seeder
             procurement: $procurement,
             diterima: $diterima,
             actor: $petugasGudang,
-            bastNumber: '001/BAST/'.now()->year,
             receivedAt: now()->subDays(5),
             notes: 'Tinta warna dikirim kurang 5 botol dari pesanan; penyedia akan mengirim susulan.',
         );

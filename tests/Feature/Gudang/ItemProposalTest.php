@@ -145,7 +145,7 @@ describe('mengusulkan barang baru', function () {
 
     it('menolak satuan di luar daftar', function () {
         $this->actingAs(pejabatPengadaan())
-            ->post('/usulan-barang', payloadUsulanBarang(['unit' => 'karung']))
+            ->post('/usulan-barang', payloadUsulanBarang(['unit' => 'ember']))
             ->assertSessionHasErrors('unit');
 
         expect(ItemProposal::count())->toBe(0);

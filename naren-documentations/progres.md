@@ -5,6 +5,99 @@ perubahan.
 
 ---
 
+## 24 Oktober 2026 (lanjutan) — BAST pengadaan format resmi BPK
+
+Narendra membawa format resmi Berita Acara Serah Terima Barang Persediaan BPK
+Perwakilan Lampung. `pdf/bast-pengadaan.blade.php` ditulis ulang mengikutinya:
+halaman 1 persis format aslinya (kop berlogo `logo_bpk_kop.jpeg`, tanggal
+terbilang, data PIHAK PERTAMA/KEDUA dengan NIP dan jabatan, tanda tangan dua
+kolom, tanpa footer; A4, margin 1,5/2 cm, Times 12 pt), halaman 2 lampiran
+rincian barang yang diterima. Keputusannya di
+[ADR 0042](keputusan/0042-bast-pengadaan-format-resmi-bpk.md), menggantikan
+sebagian ADR 0021.
+
+**Yang berubah.**
+
+- **Pihaknya internal**: PIHAK PERTAMA = Pelaksana Belanja (`purchased_by`,
+  cadangannya pembuat realisasi), PIHAK KEDUA = Petugas Persediaan
+  (`received_by`). Penyedia pindah ke lampiran.
+- **`users.nip` + `users.position`** (migrasi baru, tabel bersama — menunggu
+  Alma). Diisi Admin di Manajemen Pengguna, NIP 18 digit dengan spasi dibuang;
+  profil menampilkannya baca-saja. Seeder: NIP fiktif untuk `kasubbag`,
+  `gudang`, `pengadaan`.
+- **Nomor BAST pindah ke cetak pertama**: `procurement_receipts.bast_number`
+  nullable, dibuang dari formulir konfirmasi penerimaan beserta saran
+  berurutnya. Rute baru `PATCH pengadaan/{procurement}/bast`
+  (`procurements.bast-number`, gate baru `isi-nomor-bast`: Pejabat Pengadaan +
+  Pengelola Gudang). Dialog di kartu Penerimaan, kolom kosong tanpa saran, PDF
+  terbuka di tab baru dan tab asal dimuat ulang saat dikunjungi lagi. Boleh
+  dikoreksi sampai BAST bertanda tangan diunggah (`nomorBastDapatDiubah()`),
+  unik, tercatat di audit.
+- **Mutasi penerimaan** kini `reference_number` = judul realisasi, bukan nomor
+  BAST (nomornya belum ada saat mutasi tercatat, dan mutasi immutable).
+- `App\Support\Terbilang` baru; kalimat notifikasi `BastBelumDiunggah` tidak
+  lagi menyebut nomor BAST; laporan pengadaan PDF menulis `-` bila belum ada.
+
+**Temuan di luar cakupan.** Sejak master barang diganti data kantor (entri di
+bawah), `ProcurementRequestSeeder` tidak menemukan kode `ATK-0xx` lagi, sehingga
+realisasi contoh yang "diterima" lahir **tanpa satu pun rincian** — di basis
+data utama juga. Lampiran BAST contoh karena itu kosong. Belum diperbaiki;
+perlu memilih kode barang nyata untuk data contoh pengadaan.
+
+**Verifikasi.** 608 test lulus (+17 `BastPengadaanTest`, +23 `TerbilangTest`,
++3 manajemen pengguna; blok "saran nomor BAST" diganti satu test). Pint bersih
+untuk berkas yang diubah — `NotificationScanner.php` punya satu temuan gaya
+yang **sudah ada sebelum** sesi ini, tidak disentuh. `migrate:fresh --seed`
+berhasil di basis data uji terpisah (basis data utama hanya `migrate`, supaya
+datanya tidak terhapus). PDF dirender dan dirasterisasi (PyMuPDF): A4, font
+tersemat Times-Roman/Times-Bold, margin 2,00 cm kiri/kanan dan 1,50 cm atas,
+tepat 2 halaman; dibandingkan visual dengan contoh BAST. Dialog nomor BAST
+dicoba di Edge headless (Playwright, server kedua di port 8123 atas basis data
+uji): dialog terbuka, PDF terbuka di tab baru, tab asal memuat ulang dan
+menampilkan nomornya. Peristiwa `visibilitychange` disimulasikan — di mode
+headless tab tidak pernah benar-benar tersembunyi — jadi perpindahan tab
+sungguhan belum dicoba tangan. Galat JS `classList of null` yang muncul juga
+muncul di `/pengadaan` dan `/barang`, jadi bukan dari sesi ini.
+
+**Cacat yang ditemukan uji peramban.** Setelah nomor diisi, "Tanggal Diterima"
+bergeser dari 19 ke 24 Oktober. Penyebabnya MariaDB 10.4 XAMPP
+(`explicit_defaults_for_timestamp = 0`) diam-diam memasang
+`ON UPDATE CURRENT_TIMESTAMP` pada kolom TIMESTAMP NOT NULL pertama tabel —
+`procurement_receipts.received_at`. Tidak pernah terasa karena baris
+penerimaan dulu tidak pernah diubah; pengisian nomor BAST adalah update
+pertamanya, dan tanggal itulah yang tercetak terbilang di BAST. Diperbaiki
+migrasi `2026_10_24_000003` (DEFAULT eksplisit, tanpa ON UPDATE), diverifikasi
+ulang di peramban. Pest (SQLite) tidak dapat menangkapnya. Kolom lain yang kena
+hanya `audit_logs.timestamp` — tabel bersama, dan barisnya immutable sehingga
+ON UPDATE-nya tak pernah terpicu; dibiarkan.
+
+---
+
+## 24 Oktober 2026 — Master barang dan saldo awal dari data kantor
+
+`ItemSeeder` kini membaca `database/seeders/data/barang.csv` (2.742 barang) dan
+`saldo_awal_2026_10_01.csv` (324 barang, total 10.560). Data contoh ATK-xxx
+dibuang. Barang bersaldo dicatat lewat `StockLedger` sebagai mutasi
+`SaldoAwal` bertanggal 1 Oktober 2026 atas nama Pengelola Gudang; 2.418 barang
+tanpa saldo didaftarkan dengan stok nol dan langsung diarsipkan. Semua barang
+memakai batas default stok minimum 1, maksimum 1.000. Seeder tetap idempoten
+(`firstOrCreate`, saldo hanya untuk barang yang baru dibuat).
+
+`SatuanBarang` mendapat 30 case baru sesuai kolom `unit` CSV, termasuk `Dummy`
+(satuan placeholder dari sumber data, 150 barang, 32 di antaranya bersaldo).
+Dua test "menolak satuan di luar daftar" memakai `karung` sebagai contoh tak
+sah — kini sah, diganti `ember`.
+
+**Catatan.** `StockMutationSeeder`, `StockOpnameSeeder`, dan seeder pengadaan
+masih membuat data contoh di atas barang yang kini nyata — saldo awal
+tertimpa mutasi rekaan.
+
+**Verifikasi.** `migrate:fresh --seed` berhasil: 2.742 barang, 324 aktif,
+324 mutasi saldo awal berjumlah 10.560. 566 test lulus; Pint bersih untuk
+berkas yang diubah.
+
+---
+
 ## 5 Oktober 2026 (lanjutan) — Seluruh UI gudang, pengadaan, dan Admin dibersihkan
 
 Cicilan pedoman "UI copy: clean by default" (CLAUDE.md, 1 Oktober) dituntaskan

@@ -65,13 +65,21 @@ describe('hak akses', function () {
     });
 
     it('menampilkan data wewenang Admin tanpa isian untuk mengubahnya', function () {
-        $user = penggunaProfil(attributes: ['unit' => 'Subbagian Umum dan TU']);
+        $user = penggunaProfil(attributes: [
+            'unit' => 'Subbagian Umum dan TU',
+            'nip' => '198506142003121001',
+            'position' => 'Pengelola Pengadaan Barang/Jasa Ahli Pertama',
+        ]);
 
         $this->actingAs($user)
             ->get('/profil')
             ->assertOk()
             ->assertSee($user->username)
             ->assertSee('Subbagian Umum dan TU')
+            ->assertSee('198506142003121001')
+            ->assertSee('Pengelola Pengadaan Barang/Jasa Ahli Pertama')
+            ->assertDontSee('name="nip"', false)
+            ->assertDontSee('name="position"', false)
             ->assertDontSee('name="fullname"', false)
             ->assertDontSee('name="username"', false)
             ->assertDontSee('name="role"', false)
@@ -127,12 +135,16 @@ describe('mengganti email', function () {
             'fullname' => 'Nama Asli',
             'username' => 'nama.asli',
             'unit' => 'Unit Asli',
+            'nip' => '198506142003121001',
+            'position' => 'Jabatan Asli',
         ]);
 
         $this->actingAs($user)->patch('/profil/email', [
             'email' => 'baru@bpk.go.id',
             'email_password' => SANDI_LAMA_PROFIL,
             'fullname' => 'Nama Palsu',
+            'nip' => '199999999999999999',
+            'position' => 'Jabatan Palsu',
             'username' => 'palsu',
             'role' => UserRole::Admin->value,
             'unit' => 'Unit Palsu',
@@ -147,6 +159,8 @@ describe('mengganti email', function () {
             ->and($user->username)->toBe('nama.asli')
             ->and($user->role)->toBe(UserRole::PengelolaGudang)
             ->and($user->unit)->toBe('Unit Asli')
+            ->and($user->nip)->toBe('198506142003121001')
+            ->and($user->position)->toBe('Jabatan Asli')
             ->and($user->is_active)->toBeTrue()
             ->and($user->avatar_path)->toBeNull();
     });

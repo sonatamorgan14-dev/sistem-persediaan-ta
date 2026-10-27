@@ -27,14 +27,23 @@
 
     <x-ui.flash />
 
-    {{-- Dialog pembatalan, penolakan, dan penandaan belanja dibuka kembali
-         sendiri bila validasinya gagal, supaya pesan galatnya tidak tersembunyi
-         di balik dialog tertutup. --}}
+    {{-- Dialog pembatalan, penolakan, penandaan belanja, dan nomor BAST dibuka
+         kembali sendiri bila validasinya gagal, supaya pesan galatnya tidak
+         tersembunyi di balik dialog tertutup.
+
+         Formulir nomor BAST membuka PDF-nya di tab baru. Tab ini dimuat ulang
+         begitu dikunjungi lagi, supaya nomor yang baru diisi ikut tampil. --}}
     <div class="grid grid-cols-12 gap-4 md:gap-6"
         x-data="{
             batalTerbuka: @js($errors->hasAny(['cancel_reason', 'cancel_note'])),
             tolakTerbuka: @js($errors->has('review_note')),
             belanjaTerbuka: @js($errors->hasAny(['purchased_at', 'photos', 'photos.*', 'purchase_note'])),
+            nomorBastTerbuka: @js($errors->has('bast_number')),
+            muatUlangSaatKembali() {
+                document.addEventListener('visibilitychange', () => {
+                    if (document.visibilityState === 'visible') location.reload();
+                });
+            },
         }">
         {{-- Identitas realisasi --}}
         <div class="col-span-12 space-y-4 md:space-y-6 xl:col-span-4">
@@ -258,7 +267,7 @@
 
                     <dl class="mt-3 space-y-3">
                         @foreach ([
-                            'Nomor BAST' => $procurement->receipt->bast_number,
+                            'Nomor BAST' => $procurement->receipt->bast_number ?? 'Belum diisi',
                             'Diterima Oleh' => $procurement->receipt->receivedBy?->fullname ?? '—',
                             'Tanggal Diterima' => $procurement->receipt->received_at->translatedFormat('d F Y'),
                         ] as $label => $value)
@@ -282,14 +291,45 @@
                     @endif
 
                     {{-- Dicetak untuk ditandatangani, lalu dipindai dan
-                         diunggah kembali sebagai berkas BAST. --}}
-                    <a href="{{ route('procurements.bast', $procurement) }}" target="_blank" rel="noopener"
-                        class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03]">
-                        <svg class="size-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 2.5A1.5 1.5 0 004.5 4v2h11V4A1.5 1.5 0 0014 2.5H6zM3 7.5A1.5 1.5 0 001.5 9v4A1.5 1.5 0 003 14.5h1v2A1.5 1.5 0 005.5 18h9a1.5 1.5 0 001.5-1.5v-2h1a1.5 1.5 0 001.5-1.5V9A1.5 1.5 0 0017 7.5H3zm2.5 6h9v3h-9v-3z" />
-                        </svg>
-                        Cetak BAST
-                    </a>
+                         diunggah kembali sebagai berkas BAST. Nomornya diisi
+                         saat cetak pertama oleh salah satu penanda tangannya,
+                         dan boleh dikoreksi sampai berkas bertanda tangan
+                         diunggah (ADR 0042). --}}
+                    @php
+                        $kelasCetak = 'mt-4 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03]';
+                    @endphp
+
+                    @if ($procurement->receipt->bast_number !== null)
+                        <a href="{{ route('procurements.bast', $procurement) }}" target="_blank" rel="noopener"
+                            class="{{ $kelasCetak }}">
+                            <svg class="size-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 2.5A1.5 1.5 0 004.5 4v2h11V4A1.5 1.5 0 0014 2.5H6zM3 7.5A1.5 1.5 0 001.5 9v4A1.5 1.5 0 003 14.5h1v2A1.5 1.5 0 005.5 18h9a1.5 1.5 0 001.5-1.5v-2h1a1.5 1.5 0 001.5-1.5V9A1.5 1.5 0 0017 7.5H3zm2.5 6h9v3h-9v-3z" />
+                            </svg>
+                            Cetak BAST
+                        </a>
+
+                        @if ($procurement->nomorBastDapatDiubah())
+                            @can('isi-nomor-bast')
+                                <button type="button" @click="nomorBastTerbuka = true"
+                                    class="text-theme-sm text-brand-500 hover:text-brand-600 dark:text-brand-400 mt-3 w-full text-center font-medium">
+                                    Ubah Nomor BAST
+                                </button>
+                            @endcan
+                        @endif
+                    @else
+                        @can('isi-nomor-bast')
+                            <button type="button" @click="nomorBastTerbuka = true" class="{{ $kelasCetak }}">
+                                <svg class="size-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 2.5A1.5 1.5 0 004.5 4v2h11V4A1.5 1.5 0 0014 2.5H6zM3 7.5A1.5 1.5 0 001.5 9v4A1.5 1.5 0 003 14.5h1v2A1.5 1.5 0 005.5 18h9a1.5 1.5 0 001.5-1.5v-2h1a1.5 1.5 0 001.5-1.5V9A1.5 1.5 0 0017 7.5H3zm2.5 6h9v3h-9v-3z" />
+                                </svg>
+                                Cetak BAST
+                            </button>
+                        @else
+                            <p class="text-theme-xs mt-4 text-gray-500 dark:text-gray-400">
+                                BAST dapat dicetak setelah nomornya diisi.
+                            </p>
+                        @endcan
+                    @endif
                 </div>
             @endif
         </div>
@@ -576,6 +616,45 @@
                                 <button type="submit"
                                     class="bg-brand-500 hover:bg-brand-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
                                     Ya, sudah dibelanjakan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            @endcan
+        @endif
+
+        {{-- Nomor BAST: diisi saat cetak pertama, lalu langsung dicetak. Tidak
+             ada saran nomor — nomornya dari agenda kantor, dan saran yang
+             keliru justru dipercaya petugas (ADR 0042). --}}
+        @if ($procurement->isDiterima() && $procurement->nomorBastDapatDiubah())
+            @can('isi-nomor-bast')
+                <div x-show="nomorBastTerbuka" x-cloak @keydown.escape.window="nomorBastTerbuka = false"
+                    class="fixed inset-0 z-99999 flex items-center justify-center p-5">
+                    <div @click="nomorBastTerbuka = false" class="fixed inset-0 bg-gray-900/50"></div>
+
+                    <div @click.stop class="relative w-full max-w-lg rounded-2xl bg-white p-6 dark:bg-gray-900">
+                        <h3 class="text-theme-xl font-semibold text-gray-800 dark:text-white/90">
+                            Cetak BAST {{ $procurement->judul() }}
+                        </h3>
+                        <form method="POST" action="{{ route('procurements.bast-number', $procurement) }}"
+                            target="_blank" class="mt-5"
+                            @submit="nomorBastTerbuka = false; muatUlangSaatKembali()">
+                            @csrf
+                            @method('PATCH')
+
+                            <x-form.text-field name="bast_number" label="Nomor BAST" required
+                                :value="$procurement->receipt->bast_number"
+                                placeholder="mis. 001/UP_TUP/445237/{{ $procurement->receipt->received_at->year }}" />
+
+                            <div class="mt-6 flex justify-end gap-3">
+                                <button type="button" @click="nomorBastTerbuka = false"
+                                    class="rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 ring-1 ring-gray-300 ring-inset transition hover:bg-gray-50 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03]">
+                                    Tutup
+                                </button>
+                                <button type="submit"
+                                    class="bg-brand-500 hover:bg-brand-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
+                                    Simpan &amp; Cetak
                                 </button>
                             </div>
                         </form>

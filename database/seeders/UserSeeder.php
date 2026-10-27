@@ -12,6 +12,9 @@ class UserSeeder extends Seeder
     /**
      * Akun awal sistem. Sistem ini tertutup, tidak ada pendaftaran mandiri,
      * sehingga akun pertama harus dibuat lewat seeder.
+     *
+     * NIP di sini fiktif, hanya berbentuk sah (18 digit) supaya BAST contoh
+     * tercetak lengkap. NIP pegawai sungguhan tidak masuk repositori.
      */
     public function run(): void
     {
@@ -29,6 +32,8 @@ class UserSeeder extends Seeder
                 'username' => 'kasubbag',
                 'email' => 'kasubbag@bpk.go.id',
                 'fullname' => 'Kepala Subbagian Umum dan TI',
+                'nip' => '197803152005011002',
+                'position' => 'Kepala Subbagian Umum dan TI',
                 'unit' => 'Subbagian Umum dan TI',
                 'role' => UserRole::KasubbagUmumTi,
             ],
@@ -36,6 +41,8 @@ class UserSeeder extends Seeder
                 'username' => 'gudang',
                 'email' => 'gudang@bpk.go.id',
                 'fullname' => 'Pengelola Gudang Persediaan',
+                'nip' => '199001202015031004',
+                'position' => 'Arsiparis Ahli Pertama (Pengelola Persediaan)',
                 'unit' => 'Subbagian Umum dan TI',
                 'role' => UserRole::PengelolaGudang,
             ],
@@ -43,6 +50,8 @@ class UserSeeder extends Seeder
                 'username' => 'pengadaan',
                 'email' => 'pengadaan@bpk.go.id',
                 'fullname' => 'Pejabat Pengadaan Barang/Jasa',
+                'nip' => '198807112010121003',
+                'position' => 'Pengelola Pengadaan Barang/Jasa Ahli Pertama',
                 'unit' => 'Subbagian Umum dan TI',
                 'role' => UserRole::PejabatPengadaan,
             ],

@@ -4,6 +4,11 @@
 
 Diterima — 6 September 2026
 
+Sebagian digantikan oleh [ADR 0042](0042-bast-pengadaan-format-resmi-bpk.md):
+nomor BAST tidak lagi diisi (maupun disarankan) di formulir konfirmasi
+penerimaan, melainkan saat BAST dicetak pertama kali, dan `reference_number`
+mutasi penerimaan kini diisi judul realisasi, bukan nomor BAST.
+
 ## Konteks
 
 [ADR 0016](0016-alur-pengadaan-tiga-dokumen.md) menetapkan alur tiga dokumen

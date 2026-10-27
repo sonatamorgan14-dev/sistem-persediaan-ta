@@ -189,7 +189,6 @@ describe('penerimaan menunggu persetujuan lebih dulu', function () {
         $this->actingAs($this->petugas)
             ->from($this->url)
             ->post("{$this->url}/penerimaan", [
-                'bast_number' => '001/BAST/'.now()->year,
                 'received_at' => now()->toDateString(),
                 'received' => [$detail->procurement_detail_id => 10],
             ])

@@ -36,6 +36,10 @@ peran, sehingga `role:` tepat dipakai di sini.
   juga dapat diubah pemilik akun sendiri lewat [Profil](profil.md); nama
   lengkap, nama pengguna, peran, unit, dan status tetap hanya lewat modul ini.
   Lihat [ADR 0038](../keputusan/0038-profil-pengguna-dan-foto-profil.md).
+- **NIP dan jabatan** (sejak 24 Oktober 2026) juga hanya lewat modul ini, karena
+  tercetak di blok identitas BAST pengadaan bersama nama lengkap. Boleh kosong;
+  BAST mencetak titik-titik untuk diisi tangan. Lihat
+  [ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md).
 
 ## Validasi
 
@@ -46,6 +50,8 @@ peran, sehingga `role:` tepat dipakai di sini.
 | `email` | Wajib, format email, unik |
 | `role` | Wajib, harus salah satu `UserRole` |
 | `unit` | Wajib, maks 255 |
+| `nip` | Opsional, tepat 18 digit; spasi pengelompokan (`19850614 200312 1 001`) dibuang sebelum validasi |
+| `position` | Opsional (jabatan), maks 255 |
 | `password` | Wajib saat menambah, opsional saat mengubah; kebijakan kata sandi berlaku |
 | `is_active` | Wajib, boolean |
 

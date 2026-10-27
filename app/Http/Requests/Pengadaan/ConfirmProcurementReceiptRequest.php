@@ -20,6 +20,9 @@ use Illuminate\Foundation\Http\FormRequest;
  * formulir realisasi mencakup seluruh rincian usulan yang disetujui —
  * penerimaan adalah peristiwa sekali jadi tanpa rute ubah, sehingga baris yang
  * hilang dari kiriman akan terbaca sebagai "nol diterima" secara permanen.
+ *
+ * Nomor BAST tidak diminta di sini: nomornya diisi saat BAST dicetak pertama
+ * kali, lewat `UpdateBastNumberRequest` (ADR 0042).
  */
 class ConfirmProcurementReceiptRequest extends FormRequest
 {
@@ -34,7 +37,6 @@ class ConfirmProcurementReceiptRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'bast_number' => ['required', 'string', 'max:100'],
             'received_at' => ['required', 'date', 'before_or_equal:today'],
             'received' => ['required', 'array', 'min:1'],
             'received.*' => ['required', 'integer', 'min:0', 'max:999999'],
@@ -74,7 +76,6 @@ class ConfirmProcurementReceiptRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'bast_number' => 'nomor BAST',
             'received_at' => 'tanggal penerimaan',
         ];
     }
@@ -85,7 +86,6 @@ class ConfirmProcurementReceiptRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'bast_number.required' => 'Nomor BAST wajib diisi.',
             'received_at.before_or_equal' => 'Tanggal penerimaan tidak boleh melebihi hari ini.',
             'received.required' => 'Isi jumlah diterima untuk setiap barang.',
         ];

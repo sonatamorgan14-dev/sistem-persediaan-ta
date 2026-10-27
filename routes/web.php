@@ -142,6 +142,13 @@ Route::middleware('auth')->group(function () {
         Route::get('pengadaan/{procurement}/bast', [ProcurementController::class, 'bast'])
             ->name('procurements.bast');
 
+        // Nomor BAST diisi saat cetak pertama, oleh salah satu penanda
+        // tangannya (ADR 0042). Sama seperti unggah berkas, gate tambahan ini
+        // bagian dari `akses-pengadaan`.
+        Route::patch('pengadaan/{procurement}/bast', [ProcurementReceiptController::class, 'nomorBast'])
+            ->middleware('can:isi-nomor-bast')
+            ->name('procurements.bast-number');
+
         // Berkas pendukung. Tidak ada tautan langsung ke berkasnya: disknya
         // privat, dan seluruh unduhan wajib melewati rute terjaga ini.
         // Mengunggah dipersempit ke pelaksana pengadaan: Kasubbag membaca

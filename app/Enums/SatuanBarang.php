@@ -24,6 +24,38 @@ enum SatuanBarang: string
     case Liter = 'liter';
     case Lembar = 'lembar';
 
+    // Satuan dari master barang awal (database/seeders/data/barang.csv).
+    case Bal = 'bal';
+    case Batang = 'batang';
+    case Blister = 'blister';
+    case Blok = 'blok';
+    case Buku = 'buku';
+    case Bungkus = 'bungkus';
+    case Butir = 'butir';
+    case Dirigen = 'dirigen';
+    case Dummy = 'dummy';
+    case Eksemplar = 'eksemplar';
+    case Galon = 'galon';
+    case Gulung = 'gulung';
+    case Kaleng = 'kaleng';
+    case Kaplet = 'kaplet';
+    case Karung = 'karung';
+    case Kotak = 'kotak';
+    case Meter = 'meter';
+    case Paket = 'paket';
+    case Pasang = 'pasang';
+    case Pcs = 'pcs';
+    case Pot = 'pot';
+    case Potong = 'potong';
+    case Roll = 'roll';
+    case Sachet = 'sachet';
+    case Slop = 'slop';
+    case Strip = 'strip';
+    case Tablet = 'tablet';
+    case Tabung = 'tabung';
+    case Tube = 'tube';
+    case Vial = 'vial';
+
     public function label(): string
     {
         return match ($this) {
@@ -39,6 +71,36 @@ enum SatuanBarang: string
             self::Kilogram => 'Kilogram',
             self::Liter => 'Liter',
             self::Lembar => 'Lembar',
+            self::Bal => 'Bal',
+            self::Batang => 'Batang',
+            self::Blister => 'Blister',
+            self::Blok => 'Blok',
+            self::Buku => 'Buku',
+            self::Bungkus => 'Bungkus',
+            self::Butir => 'Butir',
+            self::Dirigen => 'Dirigen',
+            self::Dummy => 'Dummy',
+            self::Eksemplar => 'Eksemplar',
+            self::Galon => 'Galon',
+            self::Gulung => 'Gulung',
+            self::Kaleng => 'Kaleng',
+            self::Kaplet => 'Kaplet',
+            self::Karung => 'Karung',
+            self::Kotak => 'Kotak',
+            self::Meter => 'Meter',
+            self::Paket => 'Paket',
+            self::Pasang => 'Pasang',
+            self::Pcs => 'Pcs',
+            self::Pot => 'Pot',
+            self::Potong => 'Potong',
+            self::Roll => 'Roll',
+            self::Sachet => 'Sachet',
+            self::Slop => 'Slop',
+            self::Strip => 'Strip',
+            self::Tablet => 'Tablet',
+            self::Tabung => 'Tabung',
+            self::Tube => 'Tube',
+            self::Vial => 'Vial',
         };
     }
 

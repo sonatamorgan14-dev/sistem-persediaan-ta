@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Pengadaan;
 
+use App\Enums\AuditEvent;
+use App\Enums\AuditModule;
 use App\Exceptions\ProcurementTidakSiapException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pengadaan\ConfirmProcurementReceiptRequest;
+use App\Http\Requests\Pengadaan\UpdateBastNumberRequest;
 use App\Models\Procurement;
-use App\Models\ProcurementReceipt;
+use App\Support\AuditLogger;
 use App\Support\ProcurementReceiptPoster;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Carbon;
@@ -18,7 +21,8 @@ use Illuminate\View\View;
  *
  * Peristiwa sekali jadi: begitu dikonfirmasi, `ProcurementReceiptPoster`
  * menambah stok lewat StockLedger dan mengunci realisasi ke status Diterima.
- * Tidak ada rute ubah maupun hapus.
+ * Tidak ada rute ubah maupun hapus — kecuali nomor BAST, yang bukan bagian
+ * dari peristiwanya dan diisi menyusul saat BAST dicetak (ADR 0042).
  */
 class ProcurementReceiptController extends Controller
 {
@@ -42,14 +46,6 @@ class ProcurementReceiptController extends Controller
         return view('pages.procurements.confirm-receipt', [
             'title' => "Konfirmasi Penerimaan — {$procurement->judul()}",
             'procurement' => $procurement->load(['supplier', 'details.item']),
-            // Saran nomor berurut yang boleh ditimpa — format resmi BPK belum
-            // dikonfirmasi lapangan, jadi tidak ada validasi format yang
-            // dipaksakan. Lihat modul/pengadaan.md.
-            //
-            // Cacahnya dibatasi tahun berjalan, bukan sepanjang masa: penomoran
-            // dokumen resmi dimulai ulang tiap tahun, dan saran yang keliru
-            // justru berbahaya karena petugas mempercayainya.
-            'saranNomorBast' => sprintf('%03d/BAST/%d', $this->urutanBastTahunIni(), now()->year),
         ]);
     }
 
@@ -62,7 +58,6 @@ class ProcurementReceiptController extends Controller
                 procurement: $procurement,
                 diterima: array_map(fn ($jumlah) => (int) $jumlah, $data['received']),
                 actor: $request->user(),
-                bastNumber: $data['bast_number'],
                 receivedAt: Carbon::parse($data['received_at']),
                 notes: $data['notes'] ?? null,
             );
@@ -76,16 +71,46 @@ class ProcurementReceiptController extends Controller
     }
 
     /**
-     * Nomor urut BAST berikutnya dalam tahun berjalan.
+     * Mengisi atau mengoreksi nomor BAST, lalu langsung mencetak BAST-nya.
      *
-     * Memakai `received_at` (tanggal bisnis penerimaan), bukan `created_at`,
-     * supaya penerimaan yang dicatat mundur tetap masuk hitungan tahun yang
-     * benar.
+     * Nomornya berasal dari agenda kantor, bukan dari sistem, sehingga baru
+     * diisi saat BAST hendak dicetak pertama kali. Koreksi diizinkan selama
+     * BAST bertanda tangan belum diunggah: sesudahnya nomor itu sudah tercetak
+     * pada bukti yang diarsipkan. Lihat ADR 0042.
      */
-    private function urutanBastTahunIni(): int
+    public function nomorBast(UpdateBastNumberRequest $request, Procurement $procurement): RedirectResponse
     {
-        return ProcurementReceipt::query()
-            ->whereYear('received_at', now()->year)
-            ->count() + 1;
+        $receipt = $procurement->receipt;
+
+        if ($receipt === null) {
+            return redirect()
+                ->route('procurements.show', $procurement)
+                ->with('error', 'BAST baru dapat dicetak setelah penerimaan barang dikonfirmasi.');
+        }
+
+        if (! $procurement->nomorBastDapatDiubah()) {
+            return redirect()
+                ->route('procurements.show', $procurement)
+                ->with('error', 'Nomor BAST terkunci karena BAST bertanda tangan sudah diunggah.');
+        }
+
+        $lama = $receipt->bast_number;
+        $baru = $request->validated('bast_number');
+
+        if ($lama !== $baru) {
+            $receipt->update(['bast_number' => $baru]);
+
+            AuditLogger::record(
+                user: $request->user(),
+                activity: $lama === null
+                    ? "Mengisi nomor BAST {$baru} untuk {$procurement->judul()}"
+                    : "Mengubah nomor BAST {$procurement->judul()} dari {$lama} menjadi {$baru}",
+                module: AuditModule::Penerimaan,
+                event: AuditEvent::Ubah,
+                subject: $procurement,
+            );
+        }
+
+        return redirect()->route('procurements.bast', $procurement);
     }
 }

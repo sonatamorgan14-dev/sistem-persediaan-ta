@@ -47,6 +47,8 @@ class User extends Authenticatable
         'role',
         'unit',
         'fullname',
+        'nip',
+        'position',
         'is_active',
     ];
 

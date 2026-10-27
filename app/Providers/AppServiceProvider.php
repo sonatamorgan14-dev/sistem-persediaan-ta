@@ -135,5 +135,13 @@ class AppServiceProvider extends ServiceProvider
             'unggah-berkas-pengadaan',
             fn (User $user) => $user->hasRole(UserRole::PejabatPengadaan, UserRole::PengelolaGudang),
         );
+
+        // Nomor BAST diisi salah satu dari dua penanda tangannya: Pelaksana
+        // Belanja atau Petugas Persediaan. Kasubbag mencetak BAST yang sudah
+        // bernomor, tetapi tidak menomorinya (ADR 0041, ADR 0042).
+        Gate::define(
+            'isi-nomor-bast',
+            fn (User $user) => $user->hasRole(UserRole::PejabatPengadaan, UserRole::PengelolaGudang),
+        );
     }
 }

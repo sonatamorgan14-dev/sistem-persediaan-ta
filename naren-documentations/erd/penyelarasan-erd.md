@@ -128,6 +128,7 @@ dikabarkan ke Alma dan tercermin di kedua naskah:
 | `users` | Tambah `last_login_at`, `last_login_ip` | [0001](../keputusan/0001-autentikasi-sesi-tanpa-starter-kit.md) |
 | `users` | Nilai peran baru `kasubbag_umum_ti` pada kolom `role`. **Tanpa migrasi** — `role` hanya `string` tanpa constraint — tetapi tetap perubahan pada tabel bersama, jadi harus disepakati | [0030](../keputusan/0030-persetujuan-realisasi-oleh-kasubbag-umum-dan-ti.md) |
 | `users` | Tambah `avatar_path` (string, nullable) — path foto profil di disk privat. Aditif; **menunggu persetujuan Alma** | [0038](../keputusan/0038-profil-pengguna-dan-foto-profil.md) |
+| `users` | Tambah `nip` (string 18, nullable) dan `position` (string, nullable) — NIP dan jabatan pegawai, dicetak di BAST pengadaan; bisa dipakai juga untuk BAST permintaan dan Nota Dinas. Aditif; **menunggu persetujuan Alma** | [0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md) |
 | `items` | Tambah `is_active` | [0003](../keputusan/0003-arsip-alih-alih-hapus.md) |
 | `stock_mutations` | Tambah `user_id`, `stock_after`, `reference_number`, `notes` | [0007](../keputusan/0007-kolom-audit-dan-referensi-polimorfik.md) |
 | `stock_mutations` | `reference` diganti nama menjadi `reference_id` | [0007](../keputusan/0007-kolom-audit-dan-referensi-polimorfik.md) |
@@ -166,13 +167,17 @@ ERD pada naskah Naren diperbarui.
 | `procurements` | Tambah `purchased_at` (date), `purchased_by` (FK `users`, restrictOnDelete), `purchase_note` — fakta belanja, bertahan walau realisasinya diubah dan disetujui ulang. Nilai `status` baru `proses_belanja`, tanpa migrasi | [0035](../keputusan/0035-tahap-belanja-dan-foto-belanja-realisasi.md) |
 | `procurement_documents` | Nilai `type` baru `foto_belanja`, tanpa migrasi — kolomnya string polos | [0035](../keputusan/0035-tahap-belanja-dan-foto-belanja-realisasi.md) |
 | `user_notifications` | Hapus `resolved_at` beserta indeks `(user_id, resolved_at, read_at)`, diganti indeks `(user_id, read_at)` — notifikasi yang selesai kini dihapus, bukan ditandai. Tabelnya sendiri lahir di ADR 0013 | [0036](../keputusan/0036-lonceng-kotak-masuk-dan-notifikasi-selesai-dihapus.md) |
+| `procurement_receipts` | `bast_number` menjadi **nullable** — nomor BAST diisi saat BAST dicetak pertama kali, bukan saat penerimaan dikonfirmasi; BAST-nya kini serah terima internal Pelaksana Belanja → Petugas Persediaan | [0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md) |
+| `procurement_receipts` | `received_at` diberi `DEFAULT CURRENT_TIMESTAMP` eksplisit — membuang `ON UPDATE CURRENT_TIMESTAMP` yang dipasang MariaDB diam-diam, yang menggeser tanggal penerimaan setiap kali nomor BAST diisi | [0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md) |
 
 ## Butir yang perlu dikonfirmasi ke lapangan
 
 1. **Format nomor dokumen resmi BPK** untuk Nota Dinas dan BAST Permintaan
    (milik Alma), maupun BAST Pengadaan (`procurement_receipts.bast_number`,
-   milik Narendra). Belum ada satu pun yang dikonfirmasi. Nomor pada data
-   contoh masih perkiraan.
+   milik Narendra). BAST Pengadaan terjawab sebagian oleh contoh BAST resmi —
+   `{urut}/UP_TUP/445237/{tahun}`, nomor urut dari agenda kantor, diisi manual
+   saat cetak pertama ([ADR 0042](../keputusan/0042-bast-pengadaan-format-resmi-bpk.md)).
+   Sisanya belum dikonfirmasi; nomor pada data contoh masih perkiraan.
 
 Butir soal peran penerima barang terpisah sudah terjawab: **tidak ada**, hanya
 Pengelola Gudang dan Admin — lihat [ADR 0008](../keputusan/0008-penerimaan-barang-oleh-pengelola-gudang.md).

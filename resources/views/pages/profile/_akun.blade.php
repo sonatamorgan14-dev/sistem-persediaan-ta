@@ -1,7 +1,8 @@
 {{--
     Data akun yang dikelola Admin: ditampilkan, tidak dapat diubah di sini.
-    Nama lengkap tercetak di blok tanda tangan dokumen resmi, sedangkan
-    sisanya menentukan cara masuk dan wewenang akun. Lihat ADR 0038.
+    Nama lengkap, NIP, dan jabatan tercetak di dokumen resmi, sedangkan
+    sisanya menentukan cara masuk dan wewenang akun. Lihat ADR 0038 dan
+    ADR 0042.
 
     Satu-satunya teks keterangan di halaman profil adalah kalimat "hubungi
     Admin" di bawah — pengguna perlu tahu ke mana harus meminta perubahan.
@@ -15,6 +16,8 @@
 
     $baris = [
         'Nama lengkap' => $user->fullname,
+        'NIP' => $user->nip ?? '-',
+        'Jabatan' => $user->position ?? '-',
         'Nama pengguna' => $user->username,
         'Peran' => $user->role->label(),
         'Unit kerja' => $user->unit,

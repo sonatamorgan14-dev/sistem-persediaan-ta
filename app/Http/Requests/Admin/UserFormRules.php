@@ -25,6 +25,8 @@ class UserFormRules
             'email' => 'email',
             'role' => 'peran',
             'unit' => 'unit kerja',
+            'nip' => 'NIP',
+            'position' => 'jabatan',
             'password' => 'kata sandi',
             'is_active' => 'status akun',
         ];
@@ -43,6 +45,7 @@ class UserFormRules
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah dipakai akun lain.',
             'role.enum' => 'Peran yang dipilih tidak dikenali.',
+            'nip.digits' => 'NIP harus 18 digit angka.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
         ];
     }

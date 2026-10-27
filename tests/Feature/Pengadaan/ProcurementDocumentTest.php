@@ -42,7 +42,6 @@ function realisasiDiterima(User $pejabat, User $petugas, int $diterimaHariLalu =
             ->mapWithKeys(fn ($detail) => [$detail->procurement_detail_id => $detail->amount])
             ->all(),
         actor: $petugas,
-        bastNumber: '007/BAST/'.now()->year,
         receivedAt: now()->subDays($diterimaHariLalu),
     );
 

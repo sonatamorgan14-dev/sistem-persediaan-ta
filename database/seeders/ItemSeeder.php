@@ -4,62 +4,98 @@ namespace Database\Seeders;
 
 use App\Enums\MutationType;
 use App\Enums\SatuanBarang;
+use App\Enums\UserRole;
 use App\Models\Item;
+use App\Models\User;
 use App\Support\StockLedger;
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ItemSeeder extends Seeder
 {
+    private const TANGGAL_SALDO_AWAL = '2026-10-01';
+
     /**
-     * Contoh barang persediaan ATK untuk pengembangan.
+     * Master barang dan saldo awal kantor, dari dua berkas di data/.
      *
-     * Stok awal ditulis lewat StockLedger, bukan langsung ke kolom
-     * stock_current, supaya buku mutasi tetap konsisten sejak awal.
+     * Barang yang tidak tercantum di saldo awal tetap didaftarkan, tetapi
+     * diarsipkan: stoknya nol dan kodenya harus ada agar tidak didaftarkan
+     * ulang dengan kode lain. Stok awal ditulis lewat StockLedger, bukan
+     * langsung ke stock_current, supaya buku mutasi konsisten sejak awal.
      */
     public function run(): void
     {
-        $items = [
-            ['ATK-001', 'Kertas HVS A4 70 gram', SatuanBarang::Rim, 120, 20, 300],
-            ['ATK-002', 'Kertas HVS F4 70 gram', SatuanBarang::Rim, 45, 15, 200],
-            ['ATK-003', 'Tinta Printer Hitam', SatuanBarang::Botol, 8, 10, 50],
-            ['ATK-004', 'Tinta Printer Warna', SatuanBarang::Botol, 12, 10, 50],
-            ['ATK-005', 'Pulpen Tinta Hitam', SatuanBarang::Lusin, 30, 10, 100],
-            ['ATK-006', 'Pensil 2B', SatuanBarang::Lusin, 18, 5, 60],
-            ['ATK-007', 'Map Snelhecter Plastik', SatuanBarang::Buah, 240, 50, 500],
-            ['ATK-008', 'Ordner Folio', SatuanBarang::Buah, 65, 20, 150],
-            ['ATK-009', 'Stapler Besar', SatuanBarang::Buah, 14, 5, 30],
-            ['ATK-010', 'Isi Staples No. 10', SatuanBarang::Box, 0, 10, 80],
-            ['ATK-011', 'Amplop Kop Dinas', SatuanBarang::Pak, 22, 10, 100],
-            ['ATK-012', 'Spidol Whiteboard', SatuanBarang::Lusin, 9, 6, 40],
-            ['ATK-013', 'Kertas Sticky Note', SatuanBarang::Pak, 35, 10, 90],
-            ['RTK-001', 'Tisu Gulung', SatuanBarang::Dus, 16, 8, 60],
-            ['RTK-002', 'Cairan Pembersih Lantai', SatuanBarang::Liter, 25, 10, 80],
-        ];
+        $saldo = collect($this->bacaCsv('saldo_awal_2026_10_01.csv'))
+            ->mapWithKeys(fn (array $baris) => [$baris['item_code'] => (int) $baris['qty']]);
 
-        foreach ($items as [$code, $name, $unit, $stokAwal, $min, $max]) {
-            $item = Item::firstOrCreate(
-                ['item_code' => $code],
-                [
-                    'item_name' => $name,
-                    'unit' => $unit,
-                    'stock_min' => $min,
-                    'stock_max' => $max,
-                    'is_active' => true,
-                ],
-            );
+        $petugas = User::where('role', UserRole::PengelolaGudang)->first();
+        $tanggal = CarbonImmutable::parse(self::TANGGAL_SALDO_AWAL);
 
-            // Hanya isi saldo awal untuk barang yang baru dibuat.
-            if ($item->wasRecentlyCreated && $stokAwal > 0) {
+        $dibuat = 0;
+        $diarsipkan = 0;
+
+        DB::transaction(function () use ($saldo, $petugas, $tanggal, &$dibuat, &$diarsipkan) {
+            foreach ($this->bacaCsv('barang.csv') as $baris) {
+                $stokAwal = $saldo->get($baris['item_code'], 0);
+
+                $item = Item::firstOrCreate(
+                    ['item_code' => $baris['item_code']],
+                    [
+                        'item_name' => $baris['item_name'],
+                        'unit' => SatuanBarang::from(strtolower($baris['unit'])),
+                        'stock_min' => 1,
+                        'stock_max' => 1000,
+                        'is_active' => $stokAwal > 0,
+                    ],
+                );
+
+                // Hanya isi saldo awal untuk barang yang baru dibuat.
+                if (! $item->wasRecentlyCreated) {
+                    continue;
+                }
+
+                $dibuat++;
+
+                if ($stokAwal === 0) {
+                    $diarsipkan++;
+
+                    continue;
+                }
+
                 StockLedger::record(
                     item: $item,
                     type: MutationType::SaldoAwal,
                     amount: $stokAwal,
-                    notes: 'Stok pembuka data contoh.',
-                    date: now()->subDays(60),
+                    recordedBy: $petugas,
+                    notes: 'Saldo awal per 1 Oktober 2026.',
+                    date: $tanggal,
                 );
             }
+        });
+
+        $this->command?->info("Master barang dibuat: {$dibuat} barang ({$diarsipkan} diarsipkan karena tanpa saldo awal).");
+    }
+
+    /**
+     * @return list<array<string, string>> baris CSV berkunci nama kolom.
+     */
+    private function bacaCsv(string $berkas): array
+    {
+        $handle = fopen(database_path("seeders/data/{$berkas}"), 'r');
+        $kolom = fgetcsv($handle, escape: '');
+        $baris = [];
+
+        while (($data = fgetcsv($handle, escape: '')) !== false) {
+            if ($data === [null]) {
+                continue;
+            }
+
+            $baris[] = array_combine($kolom, array_map('trim', $data));
         }
 
-        $this->command?->info('Master barang contoh berhasil dibuat ('.count($items).' barang).');
+        fclose($handle);
+
+        return $baris;
     }
 }

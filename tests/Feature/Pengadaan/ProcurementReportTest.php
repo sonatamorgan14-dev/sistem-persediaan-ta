@@ -44,9 +44,12 @@ function realisasiLaporan(
             procurement: $procurement,
             diterima: [$procurement->details->first()->procurement_detail_id => $diterima],
             actor: $petugas,
-            bastNumber: $bastNumber,
             receivedAt: now(),
         );
+
+        // Nomor BAST diisi saat cetak pertama (ADR 0042); laporan dan BAST di
+        // berkas ini mengandaikan nomornya sudah ada.
+        $procurement->fresh()->receipt->update(['bast_number' => $bastNumber]);
     }
 
     return $procurement->fresh(['details', 'receipt']);

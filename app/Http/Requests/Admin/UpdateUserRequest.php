@@ -29,6 +29,8 @@ class UpdateUserRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($id, 'user_id')],
             'role' => ['required', Rule::enum(UserRole::class)],
             'unit' => ['required', 'string', 'max:255'],
+            'nip' => ['nullable', 'digits:18'],
+            'position' => ['nullable', 'string', 'max:255'],
             // Kosongkan bila kata sandi tidak diubah.
             'password' => ['nullable', 'confirmed', Password::defaults()],
             'is_active' => ['required', 'boolean'],
@@ -37,8 +39,13 @@ class UpdateUserRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
+        // NIP lazim ditulis berkelompok ("19850614 200312 1 001"); yang
+        // disimpan hanya 18 digitnya.
+        $nip = preg_replace('/\s+/', '', (string) $this->input('nip'));
+
         $this->merge([
             'username' => trim((string) $this->input('username')),
+            'nip' => $nip === '' ? null : $nip,
             'is_active' => $this->boolean('is_active'),
         ]);
     }

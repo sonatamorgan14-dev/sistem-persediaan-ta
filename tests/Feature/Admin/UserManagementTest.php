@@ -106,6 +106,33 @@ describe('membuat akun', function () {
             ->assertSessionHasErrors('role');
     });
 
+    it('menyimpan NIP tanpa spasi pengelompokan beserta jabatannya', function () {
+        // NIP dan jabatan tercetak di BAST pengadaan (ADR 0042).
+        $this->actingAs(admin())
+            ->post('/pengguna', validPayload([
+                'nip' => '19850614 200312 1 001',
+                'position' => 'Pengelola Pengadaan Barang/Jasa Ahli Pertama',
+            ]))
+            ->assertSessionHasNoErrors();
+
+        $user = User::where('username', 'budi.santoso')->first();
+
+        expect($user->nip)->toBe('198506142003121001')
+            ->and($user->position)->toBe('Pengelola Pengadaan Barang/Jasa Ahli Pertama');
+    });
+
+    it('menolak NIP yang bukan 18 digit, tetapi membolehkannya kosong', function () {
+        $this->actingAs(admin())
+            ->post('/pengguna', validPayload(['nip' => '1985061420031']))
+            ->assertSessionHasErrors(['nip' => 'NIP harus 18 digit angka.']);
+
+        $this->actingAs(admin())
+            ->post('/pengguna', validPayload(['nip' => '', 'position' => '']))
+            ->assertSessionHasNoErrors();
+
+        expect(User::where('username', 'budi.santoso')->first()->nip)->toBeNull();
+    });
+
     it('dapat membuat akun nonaktif', function () {
         $this->actingAs(admin())->post('/pengguna', validPayload(['is_active' => 0]));
 
@@ -143,6 +170,24 @@ describe('mengubah akun', function () {
 
         expect($target->fullname)->toBe('Nama Diperbarui')
             ->and(Hash::check('KataSandi#2026', $target->password))->toBeTrue();
+    });
+
+    it('memperbarui NIP dan jabatan', function () {
+        $target = User::factory()->create();
+
+        $this->actingAs(admin())
+            ->put("/pengguna/{$target->user_id}", validPayload([
+                'username' => $target->username,
+                'email' => $target->email,
+                'nip' => '197409142023211005',
+                'position' => 'Arsiparis Ahli Pertama (Pengelola Persediaan)',
+                'password' => '',
+                'password_confirmation' => '',
+            ]))
+            ->assertRedirect('/pengguna');
+
+        expect($target->refresh()->nip)->toBe('197409142023211005')
+            ->and($target->position)->toBe('Arsiparis Ahli Pertama (Pengelola Persediaan)');
     });
 
     it('mengganti kata sandi bila diisi', function () {

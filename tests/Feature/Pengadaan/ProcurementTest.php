@@ -9,6 +9,7 @@ use App\Models\Item;
 use App\Models\Notification;
 use App\Models\Procurement;
 use App\Models\ProcurementRequest;
+use App\Models\StockMutation;
 use App\Models\Supplier;
 use App\Models\User;
 use App\Support\DocumentStorage;
@@ -395,7 +396,6 @@ describe('konfirmasi penerimaan', function () {
         $detail = $procurement->details->first();
 
         $response = $this->actingAs($gudang)->post("/pengadaan/{$procurement->procurement_id}/penerimaan", [
-            'bast_number' => '001/BAST/2026',
             'received_at' => now()->toDateString(),
             'received' => [$detail->procurement_detail_id => 30],
         ]);
@@ -406,8 +406,13 @@ describe('konfirmasi penerimaan', function () {
             ->and($detail->refresh()->amount_received)->toBe(30)
             ->and($detail->kurangKirim())->toBe(10)
             ->and($procurement->refresh()->status)->toBe(ProcurementStatus::Diterima)
-            ->and($procurement->receipt->bast_number)->toBe('001/BAST/2026')
             ->and($procurement->receipt->received_by)->toBe($gudang->user_id);
+
+        // Nomor BAST baru diisi saat cetak pertama, sehingga mutasinya merujuk
+        // judul realisasi — baris mutasi tidak dapat diubah sesudahnya (ADR 0042).
+        expect($procurement->receipt->bast_number)->toBeNull()
+            ->and(StockMutation::where('item_id', $item->item_id)->sole()->reference_number)
+            ->toBe($procurement->judul());
 
         expect(Notification::query()
             ->where('user_id', $pejabat->user_id)
@@ -444,7 +449,6 @@ describe('konfirmasi penerimaan', function () {
         $detail = $procurement->details->first();
 
         $this->actingAs($gudang)->post("/pengadaan/{$procurement->procurement_id}/penerimaan", [
-            'bast_number' => '001/BAST/2026',
             'received_at' => now()->toDateString(),
             'received' => [$detail->procurement_detail_id => 10],
         ]);
@@ -474,7 +478,6 @@ describe('konfirmasi penerimaan', function () {
 
         $this->actingAs($gudang)
             ->post("/pengadaan/{$procurement->procurement_id}/penerimaan", [
-                'bast_number' => '009/BAST/2026',
                 'received_at' => now()->toDateString(),
                 // Hanya satu dari dua barang yang diisi.
                 'received' => [$procurement->details->first()->procurement_detail_id => 10],
@@ -487,43 +490,17 @@ describe('konfirmasi penerimaan', function () {
     });
 });
 
-describe('saran nomor BAST', function () {
-    it('menomori berurut dalam tahun yang sama', function () {
+describe('nomor BAST pada konfirmasi penerimaan', function () {
+    it('tidak diminta, karena diisi saat BAST dicetak pertama kali', function () {
+        // ADR 0042: nomornya berasal dari agenda kantor dan sering belum ada
+        // ketika barang datang.
         $pejabat = pejabatPengadaan();
         $gudang = pengelolaGudang();
-
-        // Realisasinya dibangun lebih dulu: pembantunya sendiri memakai
-        // actingAs($pejabat), sehingga membangunnya di dalam rantai
-        // actingAs($gudang)->get(...) justru menukar penggunanya dan menghasilkan 403.
-        $pertama = realisasiMenunggu($pejabat, $gudang);
+        $procurement = realisasiMenunggu($pejabat, $gudang);
 
         $this->actingAs($gudang)
-            ->get("/pengadaan/{$pertama->procurement_id}/penerimaan/create")
+            ->get("/pengadaan/{$procurement->procurement_id}/penerimaan/create")
             ->assertOk()
-            ->assertSee('001/BAST/'.now()->year);
-
-        realisasiDiterima($pejabat, $gudang);
-        $kedua = realisasiMenunggu($pejabat, $gudang);
-
-        $this->actingAs($gudang)
-            ->get("/pengadaan/{$kedua->procurement_id}/penerimaan/create")
-            ->assertOk()
-            ->assertSee('002/BAST/'.now()->year);
-    });
-
-    it('mengulang dari satu pada tahun berikutnya', function () {
-        // Penomoran dokumen resmi dimulai ulang tiap tahun; saran yang keliru
-        // berbahaya justru karena petugas mempercayainya.
-        $pejabat = pejabatPengadaan();
-        $gudang = pengelolaGudang();
-        realisasiDiterima($pejabat, $gudang);
-
-        $this->travel(1)->years();
-        $berikutnya = realisasiMenunggu($pejabat, $gudang);
-
-        $this->actingAs($gudang)
-            ->get("/pengadaan/{$berikutnya->procurement_id}/penerimaan/create")
-            ->assertOk()
-            ->assertSee('001/BAST/'.now()->year);
+            ->assertDontSee('name="bast_number"', false);
     });
 });

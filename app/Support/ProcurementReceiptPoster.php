@@ -28,6 +28,9 @@ use Illuminate\Support\Facades\DB;
  * Referensi mutasi menunjuk `Procurement` (alias morph map `pengadaan`),
  * bukan `ProcurementReceipt` — dokumen sumber stok masuk adalah realisasinya,
  * BAST hanya mencatat peristiwa penerimaannya. Lihat ADR 0008 dan ADR 0015.
+ *
+ * Nomor BAST tidak dicatat di sini. Nomornya berasal dari agenda kantor dan
+ * diisi saat BAST dicetak pertama kali (ADR 0042).
  */
 class ProcurementReceiptPoster
 {
@@ -40,24 +43,22 @@ class ProcurementReceiptPoster
         Procurement $procurement,
         array $diterima,
         User $actor,
-        string $bastNumber,
         CarbonInterface $receivedAt,
         ?string $notes = null,
     ): ProcurementReceipt {
         self::pastikanSiap($procurement);
 
-        $receipt = DB::transaction(function () use ($procurement, $diterima, $actor, $bastNumber, $receivedAt, $notes) {
+        $receipt = DB::transaction(function () use ($procurement, $diterima, $actor, $receivedAt, $notes) {
             $procurement->loadMissing('details', 'supplier');
 
             foreach ($procurement->details as $detail) {
-                self::terapkan($detail, $diterima, $procurement, $actor, $bastNumber, $receivedAt);
+                self::terapkan($detail, $diterima, $procurement, $actor, $receivedAt);
             }
 
             $procurement->forceFill(['status' => ProcurementStatus::Diterima])->save();
 
             return ProcurementReceipt::create([
                 'procurement_id' => $procurement->procurement_id,
-                'bast_number' => $bastNumber,
                 'received_by' => $actor->user_id,
                 'received_at' => $receivedAt,
                 'notes' => $notes,
@@ -102,7 +103,6 @@ class ProcurementReceiptPoster
         array $diterima,
         Procurement $procurement,
         User $actor,
-        string $bastNumber,
         CarbonInterface $receivedAt,
     ): void {
         // Kunci diambil di sini, sejalan dengan pola OpnamePoster: StockLedger
@@ -121,12 +121,15 @@ class ProcurementReceiptPoster
                 amount: $jumlahDiterima,
                 recordedBy: $actor,
                 notes: sprintf(
-                    'Penerimaan barang dari %s sesuai BAST %s.',
+                    'Penerimaan barang dari %s sesuai %s.',
                     $procurement->supplier?->supplier_name ?? 'penyedia tidak diketahui',
-                    $bastNumber,
+                    $procurement->judul(),
                 ),
                 reference: $procurement,
-                referenceNumber: $bastNumber,
+                // Bukan nomor BAST: nomor itu baru diisi saat BAST dicetak,
+                // sedangkan baris mutasi tidak dapat diubah sesudahnya
+                // (ADR 0042). Sama dengan opname, yang memakai judulnya.
+                referenceNumber: $procurement->judul(),
                 date: $receivedAt,
             );
         }

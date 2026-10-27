@@ -608,11 +608,12 @@ class NotificationScanner
             type: NotificationType::BastBelumDiunggah,
             dedupKey: NotificationType::BastBelumDiunggah->dedupKey($procurement->procurement_id),
             title: "BAST belum diunggah: {$procurement->judul()}",
+            // Tanpa nomor BAST: nomornya baru diisi saat dicetak (ADR 0042),
+            // dan keadaan ini justru paling sering berlaku sebelum itu.
             body: sprintf(
-                'Barang %s diterima %s dengan BAST %s, tetapi berkas bertanda tangannya belum diunggah. Cetak BAST dari sistem, mintakan tanda tangan, lalu unggah hasil pindaiannya.',
+                'Barang %s diterima %s, tetapi berkas BAST bertanda tangannya belum diunggah. Cetak BAST dari sistem, mintakan tanda tangan, lalu unggah hasil pindaiannya.',
                 $procurement->judul(),
                 $receipt?->received_at->translatedFormat('j F Y') ?? '-',
-                $receipt?->bast_number ?? '-',
             ),
             actionUrl: route('procurements.show', $procurement, false),
             subject: $procurement,

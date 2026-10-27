@@ -10,6 +10,8 @@ use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\ErrorCorrectionLevel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PhpOffice\PhpWord\TemplateProcessor;
+use RuntimeException;
 
 class RequestDocumentGenerator
 {
@@ -94,7 +96,7 @@ class RequestDocumentGenerator
     {
         $request->loadMissing(['user', 'item']);
         $issuedAt = now();
-        $filePath = 'bast-permintaan/'.$request->request_id.'.pdf';
+        $filePath = 'bast-permintaan/'.$request->request_id.'.docx';
         $document = RequestDocument::query()->firstOrNew([
             'request_id' => $request->request_id,
             'document_type' => 'bast',
@@ -108,14 +110,81 @@ class RequestDocumentGenerator
         ]);
         $document->save();
 
-        $pdf = Pdf::loadView('pdf.bast-permintaan', [
-            'request' => $request,
-            'issuer' => $issuer,
-            'issuedAt' => $issuedAt,
-            'document' => $document,
-        ])->setPaper('a4', 'portrait');
+        $templatePath = resource_path('document/template-bast-persediaan.docx');
+        $temporaryBasePath = tempnam(sys_get_temp_dir(), 'bast-');
+        if ($temporaryBasePath === false) {
+            throw new RuntimeException('Lokasi sementara untuk membuat BAST tidak dapat disiapkan.');
+        }
+        unlink($temporaryBasePath);
 
-        Storage::disk('local')->put($filePath, $pdf->output());
+        $docxPath = $temporaryBasePath.'.docx';
+
+        try {
+            $template = new TemplateProcessor($templatePath);
+            $requiredVariables = [
+                'document_number',
+                'issued_day',
+                'issued_date',
+                'recipient_name',
+                'recipient_nip',
+                'recipient_position',
+                'recipient_unit',
+                'issuer_name',
+                'issuer_nip',
+                'issuer_position',
+                'issuer_unit',
+                'request_number',
+                'item_list',
+            ];
+            $missingVariables = array_diff($requiredVariables, $template->getVariables());
+            if ($missingVariables !== []) {
+                throw new RuntimeException(
+                    'Template BAST belum lengkap. Placeholder yang belum tersedia: ${'
+                    .implode('}, ${', $missingVariables).'}',
+                );
+            }
+
+            $template->setValues([
+                'document_number' => $document->document_number,
+                'issued_day' => $issuedAt->translatedFormat('l'),
+                'issued_date' => $issuedAt->translatedFormat('j F Y'),
+                'recipient_name' => $request->user?->fullname ?? '',
+                'recipient_nip' => $request->user?->nip ?? '',
+                'recipient_position' => $request->user?->position ?? 'Penerima Barang',
+                'recipient_unit' => $request->user?->unit ?? '',
+                'issuer_name' => $issuer->fullname ?? '',
+                'issuer_nip' => $issuer->nip ?? '',
+                'issuer_position' => $issuer->position ?? 'Pengelola Gudang Persediaan',
+                'issuer_unit' => $issuer->unit ?? 'BPK Perwakilan Provinsi Lampung',
+                'request_number' => $request->request_number,
+            ]);
+
+         $details = $request->item->values();
+        if ($details->isEmpty()) {
+            throw new RuntimeException('BAST tidak dapat dibuat karena tidak memiliki rincian barang.');
+        }
+
+        $itemList = $details
+            ->map(fn ($detail) => trim(sprintf(
+                '%s %s %s',
+                number_format($detail->quantity_approved ?: $detail->quantity_requested, 0, ',', '.'),
+                $detail->item?->unit?->label() ?? '',
+                $detail->item?->item_name ?? 'Barang tidak dikenal',
+            )))
+            ->implode(', ');
+
+        $template->setValue('item_list', $itemList);
+
+            $template->saveAs($docxPath);
+            $docx = file_get_contents($docxPath);
+            if ($docx === false || ! Storage::disk('local')->put($filePath, $docx)) {
+                throw new RuntimeException('DOCX BAST tidak dapat disimpan ke penyimpanan aplikasi.');
+            }
+        } finally {
+            if (is_file($docxPath)) {
+                unlink($docxPath);
+            }
+        }
 
         return $document;
     }

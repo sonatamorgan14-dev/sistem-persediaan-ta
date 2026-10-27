@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * BAST penerimaan barang dari penyedia ke gudang.
+ * Penerimaan barang pengadaan oleh gudang, beserta nomor BAST-nya.
+ *
+ * BAST-nya adalah serah terima internal dari Pelaksana Belanja kepada
+ * Petugas Persediaan (`received_by`), bukan dari penyedia. `bast_number`
+ * kosong sampai BAST dicetak pertama kali. Lihat ADR 0042.
  *
  * `received_by` sengaja terpisah dari `Procurement::user_id` (pengaju
  * realisasi) — siapa yang mengadakan bukan siapa yang mengonfirmasi diterima,

@@ -248,6 +248,18 @@ class Procurement extends Model
             ->exists();
     }
 
+    /**
+     * Apakah nomor BAST masih boleh diisi atau dikoreksi.
+     *
+     * Terkunci begitu BAST bertanda tangan diunggah, karena nomornya sudah
+     * tercetak pada bukti yang diarsipkan — dan terbuka lagi bila berkas itu
+     * dihapus. Lihat ADR 0042.
+     */
+    public function nomorBastDapatDiubah(): bool
+    {
+        return $this->receipt !== null && ! $this->bastSudahDiunggah();
+    }
+
     public function procurementRequest(): BelongsTo
     {
         return $this->belongsTo(ProcurementRequest::class, 'procurement_request_id', 'procurement_request_id');

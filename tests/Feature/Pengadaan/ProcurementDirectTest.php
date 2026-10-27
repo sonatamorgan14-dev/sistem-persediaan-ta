@@ -368,7 +368,6 @@ describe('penerimaan realisasi langsung', function () {
 
         $this->actingAs(pengelolaGudang())
             ->post("/pengadaan/{$procurement->procurement_id}/penerimaan", [
-                'bast_number' => '099/BAST/'.now()->year,
                 'received_at' => now()->toDateString(),
                 'received' => [$detail->procurement_detail_id => 10],
             ])

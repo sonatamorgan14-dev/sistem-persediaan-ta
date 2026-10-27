@@ -1,0 +1,2743 @@
+item_code,item_name,unit,unit_excel,sumber
+1010101003000001,Akrilik,Buah,Buah,master
+1010101003000002,Akrilik,Buah,Buah,master
+1010101006000001,Vernis Kulit,Unit,Unit,master
+1010101006000002,Poles Kayu,Unit,Unit,master
+1010101006000003,Cat Pylox,Pcs,Pcs,master
+1010101006000004,Pladge Furniture,Buah,Buah,master
+1010101006000005,Cat Minyak Hitam,Kaleng,Kaleng,master
+1010101006000006,Cat,Kaleng,Kaleng,master
+1010101006000007,Pengkilap Granit,Kaleng,Kaleng,master
+1010101999000001,Gergaji Besi,Buah,Buah,master
+1010101999000002,Mata Bor,Buah,Buah,master
+1010101999000003,Kikir,Buah,Buah,master
+1010101999000004,Sendok Semen,Buah,Buah,master
+1010101999000005,Catut,Buah,Buah,master
+1010101999000006,Pahat,Buah,Buah,master
+1010101999000007,Kampak,Buah,Buah,master
+1010101999000008,Gergaji Kayu Tangan,Buah,Buah,master
+1010101999000009,Tali Senar Mesin Potong Rumput,Buah,Buah,master
+1010101999000010,Lampu LED,Pcs,Pcs,master
+1010102001000001,Stella Gantung Orange,Buah,Buah,master
+1010102001000002,Dahlia TB 5's,Buah,Buah,master
+1010102001000003,"Rinso 1,8Kg",Buah,Buah,master
+1010102002000001,Baygon 600mL,Buah,Buah,master
+1010102002000002,Hand Sanitizer Antis 5L,Dirigen,Dirigen,master
+1010102002000003,Vixal 780mL,Buah,Buah,master
+1010102002000004,Sunlight Refill 1600mL,Buah,Buah,master
+1010102002000005,Nuvo Handsoap 250mL,Buah,Buah,master
+1010102002000006,Cling Refill Pembersih Kaca 425 ml,Buah,Buah,master
+1010102002000007,Soklin Lantai 4L,Dirigen,Derigen,master
+1010102002000008,Baygon Aerosol 600mL,Buah,Buah,master
+1010102002000009,"Wipol 1,6L",Buah,Buah,master
+1010102002000010,Topron,Botol,Botol,master
+1010102002000011,Kispray 318mL,Buah,Buah,master
+1010102002000012,Dettol Hand Sanitizer 400,Buah,Buah,master
+1010102002000013,Antis Handsanitizer Spray 200 ml,Botol,Botol,master
+1010102002000014,Saniter Air Sanitizer Aerosol 200 ml,Botol,Botol,master
+1010102003000001,Stella Spray 400,Buah,Buah,master
+1010102003000002,Baygon Aerosol 600mL,Buah,Buah,master
+1010102999000001,Rondap (racun rumput),Botol,Botol,master
+1010102999000002,tinner,Dummy,-,master
+1010104001000001,Pertamax Mobil,Lembar,Lembar,master
+1010104001000002,Pertamax Motor,Lembar,Lembar,master
+1010104001000003,Solar DEX,Lembar,Lembar,master
+1010207999000001,Mata Potong Rumput,Pcs,Pcs,master
+1010299999000001,Oli samping mesin rumput,Botol,Botol,master
+1010301001000001,Ballpoint pilot biru,Buah,buah,master
+1010301001000002,Ballpoint pilot hitam,Buah,buah,master
+1010301001000003,Ballpoint pilot merah,Buah,buah,master
+1010301001000004,Ballpoint snowman biru,Buah,Buah,master
+1010301001000005,Ballpoint Snowman hitam,Buah,buah,master
+1010301001000006,Ballpoint Snowman merah V-1,Buah,buah,master
+1010301001000007,Ballpoint Gel,Buah,buah,master
+1010301001000008,Ballpoint Ballliner biru,Box,Box,master
+1010301001000009,Ballpoint Ballliner hijau,Buah,buah,master
+1010301001000010,Ballpoint Ballliner hitam,Box,Box,master
+1010301001000011,Ballpoint Ballliner merah,Buah,buah,master
+1010301001000012,Ballpoint Boxi,Buah,buah,master
+1010301001000013,Ballpoint OPF permanent Snowman untuk OHP biru,Buah,buah,master
+1010301001000014,Ballpoint OPF permanent Snowman untuk OHP hitam,Buah,buah,master
+1010301001000015,Pensil 2B Faber Castell,Buah,buah,master
+1010301001000016,Pensil mekanik Pilot,Buah,buah,master
+1010301001000017,Isi pensil mekanik Pilot 2B,Buah,buah,master
+1010301001000018,Spidol besar permanent biru,Buah,buah,master
+1010301001000019,Spidol besar permanent merah,Buah,buah,master
+1010301001000020,Spidol besar permanent hitam,Buah,buah,master
+1010301001000021,Spidol besar untuk white board warna biru,Buah,buah,master
+1010301001000022,Spidol besar untuk white board warna hijau,Buah,buah,master
+1010301001000023,Spidol besar untuk white board warna hitam,Buah,buah,master
+1010301001000024,Spidol besar untuk white board warna merah,Buah,buah,master
+1010301001000025,Spidol warna,Set,set,master
+1010301001000026,Stabilo Snowman,Buah,Buah,master
+1010301001000027,Stabilo Boss warna hijau,Buah,buah,master
+1010301001000028,Stabilo Boss warna kuning,Buah,buah,master
+1010301001000029,Stabilo Boss warna merah muda,Buah,buah,master
+1010301001000030,Stabilo Boss warna orange,Buah,buah,master
+1010301001000031,Ballpoint Snowman V5 Hitam,Buah,Buah,master
+1010301001000032,Spidol,Buah,Buah,master
+1010301001000033,Ballpoint Snowman Hitam V-2,Buah,Buah,master
+1010301001000034,Ballpoint Snowman Biru V-2,Buah,Buah,master
+1010301001000035,Box File Plastik 3 Sekat Georgeus Line,Buah,Buah,master
+1010301001000036,Double Tape 2 inchi besar (48mm),Buah,Buah,master
+1010301001000037,Spidol Gold Snowman,Buah,Buah,master
+1010301001000038,Spidol Gold Pilot,Buah,Buah,master
+1010301001000039,Ballpoint (AE9),Kotak,Kotak,master
+1010301001000040,Pensil (Lusin),Lusin,Lusin,master
+1010301001000041,Ballpoint Snowman V5 Biru,Buah,Buah,master
+1010301001000042,Ballpoint Sheaffer,Buah,Buah,master
+1010301001000043,Spidol Snowman Biru,Lusin,Lusin,master
+1010301001000044,Spidol Snowman Silver,Buah,Buah,master
+1010301001000045,Ballpoint Snowman Biru V-2 XFine (Lusin),Lusin,Lusin,master
+1010301001000046,Ballpoint Snowman Hitam V-2 XFine (Lusin),Lusin,Lusin,master
+1010301001000047,Ballpoint Snowman Merah V-1 (Lusin),Lusin,Lusin,master
+1010301001000048,Ballpoint Snowman Biru V-2 (Lusin),Lusin,Lusin,master
+1010301001000049,Pilot BL-5M Bold,Pcs,Pcs,master
+1010301001000050,Ballpoint Pilot Frixlon,Buah,Buah,master
+1010301001000051,Ballpoint Gel Kenko (Lusin),Lusin,Lusin,master
+1010301001000052,Ballpoint Pilot Biru (BPTP) (Lusin),Lusin,Lusin,master
+1010301001000053,Ballpoint Pilot Hitam (BPTP) (Lusin),Lusin,Lusin,master
+1010301001000054,Ballpoint Snowman Hitam V-2 (Lusin),Lusin,Lusin,master
+1010301001000055,Ballpoint Snowman Hitam V-1 (Lusin),Lusin,Lusin,master
+1010301001000056,Ballpoint Boldliner (Lusin),Lusin,Lusin,master
+1010301001000057,Refill Ballpoint Boldliner,Lusin,Lusin,master
+1010301001000058,Pena Hapus Pilot,Pcs,Pcs,master
+1010301001000059,Snowman Drawing Pen,Lusin,Lusin,master
+1010301001000060,Spidol untuk White Board (Lusin),Lusin,Lusin,master
+1010301001000061,Pena Prixion (Lusin),Lusin,Lusin,master
+1010301001000062,Stabilo (Box),Box,Box,master
+1010301001000063,Ballpoint Snowman V-5 (Lusin),Lusin,Lusin,master
+1010301001000064,Pena Sarasa warna hitam @12 pcs,Kotak,Kotak,master
+1010301001000065,Pena Sarasa,Buah,Buah,master
+1010301001000066,Pensil Warna Joyco,Buah,Buah,master
+1010301001000067,Buku Siswa Mahasiswa Prakerin,Pcs,Pcs,master
+1010301001000068,Joyco Pen Black,Pcs,Pcs,master
+1010301001000069,Pena Zebra Mildliner,Pcs,Pcs,master
+1010301001000070,Pensil 2B ZH,Buah,Buah,master
+1010301001000071,"Ballpoint Standard 0,5 Hitam",Pcs,Pcs,master
+1010301001000072,Pilot Hi-tech,Pcs,Pcs,master
+1010301001000073,Kenko Pen,Lusin,Lusin,master
+1010301001000074,Pulpen faste c600,Buah,Buah,master
+1010301001000075,Pena Standard,Kotak,Kotak,master
+1010301001000076,Pena Joyko,Kotak,Kotak,master
+1010301001000077,Spidol Kecil Whiteboard,Buah,Buah,master
+1010301001000078,Ballpoint Boldliner (Pcs),Pcs,Pcs,master
+1010301001000079,Pentel Silver Pen,Buah,Buah,master
+1010301001000080,Pentel Pen Jepang,Buah,Buah,master
+1010301001000081,Pentel Refill Pen,Buah,Buah,master
+1010301001000082,Pensil 2B,Pcs,Pcs,master
+1010301001000083,Pena Hitech (Lusin),Lusin,Lusin,master
+1010301001000084,Pena,Pak,Pack,master
+1010301001000085,Pena Gel K,Lusin,Lusin,master
+1010301001000086,Pena Gel 265,Lusin,Lusin,master
+1010301001000087,Pena Faster (Pcs),Pcs,Pcs,master
+1010301001000089,Pensil 2B (Lusin),Lusin,Lusin,master
+1010301001000090,"Pena Tizo 1,0 Biru",Pcs,Pcs,master
+1010301001000091,Pen Conection,Buah,Buah,master
+1010301001000092,Spidol Snowman Permanen Hitam,Buah,Buah,master
+1010301001000093,Pena Ulir,Lusin,Lusin,master
+1010301001000094,Pena Zhixin,Pcs,Pcs,master
+1010301001000095,Pensil Mekanik 0.5,Pcs,Pcs,master
+1010301001000096,Pensil Mekanik 1.0,Pcs,Pcs,master
+1010301001000097,Highlighter,Pcs,Pcs,master
+1010301001000098,Snowman Marker G12,Pcs,Pcs,master
+1010301001000099,Snowman Marker BG12,Pcs,Pcs,master
+1010301001000100,Pena (pcs),Pcs,Pcs,master
+1010301001000101,Pena Pentel BL,Pcs,Pcs,master
+1010301001000102,Pena Pentel Energel,Pcs,Pcs,master
+1010301001000103,Pena Prixion (Pcs),Pcs,Pcs,master
+1010301001000104,Ballpoint Joyko BP 345,Pcs,Pcs,master
+1010301001000105,"Ballpoint Gel Joyko 0,5 Biru",Pcs,Pcs,master
+1010301001000106,"Ballpoint Gel Joyko 0,5 Hitam",Pcs,Pcs,master
+1010301001000107,Ballpoint Joyko BP 345,Lusin,Lusin,master
+1010301001000108,"Ballpoint Gel Joyko 0,5 Biru (lusin)",Lusin,Lusin,master
+1010301001000109,"Ballpoint Gel Joyko 0,5 Hitam (lusin)",Lusin,Lusin,master
+1010301001000110,"Pena Tizo 1,0 Biru (lusin)",Lusin,Lusin,master
+1010301001000111,Joyko Highlighter Soft Color H,Set,set,master
+1010301001000112,Pena Sarasa warna biru @12 pcs,Kotak,Kotak,master
+1010301001000113,Stabilo Boss (Warna),Pcs,Pcs,master
+1010301001000114,Spidol Snowman Permanent Biru,Buah,Buah,master
+1010301002000001,Tinta stempel,Buah,buah,master
+1010301002000002,Bantalan stempel,Buah,buah,master
+1010301002000003,Stempel tanggal,Buah,buah,master
+1010301002000004,Stempel Nama,Buah,buah,master
+1010301002000005,Stempel Warna,Buah,Buah,master
+1010301002000006,Stempel Legalisir,Buah,Buah,master
+1010301002000007,Stempel Perwakilan,Pcs,Pcs,master
+1010301003000001,Acco,Kotak,kotak,master
+1010301003000002,Trigonal Clip nomor 3,Kotak,kotak,master
+1010301003000003,Trigonal Clip jumbo,Kotak,kotak,master
+1010301003000004,Binder Clips nomor 105,Kotak,kotak,master
+1010301003000005,Binder Clips nomor 107,Kotak,kotak,master
+1010301003000006,Binder Clips nomor 111,Kotak,kotak,master
+1010301003000007,Binder Clips nomor 155,Kotak,kotak,master
+1010301003000008,Binder Clips nomor 200,Kotak,kotak,master
+1010301003000009,Binder Clips nomor 260,Kotak,kotak,master
+1010301003000010,Clip Board,Buah,buah,master
+1010301003000011,Magnetik untuk white board (isi 4),Pak,pack,master
+1010301003000012,Paku push pin,Pak,pack,master
+1010301003000013,Binder Clip Deli,Pcs,Pcs,master
+1010301003000014,Joyco Binder Clips Warna Nomor 107,Buah,Buah,master
+1010301003000015,Joyco Binder Clip Warna Nomor 105,Buah,Buah,master
+1010301003000016,Kenko Binder Klip 107,Kotak,Kotak,master
+1010301003000017,Kenko Binder Klip 105,Kotak,Kotak,master
+1010301003000018,Kenko Trigonal Klip,Kotak,Kotak,master
+1010301003000019,Joyco Binder Klip 260 - ls,Lusin,Lusin,master
+1010301003000020,Binder Klips No 280,Box,Box,master
+1010301003000021,Joyco Binder Klip No 111,Buah,Buah,master
+1010301003000022,Hollow Binder Clips H155R,Set,Set,master
+1010301003000023,Hollow Binder Clips H07RG,Set,Set,master
+1010301003000024,Push Pin,Pak,Pack,master
+1010301003000025,Joyko Trigonal Klip,Kotak,Kotak,master
+1010301003000026,Binder Clips nomor 280,Kotak,Kotak,master
+1010301003000027,Binder Clips Nomor 300,Kotak,Kotak,master
+1010301003000028,Paper Clip,Box,Box,master
+1010301003000029,Paper Clips Color,Box,Box,master
+1010301004000001,Tip Ex,Buah,buah,master
+1010301004000002,Penghapus pensil (Faber Castell),Buah,buah,master
+1010301004000003,Penghapus white board besar,Buah,buah,master
+1010301004000004,Penghapus white board kecil,Buah,buah,master
+1010301004000005,Penghapus mesin tik elektrik Brother DX 8250,Buah,buah,master
+1010301004000006,Tip Ex Kertas,Buah,Buah,master
+1010301004000007,Penghapus Pensil (box),Kotak,Kotak,master
+1010301004000008,Tip Ex Joyco,Buah,Buah,master
+1010301004000009,Penghapus,Buah,Buah,master
+1010301004000010,Corection Tape,Buah,Buah,master
+1010301005000001,Buku tulis folio 50 lembar,Buah,buah,master
+1010301005000002,Buku tulis folio 100 lembar,Buah,buah,master
+1010301005000003,Buku tulis folio 200 lembar,Buah,buah,master
+1010301005000004,Buku agenda surat masuk dan keluar,Buah,buah,master
+1010301005000005,Buku ekspedisi ukuran 1 2 folio,Buah,buah,master
+1010301005000006,Buku ekspedisi ukuran 1 folio,Buah,buah,master
+1010301005000007,Block note,Buah,buah,master
+1010301005000008,Buku Folio Galaxsi,Buah,Buah,master
+1010301005000009,Buku Folio Mirage 200 lbr,Buah,Buah,master
+1010301005000010,Mirage 200 lembar,Buah,Buah,master
+1010301005000011,Buku Tamu,Buah,Buah,master
+1010301005000012,Buku Paperline 100 lembar,Buah,Buah,master
+1010301005000013,Buku Company Profile BPK RI,Buah,Buah,master
+1010301005000014,Writing PAD A4,Buah,Buah,master
+1010301005000015,Buku SSP,Pak,Pack,master
+1010301005000016,Buku Faktur Pajak,Pak,Pack,master
+1010301005000017,Block Note BPK RI,Buah,Buah,master
+1010301005000018,Nota Kecil,Buku,Buku,master
+1010301005000019,Nota Besar,Buku,Buku,master
+1010301005000020,Buku Panduan Pemeriksaaan LKPD,Buah,Buah,master
+1010301005000021,FAQ,Buah,Buah,master
+1010301005000022,Notebook Joyco A5,Lusin,Lusin,master
+1010301005000023,Buku Paperline 200 lembar,Buah,Buah,master
+1010301005000024,Buku tulis 58,Pak,Pak,master
+1010301005000025,Buku Tulis,Pak,Pack,master
+1010301005000026,Buku Resep Dokter,Pcs,Pcs,master
+1010301006000001,Ordner hitam F4,Buah,buah,master
+1010301006000002,Ordner hijau F4,Buah,buah,master
+1010301006000003,Ordner merah F4,Buah,buah,master
+1010301006000004,Ordner kuning F4,Buah,buah,master
+1010301006000005,Ordner Plastik Moderna,Buah,buah,master
+1010301006000006,Map kertas buffalo biru,Lembar,lembar,master
+1010301006000007,Map kertas buffalo hijau,Lembar,lembar,master
+1010301006000008,Map kertas buffalo kuning,Lembar,lembar,master
+1010301006000009,Map kertas buffalo merah,Lembar,lembar,master
+1010301006000010,Map kertas batik,Lembar,lembar,master
+1010301006000011,Map kain batik,Lembar,lembar,master
+1010301006000012,Map snell,Lembar,lembar,master
+1010301006000013,Map BPK RI Perwakilan Provinsi Lampung,Lembar,lembar,master
+1010301006000014,Dokumen Holder,Buah,Buah,master
+1010301006000015,Map bussines file biru,Lembar,lembar,master
+1010301006000016,Map bussines file hijau,Lembar,lembar,master
+1010301006000017,Map bussines file merah,Lembar,Lembar,master
+1010301006000018,Map bussines file kuning,Lembar,Lembar,master
+1010301006000019,Map gantung microdot,Lembar,lembar,master
+1010301006000020,Name card holder,Buah,Buah,master
+1010301006000021,Box file (map plastik) Grand F 403,Buah,Buah,master
+1010301006000022,Map KKP biru,Lembar,lembar,master
+1010301006000023,Map KKP Kuning,Lembar,lembar,master
+1010301006000024,Map KKP Merah,Lembar,lembar,master
+1010301006000025,Map logo BPK,Lembar,lembar,master
+1010301006000026,Tas Kecil,Buah,Buah,master
+1010301006000027,Name plate,Buah,buah,master
+1010301006000028,Map Naskah untuk Upacara,Buah,buah,master
+1010301006000029,Map Biola,Box,Box,master
+1010301006000030,Map Bening,Pak,Pack,master
+1010301006000031,Map Kertas Batik Logo Garuda,Buah,Buah,master
+1010301006000032,Ordner Hitam Gobi,Buah,Buah,master
+1010301006000033,Ordner Biru F4,Buah,Buah,master
+1010301006000034,Map Kertas Buffallo Hijau,Box,Box,master
+1010301006000035,Map Kertas Buffallo Kuning,Box,Box,master
+1010301006000036,Map Kertas Buffallo Merah,Box,Box,master
+1010301006000037,Map Kertas Buffallo Biru,Box,Box,master
+1010301006000038,Business File Biru,Pak,Pack,master
+1010301006000039,Business File Kuning,Pak,Pack,master
+1010301006000040,Business File Hijau,Pak,Pack,master
+1010301006000041,Business File Merah,Pak,Pack,master
+1010301006000042,Map Documen,Buah,Buah,master
+1010301006000043,Ordner,Buah,Buah,master
+1010301006000044,Clear Holder Kim 60 Lmbr,Pcs,Pcs,master
+1010301006000045,Map Ziper Topla CH-555-40,Pcs,Pcs,master
+1010301006000046,Clear Holder Yushinca F205,Pcs,Pcs,master
+1010301006000047,Ordner (Lusin),Lusin,Lusin,master
+1010301006000048,Map Rekam Medis,Lembar,Lembar,master
+1010301006000049,Map Tali,Pcs,Pcs,master
+1010301006000050,Map L (Lusin) bening dan warna F4,Lusin,Lusin,master
+1010301006000051,Map L,Buah,Buah,master
+1010301006000052,Map Batik Logo BPK,Buah,Buah,master
+1010301006000053,Box File,Buah,Buah,master
+1010301006000054,Carry File,Buah,Buah,master
+1010301006000055,Carry File Joyko,Buah,Buah,master
+1010301006000056,Map Kancing,Buah,Buah,master
+1010301006000057,Sign Holder A5,Buah,Buah,master
+1010301006000058,Sign Holder A4,Buah,Buah,master
+1010301006000059,Candy Organizer,Buah,Buah,master
+1010301006000060,Memo Organizer,Buah,Buah,master
+1010301006000061,Map Biasa,Pak,Pack,master
+1010301006000062,Map Biola (Pcs),Pcs,Pcs,master
+1010301006000063,Clear Pocket,Pak,Pack,master
+1010301006000064,Ordner 1,Buah,Buah,master
+1010301006000065,Clear Pocket,Buah,Buah,master
+1010301006000066,Clear Holder,Buah,Buah,master
+1010301006000067,Map Biola 1,Box,Box,master
+1010301006000068,Stand Sign Holder A4,Buah,Buah,master
+1010301006000069,Stand Up Sign Holder A5,Buah,Buah,master
+1010301006000070,Ordner A4,Buah,Buah,master
+1010301006000071,Map Binder A5 Kulit,Pcs,Pcs,master
+1010301006000072,Buffalo Map (Pcs),Pcs,Pcs,master
+1010301006000073,Map Kertas Buffalo (Pack),Pak,Pack,master
+1010301006000074,Ordner Folio,Pcs,Pcs,master
+1010301006000075,Pembatas Ordner,Buah,Buah,master
+1010301006000076,Sheet Protector F4,Pak,Pack,master
+1010301006000077,Map L (Lusin) bening dan Warna A4,Lusin,Lusin,master
+1010301007000001,Penggaris Plastik 1 M,Buah,Buah,master
+1010301007000002,Penggaris Baja 30 Cm,Buah,Buah,master
+1010301007000003,Penggaris Baja 40 Cm,Buah,Buah,master
+1010301007000004,Penggaris Baja 50 Cm,Buah,Buah,master
+1010301007000005,Penggaris Bening,Buah,Buah,master
+1010301007000006,Penggaris Baja 30centi,Buah,Buah,master
+1010301007000007,Mistar 15cm,Buah,Buah,master
+1010301007000008,Mistar Stenlis 15cm,Buah,Buah,master
+1010301007000009,Penggaris 30cm,Pcs,Pcs,master
+1010301007000010,Penggaris 40cm,Pcs,Pcs,master
+1010301007000011,BT Penggaris Rotary,Dummy,dummy,master
+1010301007000012,bt penggaris rotary,Dummy,dummy,master
+1010301008000001,Cutter A-200,Buah,Buah,master
+1010301008000002,Cutter K-300,Buah,Buah,master
+1010301008000003,Cutter L-500 (besar),Buah,Buah,master
+1010301008000004,Isi Cutter A-200,Kotak,Kotak,master
+1010301008000005,Isi Cutter K-300,Kotak,Kotak,master
+1010301008000006,Isi Cutter P-188,Kotak,Kotak,master
+1010301008000007,Cutter A-300,Pcs,Pcs,master
+1010301008000008,Isi Cutter L-150,Set,set,master
+1010301008000009,Gunting,Buah,Buah,master
+1010301008000010,Cutting Mat,Buah,Buah,master
+1010301008000011,Cutter K-200,Buah,Buah,master
+1010301008000012,Cutter L-500,Buah,Buah,master
+1010301008000013,Gunting 838,Pcs,Pcs,master
+1010301008000014,Gunting 828,Buah,Buah,master
+1010301008000015,Peruncing Meja,Pcs,Pcs,master
+1010301008000016,Dispenser Isolasi,Pcs,Pcs,master
+1010301008000017,Gunting K-200,Pcs,Pcs,master
+1010301008000018,Pembolong Kertas,Pcs,Pcs,master
+1010301008000019,Gunting Sc-19,Pcs,Pcs,master
+1010301008000020,Isi Cutter A-100,Set,Set,master
+1010301009000001,Pita Kalkulator Struk DR-140TM,Buah,Buah,master
+1010301010000001,Double Tape 1 2 Inch (12mm),Buah,Buah,master
+1010301010000002,Double Tape 1 inch (36mm),Buah,Buah,master
+1010301010000003,Isolasi Bening 1 2 Inch,Buah,Buah,master
+1010301010000004,Isolasi Bening 1 Inch,Buah,Buah,master
+1010301010000005,Lakban Bening 2 Inch,Buah,Buah,master
+1010301010000006,Isolasi Coklat,Buah,Buah,master
+1010301010000007,Lakban Hitam 24 mm,Buah,Buah,master
+1010301010000008,Lakban Hitam 36 mm,Buah,Buah,master
+1010301010000009,"Lakban Hitam 48 mm/ 2""",Buah,Buah,master
+1010301010000010,Lem kertas cair,Buah,Buah,master
+1010301010000011,Lem Kertas GLUKOL,Buah,Buah,master
+1010301010000012,Lem Stick 25 gr,Buah,Buah,master
+1010301010000013,Label Alamat (7x4 Cm),Buah,Buah,master
+1010301010000014,Isolasi kecil 1 2 inch KIYO,Buah,buah,master
+1010301010000015,lem pipa,Buah,buah,master
+1010301010000016,Isolasi Kabel,Buah,Buah,master
+1010301010000017,label TJM 'awas kaca,Buah,buah,master
+1010301010000018,Lakban Lennox BOPP Color Orange,Buah,Buah,master
+1010301010000019,Lakban Lennox BOPP Color Kuning,Buah,Buah,master
+1010301010000020,Lakban Lennox Duct Tape Biru,Buah,Buah,master
+1010301010000021,Lakban Dataxtape Cloth Merah,Buah,Buah,master
+1010301010000022,Lakban Dataxtape Cloth Biru Besar,Buah,Buah,master
+1010301010000023,Lakban Lennox BOP Color Ungu,Buah,Buah,master
+1010301010000024,Lakban Lennox Duct Tape Color Hijau,Buah,Buah,master
+1010301010000025,Lakban Dataxtape Cloth Biru Kecil,Buah,Buah,master
+1010301010000026,Lakban Fumaru Tape,Pak,Pak,master
+1010301010000027,Panfix 1 x 72,Buah,Buah,master
+1010301010000028,Panfix 1 2 x 72,Buah,Buah,master
+1010301010000029,Lem Uhu 21gram,Buah,Buah,master
+1010301010000030,Panfix 1 2 x 72 (Lusin),Lusin,Lusin,master
+1010301010000031,Kenko Lem Stick 8 gr - box,Box,Box,master
+1010301010000032,Lem Uhu stick 21 gr - box,Box,Box,master
+1010301010000033,Damaru Lakban OPP,Pcs,Pcs,master
+1010301010000034,Lem uhu & glue 35 ml,Pcs,Pcs,master
+1010301010000035,Lem Stick 40 gr,Buah,Buah,master
+1010301010000036,Double Tape 1 1 2 inch,Buah,Buah,master
+1010301010000037,Double Tape Busa,Buah,Buah,master
+1010301010000038,Lakban Coklat 2 inch,Buah,Buah,master
+1010301010000039,Daimaru Lakban OPP,Pak,Pak,master
+1010301010000040,Lem Fox,Buah,Buah,master
+1010301010000041,Lem Stick 40gr (Lusin),Lusin,Lusin,master
+1010301010000042,Lem Uhu,Pak,Pack,master
+1010301010000043,Isolasi Bening,Buah,Buah,master
+1010301010000044,Double Tape 2 inch,Pcs,Pcs,master
+1010301010000045,Panfix 1 x 72 (Lusin),Lusin,Lusin,master
+1010301010000046,Lem Stick 8gr,Pcs,Pcs,master
+1010301010000047,Lem Uhu (Pcs),Pcs,Pcs,master
+1010301010000048,Lem Uhu Stick 40gr,Pcs,Pcs,master
+1010301010000049,Isolasi Nitto,Pcs,Pcs,master
+1010301010000050,Isolasi 3M,Pcs,Pcs,master
+1010301010000051,Isolasi Nanko 1x72,Roll,Roll,master
+1010301010000052,Isolasi Nanko 1x72,Slop,Slop,master
+1010301010000053,Lem Stick 15 Gr,Pcs,Pcs,master
+1010301010000054,Lakban Bening 1 Inch,Buah,Buah,master
+1010301012000001,Kangaro Staples No.10 Color,Box,Box,master
+1010301012000002,Stapler,Buah,Buah,master
+1010301012000003,Stapler HD-50,Buah,Buah,master
+1010301012000004,Staples No.10,Box,Box,master
+1010301012000005,Staples Heavy Duty,Pcs,Pcs,master
+1010301013000001,Isi Staples K,Pak,Pack,master
+1010301013000002,Isi Staples B,Pak,Pack,master
+1010301013000003,Isi Staples No. 23/15,Box,Box,master
+1010301014000001,Kotak LHP Besar,Pcs,Pcs,master
+1010301014000002,Kotak LHP Kecil,Pcs,Pcs,master
+1010301014000003,Voucher BBM,Lembar,Lembar,master
+1010301014000004,Plakat (custom kayu),Eksemplar,Eks,master
+1010301014000005,Kertas Kop Surat Logo BPK,Lembar,Lembar,master
+1010301014000006,Kantong Obat,Pcs,Pcs,master
+1010301014000007,KARDUS KKP BARU,Buah,BUAH,master
+1010301014000008,Kalender Dinding,Pcs,Pcs,master
+1010301015000001,Plastik Peserta A4,Pak,Pak,master
+1010301015000002,ID Card Double Lux Acrylic,Bungkus,Bks,master
+1010301015000003,Tali Peserta Besar,Bungkus,Bks,master
+1010301015000004,Yoyo Warna,Bungkus,Bks,master
+1010301015000005,'Joyco Cutter L-500 SG,Pcs,Pcs,master
+1010301015000006,Kenko Cutter L-500,Pcs,Pcs,master
+1010301015000007,Kenko Cutter A-300,Pcs,Pcs,master
+1010301015000008,Joyco Mistar Stainless 20 cm,Pcs,Pcs,master
+1010301999000001,Pembolong Kertas 30 XL,Buah,Buah,master
+1010301999000002,Pembolong Kertas 40 XL,Buah,Buah,master
+1010301999000003,Pembolong Kertas 85,Buah,Buah,master
+1010301999000004,Pembolong Kertas Besar,Buah,Buah,master
+1010301999000005,Staples HD 10,Buah,Buah,master
+1010301999000006,Staples HD 50,Buah,Buah,master
+1010301999000007,Staples Besar (300 Kertas),Buah,Buah,master
+1010301999000008,Isi Staples HD 10,Box,Box,master
+1010301999000009,Isi Staples HD 50,Box,Box,master
+1010301999000010,Isi Staples Besar,Kotak,Kotak,master
+1010301999000011,Pembuka Staples SR-45,Buah,Buah,master
+1010301999000012,Peruncing Pensil,Buah,Buah,master
+1010301999000013,Peruncing Pensil A-5,Buah,Buah,master
+1010301999000014,Box File Plastik Microtop,Buah,Buah,master
+1010301999000015,Desk Set,Buah,Buah,master
+1010301999000016,Rak Kertas Susun 3,Buah,Buah,master
+1010301999000017,Pembatas Buku Besi Sedang,Set,Set,master
+1010301999000018,Pembatas Buku besi Besar,Set,Set,master
+1010301999000019,Peruncing Pensil merk Drupa,Buah,Buah,master
+1010301999000020,Agenda BPK RI,Buah,buah,master
+1010301999000021,Tusukan Nota,Buah,Buah,master
+1010301999000022,White Board Magnet (40x60cm),Unit,Unit,master
+1010301999000023,Pointer Ballpoint,Buah,Buah,master
+1010301999000024,Pointer Remote,Buah,Buah,master
+1010301999000025,Gantungan Kunci Key Ring,Box,Box,master
+1010301999000026,Taxliner Tizo,Pcs,Pcs,master
+1010301999000027,BP Sanmao Kue,Pcs,Pcs,master
+1010301999000028,Zhikin,Pcs,Pcs,master
+1010301999000029,Chenmei,Pcs,Pcs,master
+1010301999000030,Spoon Uang,Buah,Buah,master
+1010301999000031,Refill Taxliner Tizo,Buah,Buah,master
+1010301999000032,Idx Forte 202,Pcs,Pcs,master
+1010301999000033,Esco 057,Pcs,Pcs,master
+1010301999000034,X6 Black,Pcs,Pcs,master
+1010301999000035,Tempat Pulpen,Buah,Buah,master
+1010301999000036,Lem Stick 8gr,Pcs,Pcs,master
+1010301999000037,Lem Stick 15gr,Pcs,Pcs,master
+1010301999000038,Correction Tape (Lusin),Lusin,Lusin,master
+1010301999000039,White Board Frame Magnet,Buah,Buah,master
+1010301999000040,Correction Tape,Buah,Buah,master
+1010301999000041,Box Penyerahan KKP,Buah,Buah,master
+1010301999000042,Carry Case,Buah,Buah,master
+1010301999000043,Tali ID Peserta,Bungkus,Bungkus,master
+1010301999000044,Plastik ID Peserta,Pak,Pak,master
+1010301999000045,Name Plate,Buah,Buah,master
+1010301999000046,Peruncing Putar,Buah,Buah,master
+1010301999000047,Stabilo Warna,Pcs,Pcs,master
+1010301999000048,Highlighter,Pcs,Pcs,master
+1010301999000049,Pembatas Ordner,Pak,Pack,master
+1010301999000050,Sticky Note,Pcs,Pcs,master
+1010301999000051,Kenko Trigonal Klip,Box,Box,master
+1010301999000052,Post it Sign Here,Pcs,Pcs,master
+1010301999000053,Desk Set DS-26,Pcs,Pcs,master
+1010301999000054,Dokumen Tray 4 Tingkat,Buah,Buah,master
+1010301999000055,Paperline Kwitansi,Pcs,pcs,master
+1010301999000056,Paku Push Pin Sterofoam,Pcs,Pcs,master
+1010301999000057,Tisu Wajah 1000 Gr,Bal,Bal,master
+1010302001000001,Kertas HVS A4 70 Gram,Rim,Rim,master
+1010302001000002,Kertas HVS A4 80 Gram,Rim,Rim,master
+1010302001000003,Kertas HVS F4 70 Gram,Rim,Rim,master
+1010302001000004,Kertas HVS F4 80 Gram,Rim,Rim,master
+1010302001000005,Kertas HVS Quarto 70 Gram,Rim,Rim,master
+1010302001000006,Kertas HVS Quarto 80 Gram,Rim,Rim,master
+1010302001000007,Kertas HVS A4 70 Gram Warna,Rim,Rim,master
+1010302001000008,Kertas HVS F4 70 Gram Warna,Rim,Rim,master
+1010302001000009,Kertas HVS Folio Warna Kuning,Rim,Rim,master
+1010302001000010,Kertas HVS Folio Warna Merah,Rim,Rim,master
+1010302001000011,Kertas A3 70 Gram,Rim,Rim,master
+1010302001000012,Kertas HVS Folio DF 70 Gr,Rim,Rim,master
+1010302001000013,Kertas HVS Folio DF 80 Gr,Rim,Rim,master
+1010302001000014,Kertas FC 80 Gr,Rim,Rim,master
+1010302001000015,Kertas FC 70 Gr,Rim,Rim,master
+1010302001000016,Kertas Photo Copy 70 Gr A4,Rim,Rim,master
+1010302001000017,Kertas Photo Copy 80 Gr F4,Rim,Rim,master
+1010302001000018,Kertas Photo Copy 70 Gr F4 Paper,Rim,Rim,master
+1010302001000019,Kertas A4 75 gsm,Rim,Rim,master
+1010302001000020,Kertas F4 75 gsm,Rim,Rim,master
+1010302001000021,Kertas HVS a5,Rim,Rim,master
+1010302001000022,Kwitansi Besar,Pak,Pack,master
+1010302001000023,Hvs A4 75gr,Box,Box,master
+1010302002000002,Kertas Copy Plano,Gulung,gulung,master
+1010302002000003,Kertas Carbon,Pak,Pak,master
+1010302002000004,Kertas Krep Folio Diamon,Rim,Rim,master
+1010302002000005,Carbon Folio,Rim,Rim,master
+1010302002000006,Folio Daito,Rim,Rim,master
+1010302002000007,Sailing Dua Muka,Rim,Rim,master
+1010302002000008,Kertas Faximili 210 x 100,Roll,rol,master
+1010302002000009,Kertas Fax 210 x 30,Roll,Rol,master
+1010302002000010,Kertas Fax K 2:2,Box,Box,master
+1010302002000011,Kertas HVS A4 70 gram Logo Garuda,Rim,Rim,master
+1010302002000012,Kertas Concord 80 Gram Logo Garuda,Rim,Rim,master
+1010302002000013,Tell Struk Kalkulator,Roll,Roll,master
+1010302002000014,Kertas Kado BPK RI,Lembar,Lembar,master
+1010302002000015,Label Stiker Tom and Jerry 103,Pak,pack,master
+1010302002000016,Kertas Struk 58 x 48,Pak,Pack,master
+1010302002000017,Kertas Foto 270,Pak,Pack,master
+1010302002000018,Kertas Foto A4 135,Pak,Pack,master
+1010302002000019,PPF 80Gr,Pak,Pack,master
+1010302002000020,Faber Mini Text,Pcs,Pcs,master
+1010302002000021,Kertas Kado Kiky,Lembar,Lembar,master
+1010302002000022,Kertas BC @ 5,Pcs,Pcs,master
+1010302002000023,Sabun Kertas,Pcs,Pcs,master
+1010302002000024,Kertas Flipchart,Lembar,Lembar,master
+1010302002000025,Kertas Conqueror A4,Rim,Rim,master
+1010302002000026,King Struk 230,Pcs,Pcs,master
+1010302002000027,Kertas Glossy,Pak,Pack,master
+1010302002000028,Kertas Buram,Rim,Rim,master
+1010302002000029,Kertas Stensil,Rim,Rim,master
+1010302002000030,Kertas concorde,Pak,Pack,master
+1010302002000031,Kertas Concord folio 220gr,Pak,Pack,master
+1010302002000032,Pembatas Kertas,Buah,Buah,master
+1010302002000033,Kertas Concord A4 90gr,Pak,Pack,master
+1010302002000034,transparent sticker,Pcs,pcs,master
+1010302002000035,label,Pak,pak,master
+1010302002000036,pos it,Pcs,pcs,master
+1010302002000037,loose leaf A5100 polos,Pak,pak,master
+1010302002000038,Joyko Memo Stick MMS-655P,Dummy,dummy,master
+1010302002000039,Joyko Memo Stick MMS-657P,Dummy,dummy,master
+1010302002000040,joyko memo stick mms-654p,Dummy,dummy,master
+1010302002000041,joyko memo stick mms-656p,Dummy,dummy,master
+1010302002000042,joyko memo stick mms-12,Dummy,dummy,master
+1010302002000043,joyko memo stick mms-13,Dummy,dummy,master
+1010302002000044,joyko memo stick mms-3,Dummy,dummy,master
+1010302002000045,joyko memo stick mms-8,Dummy,dummy,master
+1010302002000046,joyko index & mark im-61,Dummy,dummy,master
+1010302002000047,joyko index 7 memo im-38,Dummy,dummy,master
+1010302002000048,Prom-Data-X 313NH C,Dummy,dummy,master
+1010302003000001,Hard Cover,Dummy,-,master
+1010302003000002,Kertas Kopi,Pak,Pack,master
+1010302003000003,Kertas Kado Motif,Pak,Pack,master
+1010302003000004,Kertas Buffalo,Pak,Pack,master
+1010302004000001,Amplop Putih Kecil,Kotak,Kotak,master
+1010302004000002,Amplop Putih Besar,Kotak,Kotak,master
+1010302004000003,Amplop Polos Coklat Sedang,Kotak,Kotak,master
+1010302004000004,Amplop Ukuran Folio Coklat,Pak,Pack,master
+1010302004000005,Amplop Kecil BPK RI Perwakilan Provinsi Lampung (logo BPK),Lembar,Lembar,master
+1010302004000006,Amplop Kecil BPK RI Perwakilan Provinsi Lampung (Garuda),Lembar,Lembar,master
+1010302004000007,Amplop Sedang BPK RI Perwakilan Provinsi Lampung (logo BPK),Lembar,Lembar,master
+1010302004000008,Amplop Sedang BPK RI Perwakilan Provinsi Lampung (Garuda),Lembar,Lembar,master
+1010302004000009,Amplop Besar BPK RI Perwakilan Provinsi Lampung (logo BPK),Lembar,Lembar,master
+1010302004000010,Amplop Besar BPK RI Perwakilan Provinsi Lampung (Garuda),Lembar,Lembar,master
+1010302004000011,Amplop Putih Polos Sedang 110,Kotak,kotak,master
+1010302004000012,Amplop besar BPK RI,Lembar,lembar,master
+1010302004000013,Amplop kecil BPK RI,Lembar,lembar,master
+1010302004000014,Amplop Omslag E,Kotak,Kotak,master
+1010302004000015,Amplop Omslag D,Kotak,Kotak,master
+1010302004000016,Amplop Omslag C,Kotak,Kotak,master
+1010302004000017,Amplop Putih Panjang Logo Dharma Wanita,Kotak,Kotak,master
+1010302004000018,Amplop Polos Coklat Kecil,Pak,Pack,master
+1010302004000019,Amplop Besar Logo BPK Ukuran F4,Buah,buah,master
+1010302004000020,Amplop Besar Logo BPK Ukuran A4,Buah,buah,master
+1010302004000021,Amplop Coklat Besar Logo BPK Ukuran F4,Buah,buah,master
+1010302004000022,Amplop Coklat Besar Logo BPK Ukuran A4,Buah,buah,master
+1010302004000023,Amplop Coklat Kecil Logo BPK,Buah,buah,master
+1010302004000024,Amplop coklat map,Pak,Pack,master
+1010302004000025,Amplop Surat Custom,Buah,Buah,master
+1010302005000001,Kop Surat BPK RI,Rim,Rim,master
+1010302005000002,Kartu HVS A4 Logo Dharma Wanita,Rim,Rim,master
+1010302999000001,Kertas Bufallo Abu-abu,Rim,Rim,master
+1010302999000002,Kertas Buffalo,Rim,Rim,master
+1010302999000003,Kertas Bufallo Orange,Rim,Rim,master
+1010302999000004,Kertas Bufalllo Hijau,Rim,Rim,master
+1010302999000005,Kertas Bufallo Merah,Rim,Rim,master
+1010302999000006,Kertas Concord Isi 100,Pak,Pack,master
+1010302999000007,Kartu Buku,Lembar,Lembar,master
+1010302999000008,Kwitansi 100 Lembar,Buah,Buah,master
+1010302999000009,Post It Besar,Pcs,Pcs,master
+1010302999000010,Post It Kecil,Pcs,Pcs,master
+1010302999000011,Post It Warna (4x5 cm) 21091,Pak,Pack,master
+1010302999000012,Post It Warna (1 x 5 cm) 21017,Pak,Pack,master
+1010302999000013,"Kertas Memo Plan M.12 (8,5 x 8 cm)",Buah,Buah,master
+1010302999000014,Plastik Sampul Mika (34 cm x 5 m),Gulung,Gulung,master
+1010302999000015,Kartu Majalah,Lembar,Lembar,master
+1010302999000016,Lembar Tanggal Kembali,Lembar,Lembar,master
+1010302999000017,Kartu Hasil Penilaian Pelaksanaan Pekerjaan,Lembar,Lembar,master
+1010302999000018,Kartu Persediaan,Lembar,Lembar,master
+1010302999000019,Lembar permohonan cuti,Lembar,Lembar,master
+1010302999000020,Blangko surat ijin keluar kantor,Blok,blok,master
+1010302999000021,Kartu merah pegawai 1,Lembar,lembar,master
+1010302999000022,Kartu merah pegawai 2,Lembar,lembar,master
+1010302999000023,Kartu pemeliharaan kendaraan bermotor,Lembar,lembar,master
+1010302999000024,Kartu pengawasan kredit,Lembar,lembar,master
+1010302999000025,Kartu persediaan ATK,Lembar,lembar,master
+1010302999000026,kartu kontrol cuti pegawai,Lembar,lembar,master
+1010302999000027,Lembar Disposisi Kalan,Blok,blok,master
+1010302999000028,Lembar Disposisi Kasetlan,Blok,blok,master
+1010302999000029,Surat Izin cuti tahunan,Blok,blok,master
+1010302999000030,Kertas Concord A4 100 gr logo garuda,Rim,rim,master
+1010302999000031,Kertas HVS 100 gr logo Garuda,Rim,Rim,master
+1010302999000032,Kartu Nama,Kotak,Kotak,master
+1010302999000034,Resep NCR,Buku,buku,master
+1010302999000035,Surat Rujukan,Buku,Buku,master
+1010302999000036,Surat Keterangan Sehat,Buku,Buku,master
+1010302999000037,Surat Keterangan Sakit,Buku,buku,master
+1010302999000038,Kartu Stok,Lembar,lembar,master
+1010302999000039,Kartu Pasien Pink,Lembar,Lembar,master
+1010302999000040,Kartu Pasien Biru,Lembar,Lembar,master
+1010302999000041,Etiket Obat biru,Buah,buah,master
+1010302999000042,Etiket Obat Putih,Buah,buah,master
+1010302999000043,Plastik obat besar,Gulung,gulung,master
+1010302999000044,Plastik obat kecil,Pak,pack,master
+1010302999000045,Cover LHP,Buah,buah,master
+1010302999000046,Sertifikat Workshop,Buah,buah,master
+1010302999000047,Kertas Concord F 50 Gr,Pak,Pak,master
+1010302999000048,Label Stiker Tom and Jerry 120,Pak,pack,master
+1010302999000049,Post It Sign Here,Pcs,Pcs,master
+1010302999000050,Kartu Parkir,Lembar,Lembar,master
+1010302999000051,Yiwu 29370 Name,Pcs,Pcs,master
+1010302999000052,Daiichi DOF05FC4,Pcs,Pcs,master
+1010302999000053,Flaminggo 9431-1,Pcs,Pcs,master
+1010302999000054,Bambi 2505 Divid,Pcs,Pcs,master
+1010302999000055,Daiichi B03 FC,Pcs,Pcs,master
+1010302999000056,Map 1 Vindex,Pcs,Pcs,master
+1010302999000057,Gift Box Kecil,Pcs,Pcs,master
+1010302999000058,Plastik Undangan,Pak,Pack,master
+1010302999000059,Stiker Sanblas,Meter,Meter,master
+1010302999000060,Plastik Klip Biru Sedang,Bungkus,Bungkus,master
+1010302999000061,Plastik Sampul Mika (45 cm x 50 cm),Gulung,Gulung,master
+1010302999000062,Plastik Sampul Mika (25 cm x 7 cm),Gulung,Gulung,master
+1010302999000063,Kartu Ucapan,Buah,Buah,master
+1010302999000064,Label DVD,Pak,Pack,master
+1010302999000065,Kertas Puyer,Pak,Pack,master
+1010302999000066,Kwitansi (Pack),Pak,Pack,master
+1010302999000067,Bantex Clear Pocket F4,Bungkus,Bungkus,master
+1010302999000068,Flexi Notes,Pcs,Pcs,master
+1010302999000069,Paper bag,Pcs,Pcs,master
+1010302999000070,Sheet Protector,Pak,Pack,master
+1010302999000071,Sticky Notes Kenko,Pak,Pak,master
+1010302999000072,Prom-Daiichi,Pcs,Pcs,master
+1010302999000073,Kertas Concorde F4 Folio,Pak,Pak,master
+1010302999000074,Sampul Mika,Pak,Pak,master
+1010302999000075,Gift Card,Buah,Buah,master
+1010302999000076,Sticky Note,Pak,Pak,master
+1010302999000077,Memo Stick,Pak,Pak,master
+1010302999000078,Kertas Memo Besar,Pcs,Pcs,master
+1010302999000079,Kertas Memo Kecil,Pcs,Pcs,master
+1010302999000080,Book End,Pcs,Pcs,master
+1010302999000081,Kwitansi 50 Lembar,Buah,Buah,master
+1010302999000082,Bantex Clear Pocket A4,Bungkus,Bungkus,master
+1010302999000083,Resep Dokter,Buku,Buku,master
+1010302999000084,Kertas Concord A4 90gr,Pak,Pack,master
+1010302999000085,Notebook,Buah,Buah,master
+1010302999000086,Kwitansi Tanggung,Pcs,Pcs,master
+1010302999000087,Memo Stick MMS-1,Pak,Pack,master
+1010302999000088,Memo Stick MMS-15,Pak,Pack,master
+1010302999000089,Post It 655,Pcs,Pcs,master
+1010302999000090,Post It 654,Pcs,Pcs,master
+1010302999000091,Sheet Protector F4,Pak,Pack,master
+1010302999000092,Kertas Foto Glossy,Pak,Pak,master
+1010302999000093,Bantex Folder,Pcs,Pcs,master
+1010302999000094,Post It 680,Pcs,Pcs,master
+1010302999000095,Kuitansi Kecil,Pcs,Pcs,master
+1010302999000096,Printech Kertas Foto Sticker 135 GSM,Pak,Pack,master
+1010302999000097,Kertas Sticker Eprint Transparent Stick A4 150 GSM,Set,Set,master
+1010303001000001,Sheet Protector Satuan Pack,Pak,Pack,master
+1010303001000002,Plastik Pelindung Kertas,Pak,Pack,master
+1010303003000001,Plakat,Buah,buah,master
+1010303999000001,Stiker logo BPK RI untuk ordner,Buah,Buah,master
+1010303999000002,Baner,Lembar,Lembar,master
+1010303999000003,Stiker Kerdus KKP,Lembar,Lembar,master
+1010303999000004,Stiker BPK RI,Buah,Buah,master
+1010303999000005,Goody Bag BPK RI,Buah,Buah,master
+1010303999000006,Kupon BBM (Cetak),Rim,Rim,master
+1010304001000001,"Continuous Form 91 2 x 11,9 4 ply",Kotak,Kotak,master
+1010304001000002,Continuous Form 91 2 X 11 2 2 Ply,Kotak,Kotak,master
+1010304001000003,Continuouis Form K5,Kotak,Kotak,master
+1010304004000001,Tinta DD-24 Colour,Buah,Buah,master
+1010304004000002,Tinta DD-24 Hitam,Buah,Buah,master
+1010304004000003,Tinta Fax Panasonic KX-FA93A 57E,Buah,Buah,master
+1010304004000004,Pita mesin tik Elektrik Brother DX 8250,Buah,Buah,master
+1010304004000005,Toner Untuk Printer 1020 (12A),Buah,Buah,master
+1010304004000006,Toner Untuk Printer 1006 (35A),Buah,Buah,master
+1010304004000007,Cartridge HP 21 Black,Buah,buah,master
+1010304004000008,Cartridge HP 22 Warna,Buah,buah,master
+1010304004000009,Toner Docuprint C1110B Hitam,Buah,Buah,master
+1010304004000010,Toner Docuprint C1110B Biru,Buah,Buah,master
+1010304004000011,Toner Docuprint C1110B Merah,Buah,Buah,master
+1010304004000012,Toner 35 A.Kecil (Refill),Buah,Buah,master
+1010304004000013,Toner 35 A.Besar (Refill),Buah,Buah,master
+1010304004000014,Toner 12A (Refill),Buah,Buah,master
+1010304004000015,Toner 49A (Refill),Buah,Buah,master
+1010304004000016,Toner 85 A.Kecil (Refill),Buah,Buah,master
+1010304004000017,Toner Warna CC 530A (Refill) CE 320A,Buah,Buah,master
+1010304004000018,Toner Panasonic (Refill),Buah,Buah,master
+1010304004000019,Toner Xerox 3200 (Refill),Buah,Buah,master
+1010304004000020,Toner Dialta (Photo copy),Buah,buah,master
+1010304004000021,Toner HP 85 A,Buah,Buah,master
+1010304004000022,Toner HP 49A,Buah,Buah,master
+1010304004000023,Cartridge Epson T103,Buah,Buah,master
+1010304004000024,Toner 85 A.Besar (Refill),Pcs,Pcs,master
+1010304004000025,Refill Tinta Printer Warna,Buah,Buah,master
+1010304004000026,Refill Tinta Printer Hitam,Buah,Buah,master
+1010304004000027,Toner CC 530A (Black) CE 320A,Buah,Buah,master
+1010304004000028,Toner CC 531A (Cyon) CE 321A,Buah,Buah,master
+1010304004000029,Toner CC 533A (Magenta) CE 323A,Buah,Buah,master
+1010304004000030,Toner CC 532A (Yellow) CE 322A,Buah,Buah,master
+1010304004000031,Refill Toner CC 532A CE 322A,Buah,Buah,master
+1010304004000032,Refill Toner CC 531A CE 321A (Cyan),Buah,Buah,master
+1010304004000033,Refill Toner CC 533A CE 323A (Magenta),Buah,Buah,master
+1010304004000034,Rekonduksi Toner 85A,Unit,Unit,master
+1010304004000035,Catridge 2170 (MD) Epson,Pcs,Pcs,master
+1010304004000036,OPC Toner,Unit,Unit,master
+1010304004000037,MR Toner,Unit,Unit,master
+1010304004000038,Chip Toner,Unit,Unit,master
+1010304004000039,Wiper Toner,Unit,Unit,master
+1010304004000040,Cartridge HP 951 XL Magenta,Buah,Buah,master
+1010304004000041,Cartridge HP 950 XL Black,Buah,Buah,master
+1010304004000042,Cartridge HP 951 XL Cyan,Buah,Buah,master
+1010304004000043,Cartridge HP 951 XL Yellow,Buah,Buah,master
+1010304004000044,Drum Toner 85A,Unit,Unit,master
+1010304004000045,P. Blade,Unit,Unit,master
+1010304004000046,W. Blade,Unit,Unit,master
+1010304004000047,Refill Toner 2025,Unit,Unit,master
+1010304004000048,Refill Toner HP 950,Unit,Unit,master
+1010304004000049,Refill Toner Sharp,Unit,Unit,master
+1010304004000050,Toner Xerox 3200,Buah,Buah,master
+1010304004000051,Cartridge LQ-2090,Buah,Buah,master
+1010304004000052,Tinta Canon 810,Buah,Buah,master
+1010304004000053,Tinta Canon 811,Buah,Buah,master
+1010304004000054,Tinta HP 98,Buah,Buah,master
+1010304004000055,Tinta HP 95,Buah,Buah,master
+1010304004000056,HP UFD + OTG x 800m 16GB,Buah,Buah,master
+1010304004000057,HP UFD 16GB,Buah,Buah,master
+1010304004000058,HP UFD 16GB (V270),Buah,Buah,master
+1010304004000059,HP UFD 8GB (V175W),Buah,Buah,master
+1010304004000060,Refill Toner 305,Buah,Buah,master
+1010304004000061,Refill Toner Warna CP 1025,Buah,Buah,master
+1010304004000062,Toner HP 79 A,Buah,Buah,master
+1010304004000063,Pita Catridge,Buah,Buah,master
+1010304004000064,Toner CE 310,Buah,Buah,master
+1010304004000065,Refill Toner 79 A,Buah,Buah,master
+1010304004000066,Toner HP 204A Warna (Refill),Buah,Buah,master
+1010304004000067,Toner HP 305A,Buah,Buah,master
+1010304004000068,Drum Toner 12A,Buah,Buah,master
+1010304004000069,Toner Canon IR 2525,Buah,Buah,master
+1010304004000070,Toner HP CF510A Black,Buah,Buah,master
+1010304004000071,Refill Toner HP CP1102,Buah,Buah,master
+1010304004000074,Toner 204 A Black,Buah,Buah,master
+1010304004000075,Toner 204 A Color,Buah,Buah,master
+1010304004000076,Toner 126 A Black,Buah,Buah,master
+1010304004000077,Toner 126 A Color,Buah,Buah,master
+1010304004000078,Tinta HP 951 XL,Buah,Buah,master
+1010304004000079,Tinta HP 950 CN,Buah,Buah,master
+1010304004000080,Catridge 810,Pcs,Pcs,master
+1010304004000081,Catridge 811,Pcs,Pcs,master
+1010304004000082,Drum Toner CP 1025,Buah,Buah,master
+1010304004000083,Tinta Epson 003 Color,Botol,Botol,master
+1010304004000084,Tinta Epson 003 Black,Botol,Botol,master
+1010304004000085,Toner Original Colour CE 311 A,Buah,Buah,master
+1010304004000086,Toner HP CF511A Cyan (204A),Buah,Buah,master
+1010304004000087,HP Laserjet Warna (Refil),Buah,Buah,master
+1010304004000088,Toner CF 279 A (Refill),Buah,Buah,master
+1010304004000089,Toner 107 A,Buah,Buah,master
+1010304004000090,Toner HP 416a,Buah,Buah,master
+1010304004000091,Toner HP 416a Refill,Buah,Buah,master
+1010304004000092,Toner 85a,Buah,Buah,master
+1010304004000093,Refill Toner 85A,Buah,Buah,master
+1010304004000094,Refill Toner 107A,Buah,Buah,master
+1010304004000095,Doktorblade 85A,Buah,Buah,master
+1010304004000096,PCR Toner,Unit,Unit,master
+1010304004000097,Toner Fotocopy,Buah,Buah,master
+1010304004000098,Toner Black 416A CMYK,Pcs,Pcs,master
+1010304004000100,Catridge L5190,Pcs,Pcs,master
+1010304004000101,Toner CE 312,Box,Box,master
+1010304004000102,Toner CE 313,Box,Box,master
+1010304004000103,Tinta Epson 003 Black (refil),Botol,Botol,master
+1010304004000104,Tinta Epson 003 Collor (Refil),Botol,Botol,master
+1010304004000105,CARTRIDGE TONER HP 85A ORIGINAL,Dummy,dummy,master
+1010304005000001,Disket Max dan Single Pack,Buah,Buah,master
+1010304005000002,CD R W 4 G,Buah,Buah,master
+1010304005000003,DVD-R,Box,Box,master
+1010304005000004,DVD RW,Buah,buah,master
+1010304006000001,Flashdisk 4 GB (Kingston),Buah,Buah,master
+1010304006000002,Flashdisk 64 GB,Buah,Buah,master
+1010304006000003,Flashdisk 32 GB,Buah,Buah,master
+1010304006000004,Flashdisk 8GB,Buah,Buah,master
+1010304006000005,Flashdisk 16GB,Buah,Buah,master
+1010304006000006,Flashdisk 2GB,Buah,Buah,master
+1010304006000007,Flashdisk 16 GB (Sandisk),Buah,Buah,master
+1010304006000008,OTG 16 GB,Buah,BUAH,master
+1010304006000009,OTG 64 GB,Buah,Buah,master
+1010304006000010,Flashdish 64 GB Type C,Buah,Buah,master
+1010304006000011,Flashdisk 128 GB,Buah,Buah,master
+1010304006000012,Flashdisk 32Gb,Buah,Buah,master
+1010304006000013,USB Hub Type C,Buah,Buah,master
+1010304006000014,Flasdisk Sandisk 128GB,Dummy,dummy,master
+1010304007000001,Memory PC,Unit,Unit,master
+1010304007000002,Micro SD 32GB,Buah,Buah,master
+1010304010000001,Mouse Micropack,Buah,Buah,master
+1010304010000002,Mouse Wireless,Buah,Buah,master
+1010304010000003,Mouse,Buah,Buah,master
+1010304999000001,Mouse,Buah,Buah,master
+1010304999000002,Mouse Pad,Buah,Buah,master
+1010304999000003,Keyboard Numblock,Unit,Unit,master
+1010304999000004,Memory Card Reader,Unit,Unit,master
+1010304999000005,HeadSet Websong,Buah,Buah,master
+1010304999000006,Card Reader Football,Unit,Unit,master
+1010304999000007,Card Reader Hi-Spead,Unit,Unit,master
+1010304999000008,Kabel Data Cat-B,Meter,Meter,master
+1010304999000009,Kabel Tester Telpon,Buah,Buah,master
+1010304999000010,Tang Crimping,Buah,Buah,master
+1010304999000011,Rb-45,Buah,Buah,master
+1010304999000012,Konector RJ 45,Buah,Buah,master
+1010304999000013,Conector RJ 45,Pcs,Pcs,master
+1010304999000014,Speaker Cliptec,Unit,Unit,master
+1010304999000015,Pembersih Keyboard,Unit,Unit,master
+1010304999000016,Wireless N Nano USB Adapter,Buah,Buah,master
+1010304999000017,6CLS FLF,Buah,Buah,master
+1010304999000018,Kabel BB USB,Buah,Buah,master
+1010304999000019,Kabel BB VGA 3m,Buah,Buah,master
+1010304999000020,Kabel VGA Cab. 2,Buah,Buah,master
+1010304999000021,Wireless Mini USB Adapter,Buah,Buah,master
+1010304999000022,Kabel VGA Netline 50m,Gulung,Gulung,master
+1010304999000023,Mr. Muschle Clear PC Monitor,Buah,Buah,master
+1010304999000024,Converter VGA to HDMI NetLine,Pcs,Pcs,master
+1010304999000025,Kabel HDMI,Pcs,Pcs,master
+1010304999000026,USB Hub,Buah,Buah,master
+1010304999000027,Adaptor Laptop,Buah,Buah,master
+1010304999000028,Keyboard USB,Buah,Buah,master
+1010304999000029,Kabel UTP CAT 6,Meter,Meter,master
+1010304999000030,OTG Mac Type C,Buah,Buah,master
+1010304999000031,Kabel Data 5 pin 10m,Buah,Buah,master
+1010304999000032,Kasa steril 16X16,Dummy,dummy,master
+1010304999000033,Salonpas Super a,Dummy,dummy,master
+1010305001000001,Kemoceng,Buah,buah,master
+1010305001000002,Sikat Gagang Panjang,Buah,buah,master
+1010305001000003,Sikat WC,Buah,buah,master
+1010305001000004,Sapu Lidi Kasur,Buah,Buah,master
+1010305001000005,Pengki & Sapu BP 10,Buah,Buah,master
+1010305001000006,Dorongan Air,Buah,Buah,master
+1010305001000007,Microfiber Dust Mop Refill,Buah,Buah,master
+1010305001000008,Mop Head For KW 18-1360,Buah,Buah,master
+1010305001000009,Mop With Handle,Buah,Buah,master
+1010305001000010,Blend Fiber Mop Head Blue,Buah,Buah,master
+1010305001000011,Sikat Lantai,Buah,Buah,master
+1010305001000012,Wiper Pembersih Kaca,Buah,Buah,master
+1010305001000013,Sapu Kebun,Buah,Buah,master
+1010305001000014,Putty Knife Flexible 1 1 2 (Pisau Pembersih Lantai),Buah,Buah,master
+1010305001000015,Mini Dustpan with brush,Set,Set,master
+1010305001000016,Putty Scrapper 5 Inchi,Buah,Buah,master
+1010305001000017,Putty Scrapper 4 Inchi,Buah,Buah,master
+1010305001000018,Broom Set Leaves Green & White,Buah,Buah,master
+1010305001000019,Pengki,Buah,Buah,master
+1010305001000020,Sapu Nagata Plastik,Buah,Buah,master
+1010305001000021,Scotch Brite 55P,Buah,Buah,master
+1010305001000022,Spons cuci Scotch Brite ID-30,Buah,Buah,master
+1010305001000023,Sikat Langit-Langit,Buah,Buah,master
+1010305001000024,Sikat Lantai Scotch Brite ID-772,Buah,Buah,master
+1010305001000025,Sapu lantai,Pcs,Pcs,master
+1010305001000026,Sikat cuci,Pcs,pcs,master
+1010305001000027,Penggosok piring,Pcs,Pcs,master
+1010305001000028,Amplas halus,Gulung,Gulung,master
+1010305001000029,Amplas kasar,Gulung,gulung,master
+1010305001000030,scotch brite 10-30ps,Dummy,dummy,master
+1010305001000031,Spons cuci Scotch Brite ID -30,Pcs,Pcs,master
+1010305001000032,Sapu Scotch Brite ID-45,Buah,buah,master
+1010305001000033,Sapu Lidi *,Buah,Buah,master
+1010305002000001,Handuk wastafel,Buah,buah,master
+1010305002000002,Karbol 900 ml,Buah,buah,master
+1010305002000003,Serbet makan,Buah,buah,master
+1010305002000004,Pel Karet,Buah,buah,master
+1010305002000005,Pel Nagata,Buah,buah,master
+1010305002000006,tarikan pel lobi,Buah,buah,master
+1010305002000007,Gantungan Towel,Buah,Buah,master
+1010305002000008,Gantungan RN Towel,Buah,Buah,master
+1010305002000009,Gantungan Tempel Kecil,Buah,Buah,master
+1010305002000010,Gantungan Tempel,Buah,Buah,master
+1010305002000011,Handuk Muka,Buah,Buah,master
+1010305002000013,Lap Tangan,Pcs,Pcs,master
+1010305002000014,Lap Gantung,Buah,Buah,master
+1010305002000015,Lap Serbaguna Nagata,Buah,Buah,master
+1010305002000016,Lap Karet,Pcs,Pcs,master
+1010305002000017,Lap Majun,Buah,Buah,master
+1010305002000018,Lap Pel,Buah,Buah,master
+1010305002000019,Lap Dapur,Buah,Buah,master
+1010305002000020,Lap Microfiber,Buah,Buah,master
+1010305002000021,Gagang Pel,Buah,Buah,master
+1010305002000022,Alat Pel dengan Pemeras,Buah,Buah,master
+1010305002000023,Microfiber Dust Mop Alumunium,Buah,Buah,master
+1010305002000024,Twister Mop Bucket + Mop Stick,Set,Set,master
+1010305002000025,Bolde SPR Mop Aristo,Buah,Buah,master
+1010305002000026,Kanebo kecil,Buah,Buah,master
+1010305002000027,Scotch brite 55p,Buah,Buah,master
+1010305002000028,Scotch brite id30p,Buah,Buah,master
+1010305002000029,Sapu,Buah,Buah,master
+1010305002000030,Pembersih Kaca,Buah,Buah,master
+1010305002000031,Krisbow Refill Kain Pel Microfiber,Pcs,Pcs,master
+1010305002000032,Mutli Refill 1000gr,Buah,Buah,master
+1010305002000033,Multi Refill 1000gr,Buah,Buah,master
+1010305002000034,Super MOP Tatay Set,Buah,Buah,master
+1010305002000035,Tissue Paseo,Buah,Buah,master
+1010305002000036,Facial Tissue,Buah,Buah,master
+1010305002000037,Jolly Tissue Refill,Buah,Buah,master
+1010305002000038,Tissue Nice,Pcs,Pcs,master
+1010305002000039,Krisbow Alat Pel Bergagang,Buah,Buah,master
+1010305002000040,Krisbow Alat Pel Microfiber 18 Inch,Pcs,Pcs,master
+1010305002000041,Krisbow Refill Kain Pel Microfiber 18 Inch,Pcs,Pcs,master
+1010305002000042,Krisbow Refill Pel Bergagang,Pcs,Pcs,master
+1010305002000043,Proclean 44 cm Serokan Air,Buah,Buah,master
+1010305002000044,Tissue Multifold - 160 sheet,Bungkus,bungkus,master
+1010305002000045,Alat pel bergagang,Pcs,Pcs,master
+1010305002000046,Paseo Roll (isi 12),Set,Set,master
+1010305002000047,Nice Refill 1000 gr,Buah,Buah,master
+1010305002000048,Refill Lobby Daster warna biru 80 cm,Pcs,pcs,master
+1010305002000049,Refill Lobby Daster warna biru 60 cm,Pcs,Pcs,master
+1010305003000001,Ember besar 40 liter,Buah,buah,master
+1010305003000002,Ember sedang 5 galon,Buah,buah,master
+1010305003000003,Gayung air,Buah,buah,master
+1010305003000004,Selang air,Meter,meter,master
+1010305003000005,Ember Kecil,Buah,Buah,master
+1010305003000006,Selang 5 8 Benang,Roll,Roll,master
+1010305003000008,Drum Kaleng,Buah,Buah,master
+1010305003000009,Ember,Buah,Buah,master
+1010305003000010,Ember Excellent 3 GL,Buah,Buah,master
+1010305003000011,Ember Excellent 6 GL,Buah,Buah,master
+1010305003000012,Ember 18 Liter,Buah,Buah,master
+1010305003000013,Ember Besar 22 GL,Buah,Buah,master
+1010305003000014,Ceret Taman,Buah,Buah,master
+1010305003000015,Selang Air,Roll,Roll,master
+1010305003000016,Ember 19L,Buah,Buah,master
+1010305003000017,Stik semprot tangki,Pcs,Pcs,master
+1010305004000001,Kanebo Sedang,Buah,buah,master
+1010305004000002,Keset kaki kawat,Buah,buah,master
+1010305004000003,Keset kaki sabut,Buah,buah,master
+1010305004000004,Keset kamar mandi,Buah,buah,master
+1010305004000005,Kotak sampah besar tertutup,Buah,buah,master
+1010305004000006,Keset Kawat Besar,Buah,Buah,master
+1010305004000007,Keset Sabut Besar,Buah,Buah,master
+1010305004000008,Keset Kaki Plastik Welcome,Buah,buah,master
+1010305004000009,Tempat Sampah Tanggung,Buah,buah,master
+1010305004000010,Tempat Sampah Kecil,Buah,buah,master
+1010305004000011,Keset Panjang,Meter,meter,master
+1010305004000012,Kotak Sampah 20L,Buah,Buah,master
+1010305004000013,Keset Karet,Buah,Buah,master
+1010305004000014,Keset Kaki,Lembar,Lembar,master
+1010305004000015,Drum Sampah,Buah,Buah,master
+1010305004000016,Kantong Sampah Besar,Pak,Pack,master
+1010305004000017,Kotak Sampah 40 L,Buah,Buah,master
+1010305004000018,Kotak Sampah 58 L,Buah,Buah,master
+1010305004000019,Plastik Sampah Besar,Buah,Buah,master
+1010305004000020,Pengki,Buah,Buah,master
+1010305004000021,Plastik Sampah Kecil,Pak,Pak,master
+1010305004000022,Keset lantai,Pcs,pcs,master
+1010305004000023,Plastik Sampah Ukuran Sedang,Pak,Pack,master
+1010305005000001,alat semprot air,Buah,buah,master
+1010305005000002,kran air 1 2,Buah,buah,master
+1010305005000003,Kran air 3 4,Buah,Buah,master
+1010305005000004,Kunci laci,Buah,buah,master
+1010305005000005,Shower mandi,Buah,buah,master
+1010305005000006,Shower toilet,Buah,buah,master
+1010305005000007,Stop kran 1 1 2,Buah,buah,master
+1010305005000008,Stop kran 1 1 4,Buah,buah,master
+1010305005000009,Anak Kunci,Buah,Buah,master
+1010305005000010,Gembok,Buah,Buah,master
+1010305005000011,Kunci 808,Buah,Buah,master
+1010305005000012,Stop kran biasa,Buah,buah,master
+1010305005000013,kunci etalase,Buah,Buah,master
+1010305005000014,Kunci Pintu,Unit,Unit,master
+1010305005000015,Kunci Pintu Merek SES,Buah,Buah,master
+1010305005000016,Kunci Almari Deksen 8128,Set,Set,master
+1010305005000017,Kran Ws M,Buah,Buah,master
+1010305005000018,Kunci L,Set,Set,master
+1010305005000019,Kunci Pas,Set,Set,master
+1010305005000020,Kran Onda PVC 1,Buah,Buah,master
+1010305005000021,Kunci Silinder,Buah,Buah,master
+1010305005000022,Sprayer 500 ml,Buah,Buah,master
+1010305005000023,"Sprayer 1,5 L",Buah,Buah,master
+1010305005000024,Alat Semprot Disinfektan,Buah,Buah,master
+1010305005000025,Springkel Plastik,Buah,Buah,master
+1010305006000001,Tali rafia,Gulung,gulung,master
+1010305006000002,Pita Merah Putih,Gulung,gulung,master
+1010305006000003,Lem Korea,Buah,Buah,master
+1010305007000001,isolasi pipa,Buah,buah,master
+1010305007000002,Shott drat 1,Buah,buah,master
+1010305007000003,Shott drat 1 1 4,Buah,buah,master
+1010305007000004,selotip pipa besar,Buah,buah,master
+1010305007000005,Pipa Selpon 2 Inchi,Batang,Batang,master
+1010305007000006,Tutup Toilet,Buah,Buah,master
+1010305008000001,Sabun cair,Buah,buah,master
+1010305008000002,prosteks,Buah,buah,master
+1010305008000003,pembersih kaca stick,Buah,buah,master
+1010305008000004,Rinso Cair 38 ml,Sachet,Sachet,master
+1010305008000005,sunlight refill,Bungkus,bks,master
+1010305008000006,Super pel,Botol,botol,master
+1010305008000007,Cairan Pembersih Kaca,Buah,Buah,master
+1010305008000008,Hand Soap Refill,Buah,Buah,master
+1010305008000009,Hand Soap Botol,Buah,Buah,master
+1010305008000010,wifol refil,Bungkus,bungkus,master
+1010305008000011,Hearpic,Bungkus,Bungkus,master
+1010305008000012,Mama Lemon,Botol,Botol,master
+1010305008000013,SoKlin,Pcs,Pcs,master
+1010305008000015,Hand Wash,Pcs,Pcs,master
+1010305008000016,Vixal,Pcs,Pcs,master
+1010305008000017,Pembersih Dashbord,Pcs,Pcs,master
+1010305008000018,Auto Glym,Pcs,Pcs,master
+1010305008000019,Kapur Ajaib,Pcs,Pcs,master
+1010305008000020,Kit Jet Wax,Buah,Buah,master
+1010305008000021,Kit Black Magic R200,Buah,Buah,master
+1010305008000022,Kit Chain Lube,Buah,Buah,master
+1010305008000023,Super Pell Refill,Buah,Buah,master
+1010305008000024,Superpell Besar,Buah,Buah,master
+1010305008000025,Sunlight Besar,Buah,Buah,master
+1010305008000026,Hand Soap Botol Besar,Buah,Buah,master
+1010305008000027,Topron,Buah,Buah,master
+1010305008000028,Mama Lemon Refill 680 ml,Buah,Buah,master
+1010305008000029,Hand Sanitizer Antis Spray 200 ml,Botol,Botol,master
+1010305008000030,Hand Sanitizer Antis Cair 5 liter,Dirigen,Dirigen,master
+1010305008000031,Wipol CL Pine Refill 800 ml,Buah,Buah,master
+1010305008000032,SOS Pembersih Lantai 4 Liter,Dirigen,Dirigen,master
+1010305008000033,Bayclin Reguler 4 Liter,Dirigen,Dirigen,master
+1010305008000034,SoKlin Refill 1600mL,Buah,Buah,master
+1010305008000035,SoKlin Refill 600mL,Buah,Buah,master
+1010305008000036,"Yuri Hand Soap 3,7 Liter",Buah,Buah,master
+1010305008000037,Sunlight Refill 755mL,Buah,Buah,master
+1010305008000038,"Wipol 1,6L",Buah,Buah,master
+1010305008000039,Attack Jaz1 900,Buah,Buah,master
+1010305008000040,Nuvo 250mL,Buah,Buah,master
+1010305008000041,Sunlight Refill 1600,Buah,Buah,master
+1010305008000042,Cling Pembersih Kaca 440,Buah,Buah,master
+1010305008000043,"Rinso 1,8Kg",Buah,Buah,master
+1010305008000044,Soklin Lantai 4L,Dirigen,Dirigen,master
+1010305008000045,Kispray 318mL,Buah,Buah,master
+1010305008000046,SOS Pembersih Lantai 750ml,Buah,Buah,master
+1010305008000047,Pembersih Kloset,Buah,Buah,master
+1010305008000048,Dettol Hand Sanitizer 400 ml,Buah,Buah,master
+1010305008000049,Roundup,Botol,Botol,master
+1010305008000050,Harpic 450mL,Buah,Buah,master
+1010305008000051,Dahlia Toilet Ball,Buah,Buah,master
+1010305008000052,Handsanitizer Antis 55mL,Botol,Botol,master
+1010305008000053,Saniter Hand Wash 400,Buah,Buah,master
+1010305008000054,Sunlight Refill 700mL,Buah,Buah,master
+1010305008000055,Force Magic 600mL,Buah,Buah,master
+1010305008000056,"Super Pell Refill 1,6L",Buah,Buah,master
+1010305008000057,Baygon Aerosol 600,Botol,Botol,master
+1010305008000058,Rapika 400,Buah,Buah,master
+1010305008000059,Sunlight Refill 680 ml,Buah,Buah,master
+1010305008000060,TAF Lemon & Lime 500 ml,Buah,Buah,master
+1010305008000061,Bubuk Super Pemberish Kifa 650gr,Bungkus,Bungkus,master
+1010305008000062,Cusson Baby Oil,Buah,Buah,master
+1010305008000063,Citric Acid,Buah,Buah,master
+1010305008000064,Pembersih lantai Refil 780 ML,Bungkus,Bungkus,master
+1010305008000065,pembersih lantai 600 ml,Bungkus,bungkus,master
+1010305008000066,Pembersih lantai 450 ml,Bungkus,bungkus,master
+1010305008000067,Pembersih serbaguna - 660 gr,Bungkus,bungkus,master
+1010305008000068,Semprotan nyamuk - 600 ml,Botol,botol,master
+1010305008000069,Sabun cuci tangan - Refill 375ml,Pcs,Pcs,master
+1010305008000070,Deterjen Cair,Pcs,Pcs,master
+1010305008000071,Cairan racun (pilarquat) gulma rumput - 1 L,Botol,botol,master
+1010305008000072,Pembersih keramik dan porselen - 1L,Botol,botol,master
+1010305008000073,Pledge Furniture 450 ml,Botol,botol,master
+1010305008000074,Soklin Refill 780 ml,Buah,Buah,master
+1010305008000075,Trika 300 ml,Buah,Buah,master
+1010305008000076,WPC 600ml,Buah,Buah,master
+1010305008000077,Super Sol 750 ml,Buah,Buah,master
+1010305008000078,Cif 660 gr,Botol,Botol,master
+1010305008000079,Wipol Refil 390 gram,Buah,Buah,master
+1010305008000080,Sunlight 635 gram,Buah,Buah,master
+1010305008000081,Cling Refill Pembersih Kaca 400 ml,Buah,Buah,master
+1010305008000082,Soklin Lantai Refill 770 ml,Buah,Buah,master
+1010305008000083,Soklin Liquid Soft Detergen Pakaian (isi 12),Set,Set,master
+1010305008000084,Yuri Handsoap 375 ml,Buah,Buah,master
+1010305008000085,Yuri Handsoap 375 ml (isi 2),Set,Set,master
+1010305008000086,Mama Lemon Refil 610 ml,Buah,Buah,master
+1010305008000087,Sunlight Refill 610 ml,Buah,Buah,master
+1010305009000001,Cangkir tamu (tea set),Set,set,master
+1010305009000002,Centong nasi,Buah,buah,master
+1010305009000003,Gelas besar,Buah,buah,master
+1010305009000004,Gelas sedang,Buah,buah,master
+1010305009000005,Gelas sedang berkaki,Lusin,Lusin,master
+1010305009000006,Mangkuk oval tertutup,Buah,buah,master
+1010305009000007,Piring kecil,Buah,buah,master
+1010305009000008,Piring kue ceper,Lusin,lusin,master
+1010305009000009,Piring makan,Buah,buah,master
+1010305009000010,Piring makan ceper lebar,Buah,buah,master
+1010305009000011,Garpu Makan Besar,Lusin,lusin,master
+1010305009000012,Garpu kecil,Lusin,lusin,master
+1010305009000013,Sendok makan,Lusin,lusin,master
+1010305009000014,Sendok makan kecil,Lusin,lusin,master
+1010305009000015,Sendok sayur panjang,Buah,buah,master
+1010305009000016,Tempat buah,Buah,buah,master
+1010305009000017,Tempat lauk,Buah,buah,master
+1010305009000018,Tempat nasi,Buah,buah,master
+1010305009000019,Tutup gelas besar (melamin),Buah,buah,master
+1010305009000020,Tutup gelas kertas,Set,set,master
+1010305009000021,Tutup gelas sedang,Buah,buah,master
+1010305009000022,Cangkir Tamu Merk Sango,Set,Set,master
+1010305009000023,Capitan Kue,Buah,Buah,master
+1010305009000024,Mangkuk Sango,Lusin,Lusin,master
+1010305009000026,Tempat Kue Ivory,Buah,Buah,master
+1010305009000027,Tutup Gelas Stainless Besar,Buah,Buah,master
+1010305009000028,Tutup Kue,Buah,Buah,master
+1010305009000029,Piring kue persegi empat Bistro,Lusin,lusin,master
+1010305009000030,Sendok Gantung,Set,set,master
+1010305009000031,Tempat Bumbu,Set,set,master
+1010305009000032,Tempat Coca Cola,Buah,buah,master
+1010305009000033,Tempat Gula Nagata,Set,set,master
+1010305009000034,Tempat Pipet,Buah,buah,master
+1010305009000035,Tempat Roti Bistro,Buah,buah,master
+1010305009000036,Toples Segi 4 Soga,Set,set,master
+1010305009000037,Toples Bistro,Buah,buah,master
+1010305009000038,Toples Kerupuk,Buah,buah,master
+1010305009000039,Cobek Batu,Buah,buah,master
+1010305009000040,piring kue soga,Dummy,-,master
+1010305009000041,Gelas Biasa,Buah,Buah,master
+1010305009000042,Gelas Reguler K,Buah,Buah,master
+1010305009000043,Mangkok Sango 2011,Buah,Buah,master
+1010305009000044,Water Jug Silvana,Buah,Buah,master
+1010305009000045,Piring Puding,Buah,Buah,master
+1010305009000046,Piring 9 List,Lusin,Lusin,master
+1010305009000047,Mangkok 7.A,Lusin,Lusin,master
+1010305009000048,Toples Sinax,Pcs,Pcs,master
+1010305009000049,Mangkok,Lusin,Lusin,master
+1010305009000050,Sendok Soup,Buah,Buah,master
+1010305009000051,Sendok Sayur,Lusin,Lusin,master
+1010305009000052,mangkuk Sup 28',Buah,Buah,master
+1010305009000053,Mangkuk 5',Lusin,Lusin,master
+1010305009000054,mangkuk 4',Lusin,Lusin,master
+1010305009000055,Onix Gayung,Pcs,Pcs,master
+1010305009000056,Piring Makan Ceper Sedang,Lusin,Lusin,master
+1010305009000057,Luminar Jug,Pcs,Pcs,master
+1010305009000058,Toples Set,Set,Set,master
+1010305009000059,Panci Eco 28 cm,Buah,Buah,master
+1010305009000060,Kuali No. 16,Pcs,Pcs,master
+1010305009000061,Panci 26 cm,Pcs,Pcs,master
+1010305009000062,Panci 0.6 x 18 cm,Pcs,Pcs,master
+1010305009000063,Capodimonte Turner,Pcs,Pcs,master
+1010305012000001,Baygon spray,Buah,buah,master
+1010305012000002,Kapur barus,Bungkus,bungkus,master
+1010305012000003,Pengharum mobil Refill glade 8 gram,Buah,buah,master
+1010305012000004,Pengharum mobil,Buah,buah,master
+1010305012000005,Pengharum ruangan 350 ml,Buah,buah,master
+1010305012000006,Pengharum telepon,Buah,buah,master
+1010305012000007,Pengharum ruangan otomatis,Buah,buah,master
+1010305012000008,Pengharum ruangan dispenser isi ulang,Buah,buah,master
+1010305012000009,Kamper Ball Bagus Isi 5,Pcs,Pcs,master
+1010305012000010,Kamper Ball Isi 5,Bungkus,Bungkus,master
+1010305012000011,Pengharum Ruangan Gantung,Buah,Buah,master
+1010305012000012,Air Freshener,Buah,Buah,master
+1010305012000013,Air Freshener Mini,Buah,Buah,master
+1010305012000014,Air Freshener Double Fresh,Buah,Buah,master
+1010305012000015,Pengharum Toilet,Pcs,Pcs,master
+1010305012000016,Dahlia Toilet Ball,Pcs,Pcs,master
+1010305012000017,Stella Spray 400mL,Buah,Buah,master
+1010305012000018,Stella Spray 350mL (Apple),Buah,Buah,master
+1010305012000019,Stella Gantung Orange AIO 42 gram,Buah,Buah,master
+1010305012000020,Pengharum lemari,Bungkus,bungkus,master
+1010305012000021,Glade Pengharum Ruangan 350 ml,Botol,Botol,master
+1010305012000022,Stella Gantung Apple AIO 42 gram,Buah,buah,master
+1010305012000023,Stella Spray 350 Ml (Lemon),Buah,Buah,master
+1010305012000024,Stella Spray (Apple 350ml),Buah,buah,master
+1010305013000001,"Kuas Cat 1,5",Buah,Buah,master
+1010305013000002,Kuas Cat 2,Buah,Buah,master
+1010305999000001,Asbak kaca,Buah,Buah,master
+1010305999000002,Agenda,Buah,Buah,master
+1010305999000003,Gunting 838,Buah,Buah,master
+1010305999000004,Gunting 848,Buah,Buah,master
+1010305999000005,Pemotong lakban Tape Dispenser,Buah,Buah,master
+1010305999000006,Box CD Satuan,Buah,Buah,master
+1010305999000007,Tempat CD Hitam (Risleting),Buah,Buah,master
+1010305999000008,Tempat Isolasi Kecil,Buah,Buah,master
+1010305999000009,Tempat Isolasi Besar,Buah,Buah,master
+1010305999000010,Pemotong kertas A3 (Origin),Buah,Buah,master
+1010305999000011,Mesin Label Huruf (Joyko A6600) atau setara,Buah,Buah,master
+1010305999000012,Label Gulung Untuk Mesin Label,Buah,Buah,master
+1010305999000013,Soft Board (60 x 90 Cm),Buah,Buah,master
+1010305999000014,Acrilic Papan Nama (30 x 8 Cm),Buah,Buah,master
+1010305999000015,Bet Nama,Buah,Buah,master
+1010305999000016,Tempat Tissue,Buah,Buah,master
+1010305999000017,Kantong Buku,Lembar,Lembar,master
+1010305999000018,Kotak Kardus KKP,Buah,Buah,master
+1010305999000019,Kotak Kardus Dokumen,Buah,Buah,master
+1010305999000020,Kalkulator 12 digit,Buah,Buah,master
+1010305999000021,Kalkulator 16 digit,Buah,Buah,master
+1010305999000022,Album Exclusive,Buah,buah,master
+1010305999000023,Album jumbo,Buah,buah,master
+1010305999000024,Bunga plastik meja tamu,Buah,buah,master
+1010305999000025,Dispenser,Buah,buah,master
+1010305999000026,Galon,Buah,buah,master
+1010305999000027,Gunting taman,Buah,buah,master
+1010305999000028,Handle jendela,Buah,buah,master
+1010305999000029,Jam dinding bulat Seiko,Buah,buah,master
+1010305999000030,Kain hijab,Meter,meter,master
+1010305999000031,Kapstok,Buah,buah,master
+1010305999000032,karpet untuk mushola,Meter,meter,master
+1010305999000033,Meteran 5 m,Buah,buah,master
+1010305999000034,Meteran 50 meter,Buah,buah,master
+1010305999000035,Mukena,Buah,buah,master
+1010305999000036,Nampan kayu besar,Buah,buah,master
+1010305999000037,Nampan kayu kecil,Buah,buah,master
+1010305999000038,Paku payung berwarna,Kotak,kotak,master
+1010305999000039,Panci set (5 susun),Set,set,master
+1010305999000040,Payung besar,Buah,buah,master
+1010305999000041,Pisau,Buah,buah,master
+1010305999000042,sajadah imam,Buah,buah,master
+1010305999000043,Serok gorengan,Buah,buah,master
+1010305999000044,Sutil sodet untuk menggoreng,Buah,buah,master
+1010305999000045,Taplak meja makan besar,Buah,buah,master
+1010305999000046,Taplak meja tamu,Buah,buah,master
+1010305999000047,Taplak meja ukuran 1 x 1 meter,Buah,buah,master
+1010305999000048,Teko untuk merebus air,Buah,buah,master
+1010305999000049,Telenan,Buah,buah,master
+1010305999000050,Tempat tusuk gigi,Buah,buah,master
+1010305999000051,Tissue kotak,Buah,buah,master
+1010305999000052,Tissue isi ulang,Buah,buah,master
+1010305999000053,Tusuk gigi,Kotak,kotak,master
+1010305999000054,Wajan,Buah,buah,master
+1010305999000055,Pengasah gunting pisau,Buah,buah,master
+1010305999000056,Kaligrafi tulisan Allah,Buah,buah,master
+1010305999000057,Kaligrafi tulisan Muhammad,Buah,buah,master
+1010305999000058,Sajadah gulung,Buah,buah,master
+1010305999000059,Bed cover kecil,Buah,buah,master
+1010305999000060,Bed cover besar,Buah,buah,master
+1010305999000061,Blender Miyako,Buah,Buah,master
+1010305999000062,Rak Gelas Plastik,Buah,Buah,master
+1010305999000063,Taplak Lover Kecil,Buah,buah,master
+1010305999000064,Tissue Merk Nice,Buah,Buah,master
+1010305999000065,Kotak Kardus Dosir dengan tutup,Buah,buah,master
+1010305999000066,Bantal Tidur,Buah,Buah,master
+1010305999000067,Baskom 12,Buah,buah,master
+1010305999000068,Baskom 16,Buah,buah,master
+1010305999000069,Baskom Besar,Buah,buah,master
+1010305999000070,Guling Besar,Buah,buah,master
+1010305999000071,Hanger,Lusin,lusin,master
+1010305999000072,Irus Sayur Kecil,Buah,buah,master
+1010305999000073,Kitchen NGT,Buah,buah,master
+1010305999000074,Kaki Dispenser,Buah,buah,master
+1010305999000075,Magic Com Miyako,Buah,buah,master
+1010305999000076,Mangkuk Sup,Buah,buah,master
+1010305999000077,Meja Setrika,Buah,buah,master
+1010305999000078,Mirror Box,Buah,buah,master
+1010305999000079,Nampan Stainless,Buah,buah,master
+1010305999000080,Pengki,Buah,buah,master
+1010305999000081,Pisau Set,Set,set,master
+1010305999000082,Ricebox Lionstar,Buah,buah,master
+1010305999000083,Sajadah Kotak,Gulung,gulung,master
+1010305999000084,Saringan,Buah,buah,master
+1010305999000085,Setrika Phillips,Buah,buah,master
+1010305999000086,Sprei Single Kecil,Set,set,master
+1010305999000087,Sprei My Love Besar no.3,Set,set,master
+1010305999000088,Taplak Meja Panjang,Buah,buah,master
+1010305999000089,Teflon,Buah,buah,master
+1010305999000090,Tempat Aqua,Buah,buah,master
+1010305999000091,Tutup Aqua Galon,Buah,buah,master
+1010305999000092,Tutup Tempat Tissue,Buah,buah,master
+1010305999000093,Bed Cover Selimut,Buah,buah,master
+1010305999000094,panci sebaguna,Buah,buah,master
+1010305999000095,Panci Susu Halco 16cm,Buah,buah,master
+1010305999000096,pompa minyak,Buah,buah,master
+1010305999000097,map tebal,Buah,bh,master
+1010305999000098,Arit,Buah,Buah,master
+1010305999000099,Burung Garuda,Buah,Buah,master
+1010305999000100,Bunga Pacira,Pot,Pot,master
+1010305999000101,Bunga Cut Merah,Pot,Pot,master
+1010305999000102,Bunga Ciang Mai,Pot,Pot,master
+1010305999000103,Bunga Sepatu Kaca,Pot,Pot,master
+1010305999000104,Bunga Lady Day,Pot,Pot,master
+1010305999000105,Batu Putih,Bungkus,Bungkus,master
+1010305999000106,Cangkul,Buah,Buah,master
+1010305999000107,Frame Presiden dan Wakil Presiden,Buah,Buah,master
+1010305999000108,Frame 20R,Buah,Buah,master
+1010305999000109,Frame 16R,Buah,Buah,master
+1010305999000110,Garuk,Buah,Buah,master
+1010305999000111,High Living (alat pembersih kaca),Buah,Buah,master
+1010305999000112,Kirapak Jerigen,Buah,Buah,master
+1010305999000113,Kaki Frame,Buah,Buah,master
+1010305999000114,Klep Pompa,Buah,Buah,master
+1010305999000115,plat segitiga,Buah,buah,master
+1010305999000116,pas lem,Buah,buah,master
+1010305999000117,paku daiken 2 inchi,Kotak,kotak,master
+1010305999000118,stela gantung,Buah,Buah,master
+1010305999000119,sapu nagata,Buah,Buah,master
+1010305999000120,spon cuci piring,Buah,Buah,master
+1010305999000121,sapu lidi,Buah,buah,master
+1010305999000122,sikat tangan,Buah,buah,master
+1010305999000123,sop corong minyak,Buah,Buah,master
+1010305999000124,skrup,Buah,Buah,master
+1010305999000125,tempat buah lidi,Buah,Buah,master
+1010305999000126,tissu rol raisa,Gulung,gulung,master
+1010305999000127,tali tambang,Meter,Meter,master
+1010305999000128,Pitempel,Kotak,Kotak,master
+1010305999000129,Saringan Klep,Buah,Buah,master
+1010305999000130,Sodrat,Buah,buah,master
+1010305999000131,Teko Listrik Miyako,Buah,Buah,master
+1010305999000132,Telpon Panasonic KX-TS 505MX,Unit,Unit,master
+1010305999000133,Bingkai Foto,Buah,Buah,master
+1010305999000134,Keranjang Buah,Buah,Buah,master
+1010305999000135,Jam Dinding Sakana,Buah,Buah,master
+1010305999000136,Lemari Tempat Mukena GC 1761,Unit,Unit,master
+1010305999000137,Daun Pintu,Unit,Unit,master
+1010305999000138,Plitur,Unit,Unit,master
+1010305999000139,Fitting Keramik,Buah,Buah,master
+1010305999000140,Sendal Jepit,Pasang,Pasang,master
+1010305999000141,Tutup Kulkas,Pcs,Pcs,master
+1010305999000142,Keranjang Aqua,Buah,Buah,master
+1010305999000143,Sprei My Love Single no.1,Set,Set,master
+1010305999000144,Kasur Busa Standart Bigfoom 13x90x2m,Unit,Unit,master
+1010305999000145,Keranjang untuk Tissu,Set,Set,master
+1010305999000146,Sok 2 Inchi,Buah,Buah,master
+1010305999000147,Sprei 3 in 1,Buah,Buah,master
+1010305999000148,Keni 2 Inchi,Buah,Buah,master
+1010305999000149,Plastik Steal 5 m,Buah,Buah,master
+1010305999000150,Air Aki,Botol,Botol,master
+1010305999000151,Rak Piring,Buah,Buah,master
+1010305999000152,Taplak Makan Bundar,Buah,Buah,master
+1010305999000153,Gunting Pagar,Buah,Buah,master
+1010305999000154,Taplak Meja Bulat,Potong,Potong,master
+1010305999000158,Claris,Buah,Buah,master
+1010305999000159,Shower Puff,Buah,Buah,master
+1010305999000160,Sprei My Love 180,Buah,Buah,master
+1010305999000161,Handuk Mandi,Lembar,Lembar,master
+1010305999000162,Kipas Angin,Buah,Buah,master
+1010305999000163,Bantal Kursi,Buah,Buah,master
+1010305999000164,SBK Belgi,Buah,Buah,master
+1010305999000165,Gelas Setengah 9 AW,Lusin,Lusin,master
+1010305999000166,Keni 2 1 2 inch,Buah,Buah,master
+1010305999000167,Keni 1 inch,Buah,Buah,master
+1010305999000168,Dinabold,Buah,Buah,master
+1010305999000169,Winduck 100 x 50,Buah,Buah,master
+1010305999000170,Winduck 40 x 25,Buah,Buah,master
+1010305999000171,Anyaman Bambu,Lusin,Lusin,master
+1010305999000172,Sedotan,Pak,Pack,master
+1010305999000173,Bunga Round,Pot,Pot,master
+1010305999000174,Bunga Oval,Pot,Pot,master
+1010305999000175,Tatakan Gelas Kertas,Pcs,Pcs,master
+1010305999000176,Gantungan Baju,Buah,Buah,master
+1010305999000177,Kit Wash & Glow Refill,Buah,Buah,master
+1010305999000179,Kompor Listrik Maspion S-301,Buah,Buah,master
+1010305999000180,Spons Jumbo,Buah,Buah,master
+1010305999000181,Taplak Meja Makan Kecil,Buah,Buah,master
+1010305999000182,Frame 40 x 60,Buah,Buah,master
+1010305999000183,Taplak Meja Plastik Bening,Meter,Meter,master
+1010305999000184,Bendera Merah Putih Uk. 90 x 135,Pcs,Pcs,master
+1010305999000185,Fiory Stoples + Rak,Set,Set,master
+1010305999000186,Kenmaster Rak Drawer,Pcs,Pcs,master
+1010305999000187,Kotak Perkakas,Pcs,Pcs,master
+1010305999000188,Frypan,Pcs,Pcs,master
+1010305999000189,Taplak Meja Rempel Penuh Bahan Flash No. 8 Uk: 721cm,Set,Set,master
+1010305999000190,Taplak Meja Rempel Penuh Bahan Flash No. 8 Uk: 240cm,Set,Set,master
+1010305999000191,Taplak Meja Rempel Penuh Bahan Flash No. 8 Uk: 120cm,Set,Set,master
+1010305999000192,Taplak Meja Rempel Penuh Bahan Flash No.14 Uk: 721cm,Set,Set,master
+1010305999000193,Taplak Meja Rempel Penuh Bahan Flash No.14 Uk: 240cm,Set,Set,master
+1010305999000194,Taplak Meja Rempel Penuh Bahan Flash No.14 Uk: 120cm,Set,Set,master
+1010305999000195,Sarung Kursi Bahan,Buah,Buah,master
+1010305999000196,Lichfield Bottle Opener 626177,Pcs,Pcs,master
+1010305999000197,Indo-K C&S,Pcs,Pcs,master
+1010305999000198,Kompor Gas Portable,Pcs,Pcs,master
+1010305999000199,Regulator gas,Pcs,Pcs,master
+1010305999000200,Jas Hujan,Buah,Buah,master
+1010305999000201,Baterai Kalkulator,Buah,Buah,master
+1010305999000202,Bendera Merah Putih Uk. Besar,Unit,Unit,master
+1010305999000203,Bunga Meja,Set,Set,master
+1010305999000204,TC 5,Pcs,Pcs,master
+1010305999000205,Kunci HDN Padat,Pcs,Pcs,master
+1010305999000206,Kunci Sentral Samping,Pcs,Pcs,master
+1010305999000207,Panci Set,Pcs,Pcs,master
+1010305999000208,Tempat Sambal,Pcs,Pcs,master
+1010305999000209,Palu,Buah,Buah,master
+1010305999000210,Obeng Kembang,Buah,BUah,master
+1010305999000211,Obeng Minus,Buah,Buah,master
+1010305999000212,Tool Box,Buah,Buah,master
+1010305999000213,Sangkur,Buah,Buah,master
+1010305999000214,Taplak Meja Panjang Bahan Flash No. 23,Buah,Buah,master
+1010305999000215,Taplak Meja Panjang Bahan Flash No. 10,Buah,Buah,master
+1010305999000216,TC 6,Buah,Buah,master
+1010305999000217,TC 4,Buah,Buah,master
+1010305999000218,Semir Ban,Buah,Buah,master
+1010305999000219,Cairan Pembersih Lantai,Pcs,Pcs,master
+1010305999000220,Tutup Saji Bulat,Buah,Buah,master
+1010305999000221,Tutup Saji Segi,Buah,Buah,master
+1010305999000222,Alat Berkebun Set,Set,Set,master
+1010305999000223,Pot Bunga Lotus,Buah,Buah,master
+1010305999000224,Keni 1 1 4,Buah,Buah,master
+1010305999000225,Container,Buah,Buah,master
+1010305999000226,Payung Lipat,Buah,Buah,master
+1010305999000227,Pembersih Keramik Kamar Mandi,Dummy,-,master
+1010305999000228,Serok,Buah,Buah,master
+1010305999000229,Extension Handle,Buah,Buah,master
+1010305999000231,Pembersih Debu,Buah,Buah,master
+1010305999000232,Sarung Tangan,Buah,Buah,master
+1010305999000233,Sulak,Buah,Buah,master
+1010305999000234,Anvil Cutter,Buah,Buah,master
+1010305999000235,Amplas,Pak,Pack,master
+1010305999000236,Kit Wiper Fluid,Buah,Buah,master
+1010305999000237,Jaring Taman,Meter,Meter,master
+1010305999000238,Serok Ikan,Buah,Buah,master
+1010305999000239,Pompa Solar,Buah,Buah,master
+1010305999000240,Golok,Buah,Buah,master
+1010305999000241,Pledge Polish 170 ml,Buah,Buah,master
+1010305999000242,Polybag,Buah,Buah,master
+1010305999000243,Color Glazing,Botol,Botol,master
+1010305999000244,Busa Poles,Buah,Buah,master
+1010305999000245,Spons Mobil,Buah,Buah,master
+1010305999000246,Lamp Changer Kit (u ganti lampu),Buah,Buah,master
+1010305999000247,Sepatu Bot,Buah,Buah,master
+1010305999000248,Aseptic Gell,Buah,Buah,master
+1010305999000249,Harpic,Buah,Buah,master
+1010305999000250,Tissue Nice 10 Roll,Pak,Pak,master
+1010305999000251,Cash Box Joyco CB 27 A,Unit,Unit,master
+1010305999000252,Gunting SC-14,Buah,Buah,master
+1010305999000253,Gunting SC-828,Buah,Buah,master
+1010305999000254,Meja belajar,Buah,Buah,master
+1010305999000255,Jepitan Baju,Pcs,Pcs,master
+1010305999000256,Gantungan Lampu,Buah,Buah,master
+1010305999000257,Sekop,Buah,Buah,master
+1010305999000258,Tisu Multi Refill,Buah,Buah,master
+1010305999000259,Handsanitizer Antis 5L,Dirigen,Derigen,master
+1010305999000260,Kispray Refill 300,Buah,Buah,master
+1010305999000261,Gunting Besar 848,Pcs,Pcs,master
+1010305999000262,Tas Pinggang,Buah,Buah,master
+1010305999000263,Pupuk MPK Nitrea,Karung,Karung,master
+1010305999000264,Gergaji Kayu,Buah,Buah,master
+1010305999000265,Tali senar mesin potong rumput,Buah,Buah,master
+1010305999000266,Rapika Biang R250,Buah,Buah,master
+1010305999000267,Manset Kaos Tangan,Buah,Buah,master
+1010305999000268,PP pocket sheet protector F4,Dummy,dummy,master
+1010305999000269,Lampu TL Philips 36 W,Pcs,pcs,master
+1010305999000270,Lampu LED Bulb 8 W Philips,Pcs,pcs,master
+1010305999000271,Lampu LED Bulb 12 W Philips,Pcs,pcs,master
+1010305999000272,Ducting kabel TC-3,Batang,Batang,master
+1010305999000273,Ducting kKabel TC-4,Batang,Batang,master
+1010305999000274,Downlight Tricolor 12 W Inlite,Pcs,pcs,master
+1010305999000275,"Kabel NYMHY 2X1,5mm serabut (50m)",Roll,roll,master
+1010305999000276,"Kabel NYM 2x1,5mm (50m)",Roll,roll,master
+1010305999000277,Oli mesin rumput,Liter,Liter,master
+1010305999000278,Sprinkler,Pcs,pcs,master
+1010305999000279,Lem Tikus Kiriko,Buah,buah,master
+1010305999000280,Pilarquant (Pembasmi Rumput) 1 L,Buah,Buah,master
+1010306001000001,"Kabel NYM ukuran 1 x 1,5",Roll,roll,master
+1010306001000002,"Kabel NYM ukuran 2 x 1,5",Roll,roll,master
+1010306001000003,Kabel jek,Set,set,master
+1010306001000004,Kabel Telepon,Buah,buah,master
+1010306001000005,"Kabel NYM Eterna 2x0,75",Roll,roll,master
+1010306001000006,Kabel VGA 15 m,Roll,roll,master
+1010306001000007,Kabel VGA 30 m,Roll,roll,master
+1010306001000008,Kabel Tajima,Meter,Meter,master
+1010306001000009,"Kabel NYHYO 2 x 1,5",Roll,Roll,master
+1010306001000010,GD VGA FM FM,Buah,Buah,master
+1010306001000011,"Kabel NYMHYO 3 X 1,5",Meter,Meter,master
+1010306001000012,"Kabel Mic + Socket Besar 1,5 m",Set,Set,master
+1010306001000013,"Kabel Mic + Socket Kecil 1,5 m",Set,Set,master
+1010306001000014,"Kabel NYY 3 X 2,5 E",Meter,Meter,master
+1010306001000015,"Kabel NYLY 0,3 X 15",Buah,Buah,master
+1010306001000016,"Kabel 3 x 2,5",Meter,Meter,master
+1010306001000017,"Kabel 2 x 1,5 E",Meter,Meter,master
+1010306001000018,Kabel Roll,Buah,Buah,master
+1010306001000019,Kabel NYM ukuran 4 x 4,Meter,Meter,master
+1010306001000020,"Kabel NYY ukuran 2 x 0,75",Roll,Roll,master
+1010306001000021,"Kabel NYY ukuran 4 x 0,75",Meter,Meter,master
+1010306001000022,Kabel Sound System,Meter,Meter,master
+1010306001000023,Jack Sound System,Pasang,Pasang,master
+1010306001000024,"Kabel NYM 2x2,5 E",Roll,Roll,master
+1010306001000025,"Kabel NYMHY 2 x 0,75",Roll,Roll,master
+1010306001000026,Jack Speaker K4CF,Buah,Buah,master
+1010306001000027,Kabel Speaker FMR215,Meter,Meter,master
+1010306001000028,Kabel UTP Scaft,Meter,Meter,master
+1010306001000029,Kabel 3x6,Meter,Meter,master
+1010306001000030,Kabel NYA 1 x 10,Meter,Meter,master
+1010306001000031,Kabel 4 x 10,Meter,Meter,master
+1010306001000032,Kabel NYMHY uk: 2x1.5,Roll,Roll,master
+1010306001000033,Kabel Coaxial (CCTV),Roll,Roll,master
+1010306001000034,Kabel USB To Serial DB9,Buah,Buah,master
+1010306001000035,"Kabel NYYHYO 2x0,75",Roll,Roll,master
+1010306001000036,Kabel Pesawat Telepon,Pcs,Pcs,master
+1010306001000037,Essensial Philips,Buah,Buah,master
+1010306001000038,Amplehennol Canon Female,Unit,Unit,master
+1010306001000039,Amplehennol Canon Male,Unit,Unit,master
+1010306001000040,Kabel Mic Streo Tasker Balanced,Unit,Unit,master
+1010306001000041,"Kabel NYYHY 2 x 1,5 mm",Roll,Roll,master
+1010306001000042,"Kabel NYY 2 x 1,5 mm",Roll,Roll,master
+1010306001000043,"Kabel NYY 2 x 2,5 mm",Buah,Buah,master
+1010306001000044,Jack Mini,Buah,Buah,master
+1010306001000045,Belden Cable 6,Dus,Dus,master
+1010306001000046,Belden Cable 6 (meter),Meter,Meter,master
+1010306001000047,"Kabel Ayyhy Eterra 2 X 1,5",Roll,Roll,master
+1010306001000048,Kabel Ties 25cm,Pcs,Pcs,master
+1010306002000001,Emergency lamp,Buah,buah,master
+1010306002000002,Lampu Phillip Essential 14 watt,Buah,buah,master
+1010306002000003,Lampu Phillip Essential 18 watt,Buah,Buah,master
+1010306002000004,Lampu Phillip Essential 23 watt,Buah,buah,master
+1010306002000005,Lampu Phillip 45 watt,Buah,buah,master
+1010306002000006,Lampu phillip 5 watt,Buah,buah,master
+1010306002000007,Lampu Phillip 65 watt,Buah,buah,master
+1010306002000008,Lampu Phillip 8 watt,Buah,buah,master
+1010306002000009,Lampu TL Phillip 18 Watt,Buah,Buah,master
+1010306002000010,Lampu TL Phillip 36 40 watt,Buah,buah,master
+1010306002000011,Kap Lampu,Pcs,Pcs,master
+1010306002000012,Lampu Philip TL Ring,Buah,Buah,master
+1010306002000013,Philip Berwarna Putih,Buah,Buah,master
+1010306002000015,Lampu Philips Master PLC 13 watt,Buah,Buah,master
+1010306002000016,Lampu Philips 80 W,Buah,Buah,master
+1010306002000017,Lampu Sorot Osram 150 Watt,Buah,Buah,master
+1010306002000018,Lampu Halogen 20 w,Buah,Buah,master
+1010306002000019,Lampu Taman Besar TO 2,Buah,Buah,master
+1010306002000020,Lampu Ring 32 Watt,Buah,Buah,master
+1010306002000021,Lampu HPIT 250W,Buah,Buah,master
+1010306002000022,Lampu Mercury 250 W,Buah,Buah,master
+1010306002000023,Lampu TS 8 Watt Putih,Buah,Buah,master
+1010306002000024,HPLN 250 Watt,Buah,Buah,master
+1010306002000025,Lampu Sorot LED Philips 10 w,Buah,Buah,master
+1010306002000026,Lampu LED Philip 13w,Buah,Buah,master
+1010306002000027,Lampu Belajar,Pcs,Pcs,master
+1010306002000028,Lampu Philips Halogen 150W,Buah,Buah,master
+1010306002000029,Lampu Bosecom 3 Mata,Buah,Buah,master
+1010306002000030,Kap Halogen Philips QUF 133,Pcs,Pcs,master
+1010306002000031,Kap Halogen Philips QUF 135,Pcs,Pcs,master
+1010306002000032,Lampu Philips Halogen 300W,Pcs,Pcs,master
+1010306002000033,Lampu Philips Master PLC 18 Watt,Buah,Buah,master
+1010306002000034,Lampu Philip TL 30 Watt,Buah,Buah,master
+1010306002000035,Lampu Plusline 1000 Watt,Buah,Buah,master
+1010306002000036,Lampu Philips Tubelight 22 watt,Buah,Buah,master
+1010306002000037,Lampu Philips Tubelight 32 watt,Buah,Buah,master
+1010306002000038,Lampu Sorot LED 50 watt,Buah,Buah,master
+1010306002000039,Travo Lampu Mercury 250 watt,Buah,Buah,master
+1010306002000040,travo Lampu TL BTA 36 watt 220 volt,Buah,Buah,master
+1010306002000041,Travo Lampu Master 13 watt 18 watt,Buah,Buah,master
+1010306002000042,Starter S-10-P,Buah,Buah,master
+1010306002000043,Lampu Philips 20 Watt,Buah,Buah,master
+1010306002000044,LAMPU KOLAM,Buah,BUAH,master
+1010306002000045,Lampu Sorot 100 watt,Buah,Buah,master
+1010306002000046,Lampu LED 9 watt,Buah,Buah,master
+1010306002000047,Lampu LED 12 Watt,Buah,Buah,master
+1010306002000048,LED Bulb 9 Watt,Buah,Buah,master
+1010306002000049,LED Bulb 13 Watt,Buah,Buah,master
+1010306002000050,"LED Bulb 14,5 watt",Pcs,Pcs,master
+1010306002000051,LED Bulb 19 watt,Pcs,Pcs,master
+1010306002000052,Lampu TL-D 18 Watt,Buah,Buah,master
+1010306002000053,Lampu TL-D 36 Watt,Buah,Buah,master
+1010306002000054,LED Bulb 12 Watt,Buah,Buah,master
+1010306002000055,LED Bulb 6w,Buah,Buah,master
+1010306002000056,Lampu LED 50w,Pcs,Pcs,master
+1010306002000057,Lampu Sorot Philips LED 30w,Pcs,Pcs,master
+1010306002000058,Lampu Up Ceiling Panasonic,Pcs,Pcs,master
+1010306002000059,LED Bulb 7 W,Pcs,PCS,master
+1010306002000060,Lampu Downlight 22 W,Buah,Buah,master
+1010306002000061,Lampu Downlight 7 W,Buah,Buah,master
+1010306002000062,lampu 15 watt,Pcs,pcs,master
+1010306002000063,Lampu sorot Philips LED 20 w,Pcs,pcs,master
+1010306002000064,lampu 11 watt,Pcs,pcs,master
+1010306002000065,Lampu Downlight LED 23 Watt Philips,Buah,buah,master
+1010306002000066,Lampu Downlight 10 watt Philips,Buah,Buah,master
+1010306002000067,Lampu Downlight 14 watt Philips,Buah,Buah,master
+1010306002000068,Lampu sorot 10 watt,Buah,Buah,master
+1010306003000001,Stop kontak tanam,Buah,buah,master
+1010306003000002,Stop kontak tempel,Buah,buah,master
+1010306003000003,Stop Kontak 6 lubang,Buah,buah,master
+1010306003000004,Stop Kontak Lubang 4,Pcs,Pcs,master
+1010306003000005,Stop kontak kepala 3,Pcs,Pcs,master
+1010306003000006,Stop kontak clipsal,Pcs,pcs,master
+1010306003000007,stop kontak 5 lubang,Pcs,pcs,master
+1010306004000001,Sakelar Panasonic,Buah,Buah,master
+1010306004000002,OHM Saklar 25A,Buah,Buah,master
+1010306004000003,Saklar Seri Clipsal,Pcs,Pcs,master
+1010306004000004,Saklar triple clipsal,Pcs,pcs,master
+1010306004000005,mcb 16A,Pcs,pcs,master
+1010306004000006,mcb 10A,Pcs,pcs,master
+1010306005000001,Stop Kontak cabang 5 lubang,Buah,buah,master
+1010306005000002,Stop Kontak Cabang 2 Lubang,Buah,Buah,master
+1010306005000003,Terminal Lampu Taman Embodas,Buah,Buah,master
+1010306005000004,Steker T. Arde,Buah,Buah,master
+1010306005000005,Steker T. Arde dan saklar,Buah,Buah,master
+1010306005000006,Steker Broco,Pcs,Pcs,master
+1010306005000007,stick lampu,Buah,buah,master
+1010306006000001,Trafo BTA 36 watt 220 volt,Pcs,Pcs,master
+1010306006000002,Trafo BTA 36 watt 220V,Pcs,Pcs,master
+1010306007000001,Starter lampu neon 20 watt,Buah,buah,master
+1010306007000002,Starter lampu neon 40 watt,Buah,buah,master
+1010306007000003,Starter S10-P,Buah,Buah,master
+1010306008000001,Fitting lampu plafon Panasonic,Pcs,Pcs,master
+1010306008000002,Fitting Lampu,Buah,Buah,master
+1010306010000001,Batu Baterai 9 Volt (Baterai Kotak),Buah,Buah,master
+1010306010000002,Batu Baterai A3,Buah,Buah,master
+1010306010000003,Batu Baterai A4,Buah,Buah,master
+1010306010000004,Batu Baterai ABC Besar,Buah,Buah,master
+1010306010000005,Batu Baterai A-23 (utk Bel),Buah,Buah,master
+1010306010000006,Batu baterai A2,Buah,Buah,master
+1010306010000007,"Batu Baterai 1,5 V",Buah,buah,master
+1010306010000008,batu baterai everedy 1050,Set,set,master
+1010306010000009,Batu Baterai Sedang,Buah,Buah,master
+1010306010000010,Batu Baterai A2 (Lusin),Lusin,Lusin,master
+1010306010000011,Batu Baterai A3 (Pack),Pak,Pack,master
+1010306010000012,Batu Baterai A2 (Pack),Pak,Pack,master
+1010306010000013,baterai panasonic UM24,Pcs,pcs,master
+1010306999000001,Steker T,Buah,Buah,master
+1010306999000002,Senter,Buah,buah,master
+1010306999000003,Travo 40 watt,Buah,buah,master
+1010306999000004,over steker,Buah,buah,master
+1010306999000005,Colokan Lampu,Buah,Buah,master
+1010306999000006,steker kaki 3 untuk Laptop,Buah,buah,master
+1010306999000007,Kepala Steker Broco,Buah,Buah,master
+1010306999000008,skrap,Dummy,-,master
+1010306999000009,taspen besar,Dummy,-,master
+1010306999000010,taspen kecil,Dummy,-,master
+1010306999000011,steker kombinasi,Buah,buah,master
+1010306999000012,tee,Dummy,-,master
+1010306999000013,Sekring MCB 25A M.G,Buah,Buah,master
+1010306999000014,Auto Man Timer Lampu Taman Otomatis,Buah,Buah,master
+1010306999000015,Sekring MCB 32A Scheineder,Buah,Buah,master
+1010306999000016,Pipa Kabel TF4,Buah,Buah,master
+1010306999000017,Sekring Batu Merk Fuse Gave,Buah,Buah,master
+1010306999000018,Sekring MCB 6A Asli,Buah,Buah,master
+1010306999000019,Sekring MCB 10A,Buah,Buah,master
+1010306999000020,Sekring MCB 16A,Buah,Buah,master
+1010306999000021,Tespen Probex,Buah,Buah,master
+1010306999000022,Konector ABC,Set,Set,master
+1010306999000023,Flexible,Meter,Meter,master
+1010306999000024,SWC,Buah,Buah,master
+1010306999000025,SWN,Buah,Buah,master
+1010306999000026,Klem 14,Buah,Buah,master
+1010306999000027,Kawat,Gulung,Gulung,master
+1010306999000028,MCB 50A,Buah,Buah,master
+1010306999000029,Besi Seng SNI,Batang,Batang,master
+1010306999000030,Kap Cobra 250 W,Buah,Buah,master
+1010306999000031,Travo 250 WP,Buah,Buah,master
+1010306999000032,Paku,Kotak,Kotak,master
+1010306999000033,Mistang Tiang,Buah,Buah,master
+1010306999000034,Bok 1 Group,Buah,Buah,master
+1010306999000035,Klem Mistang,Buah,Buah,master
+1010306999000036,Baut,Buah,Buah,master
+1010306999000037,Ring,Buah,Buah,master
+1010306999000038,Twisted 2 x 10,Meter,Meter,master
+1010306999000039,Handel 25A,Buah,Buah,master
+1010306999000040,Kabel Ties 30 cm,Bungkus,Bungkus,master
+1010306999000041,Antena,Buah,Buah,master
+1010306999000042,Flexible Wasser 30 Cm,Buah,Buah,master
+1010306999000043,Soket Speaker NL4FC,Buah,Buah,master
+1010306999000044,Skun 10',Pcs,Pcs,master
+1010306999000045,Skun 6',Pcs,Pcs,master
+1010306999000046,Skun 16',Pcs,Pcs,master
+1010306999000047,Tespen Licon,Pcs,Pcs,master
+1010306999000048,Clem No. 22,Pcs,Pcs,master
+1010306999000049,Clem No.17,Pcs,Pcs,master
+1010306999000050,Steker Arde Broco,Pcs,Pcs,master
+1010306999000051,Twice 2x16,Meter,Meter,master
+1010306999000052,Box Mica,Pcs,Pcs,master
+1010306999000053,Terminal Legran,Pcs,Pcs,master
+1010306999000054,Kap WD-E27,Buah,Buah,master
+1010306999000055,Saklar Gantung,Buah,Buah,master
+1010306999000056,Esensial 1800,Buah,Buah,master
+1010306999000057,Unibel Kontak,Buah,Buah,master
+1010306999000058,T.Pancing,Roll,Roll,master
+1010306999000059,A1941-C5198,Set,Set,master
+1010306999000060,A1943-C5200,Set,Set,master
+1010306999000061,Relay Auto 220 VAC,Buah,Buah,master
+1010306999000062,MCB Biru,Buah,Buah,master
+1010306999000063,Dop Telepon,Pcs,Pcs,master
+1010306999000064,Pwk Arai,Buah,Buah,master
+1010306999000065,Sdd 1 R,Buah,Buah,master
+1010306999000066,Pluk Over 1 x 1 2,Buah,Buah,master
+1010306999000067,Nitto,Buah,Buah,master
+1010306999000068,Steker Matsuya,Lusin,Lusin,master
+1010306999000069,T.Porslen,Buah,Buah,master
+1010306999000070,Isolasi Nito,Buah,Buah,master
+1010306999000071,Pot Led,Buah,Buah,master
+1010306999000072,Klem 9,Buah,Buah,master
+1010306999000073,Simplek,Buah,Buah,master
+1010306999000074,Fitting Delta,Buah,Buah,master
+1010306999000075,D Xphore Vetop,Buah,Buah,master
+1010306999000076,Camel Combination Plict,Buah,Buah,master
+1010306999000077,Camel Diagonal Plict,Buah,Buah,master
+1010306999000078,Lancer Rubber 6 x 100,Buah,Buah,master
+1010306999000079,Lancer Rubber 6 x 125,Buah,Buah,master
+1010306999000080,"DAC 4,5 x 4,5",Batang,Btg,master
+1010306999000081,"DAC 2,5 x 2,5",Batang,Btg,master
+1010306999000082,RTC 4,Batang,Btg,master
+1010306999000083,RTC 8,Batang,Btg,master
+1010306999000084,PLC Master 18 65,Buah,Buah,master
+1010306999000085,LNB,Unit,Unit,master
+1010306999000086,Switch LNB,Unit,Unit,master
+1010306999000087,Matrik HD52,Unit,Unit,master
+1010306999000088,Box MCB,Buah,Buah,master
+1010306999000089,Kondensator,Buah,Buah,master
+1010306999000090,Power Supply,Buah,Buah,master
+1010306999000091,Relay (Set),Set,Set,master
+1010306999000092,Soket AC,Buah,Buah,master
+1010306999000093,Trafo BTA 36w,Buah,Buah,master
+1010306999000094,seri strip panasonic,Pcs,pcs,master
+1010306999000095,mangkuk inbow,Pcs,pcs,master
+1010306999000096,stik lampu,Buah,buah,master
+1010307999000001,Materai 6000,Pcs,Pcs,master
+1010307999000002,Materai 3000,Pcs,Pcs,master
+1010307999000003,Thermometer Gun,Pcs,Pcs,master
+1010307999000004,Materai 10000,Pcs,Pcs,master
+1010309001000001,Materai 10000,Lembar,Lembar,master
+1010309999000001,Tape VHB 3M Transparant,Buah,Buah,master
+1010309999000002,File Bag,Buah,Buah,master
+1010309999000003,Sticker BPK,Eksemplar,Eksemplar,master
+1010309999000004,Elevated Tray,Buah,Buah,master
+1010309999000005,Kwitansi,Pak,Pack,master
+1010309999000006,Plastik ID Peserta,Pak,Pack,master
+1010309999000007,Tali ID Peserta,Pak,Pack,master
+1010309999000008,Tali Yoyo,Pak,Pack,master
+1010309999000009,Acrylic ID Card,Pak,Pack,master
+1010309999000010,Kwitansi (Buah),Buah,Buah,master
+1010309999000011,Lakban Putih,Buah,Buah,master
+1010309999000012,Nota Besar 2ply,Buah,Buah,master
+1010309999000013,Alvaboard 500x750,Buah,Buah,master
+1010309999000014,Tali Yoyo Warna,Pak,Pack,master
+1010309999000015,Tali ID Peserta Besar,Pak,Pack,master
+1010309999000016,Box File,Buah,Buah,master
+1010309999000017,Tali ID Peserta (Pcs),Pcs,Pcs,master
+1010309999000018,Box File 1,Buah,Buah,master
+1010309999000019,Desk Set,Pcs,Pcs,master
+1010309999000020,Magazine Case,Buah,Buah,master
+1010309999000021,Headset,Buah,Buah,master
+1010309999000022,Key Ring,Pak,Pack,master
+1010309999000023,Frame Acrylic 4R,Buah,Buah,master
+1010309999000024,Staples Remover,Buah,Buah,master
+1010309999000025,Desk Organizer,Pcs,Pcs,master
+1010309999000026,Clear Pocket,Pak,Pack,master
+1010309999000027,Tas Pinggang,Pcs,Pcs,master
+1010310999000001,kalender dinding tahun 2025,Pcs,pcs,master
+1010311999000001,Pembersih Pakaian,Dummy,dummy,master
+1010313001000001,Pertamax Mobil,Lembar,Lembar,master
+1010313001000002,Pertamax Motor,Lembar,Lembar,master
+1010313001000003,Solar Dex (Genset),Lembar,Lembar,master
+1010314002000001,Dobrizol,Butir,butir,master
+1010314002000002,Ersolon 4mg,Butir,butir,master
+1010314002000003,Sanmol 500mg,Butir,Butir,master
+1010314005000001,Counterpain 15gr,Tube,tube,master
+1010314005000002,Tolak Angin SK,Sachet,Sachet,master
+1010314005000003,Counterpain Cool,Tube,Tube,master
+1010314999000001,Oxycan b,Dummy,dummy,master
+1010314999000002,16x16 kasa steril onemed,Dummy,dummy,master
+1010314999000003,@10 super salonpas,Dummy,dummy,master
+1010399999000001,Kantong Kertas Logo Dharma Wanita Uk. Besar,Buah,Buah,master
+1010399999000002,Kantong Kertas Logo Dharma Wanita Uk. Kecil,Buah,Buah,master
+1010399999000003,Sifon Botol,Buah,Buah,master
+1010399999000004,Plastik Wrap Roll,Roll,Roll,master
+1010399999000005,Kalender Dinding BPK RI Perwakilan Provinsi Lampung,Eksemplar,Eksemplar,master
+1010399999000006,Linggis,Buah,Buah,master
+1010399999000007,Obat Anti Jamur,Botol,Botol,master
+1010399999000008,Kit Black Magic,Botol,Botol,master
+1010399999000009,Kit Wax,Kaleng,Kaleng,master
+1010399999000010,Aquarium,Set,Set,master
+1010399999000011,Pohon Natal,Set,Set,master
+1010399999000012,Pompa,Unit,Unit,master
+1010399999000013,Taplak Meja Belgia Uk. 13 x 62,Potong,Potong,master
+1010399999000014,Gas Portable,Buah,Buah,master
+1010399999000015,Stain Remover,Buah,Buah,master
+1010399999000016,Detergen Sachet,Bungkus,Bungkus,master
+1010399999000017,Kain Ball,Pcs,Pcs,master
+1010399999000018,Oli Castrol,Liter,Liter,master
+1010399999000019,Pipa Wavin AW 1 1 4,Batang,Batang,master
+1010399999000020,Pipa Wavin AW 1,Batang,Batang,master
+1010399999000021,Sok Sambung 1 1 4,Buah,Buah,master
+1010399999000022,Sok Sambung 1,Buah,Buah,master
+1010399999000023,Selotip Onda,Buah,Buah,master
+1010399999000024,Selotip Kran Onda PVC 1 1 4,Buah,Buah,master
+1010399999000025,T 1 1 4,Buah,Buah,master
+1010399999000026,T 1,Buah,Buah,master
+1010399999000027,SDL Over 1x3 4,Buah,Buah,master
+1010399999000028,Lem Isarplas,Kaleng,Kaleng,master
+1010399999000029,Kalender Meja BPK RI Perwakilan Prov. Lampung,Eksemplar,Eks,master
+1010399999000030,Force Magic,Botol,Botol,master
+1010399999000031,DOP,Buah,Buah,master
+1010399999000032,Cover Spion,Buah,Buah,master
+1010399999000033,Dudukan Plat Kendaraan,Buah,Buah,master
+1010399999000034,Obat Anti Jamur (Liter),Liter,Liter,master
+1010399999000035,Emergency Toilet Sign,Buah,Buah,master
+1010399999000036,Lampu Lalu Lintas,Buah,Buah,master
+1010399999000037,Topi,Buah,Buah,master
+1010399999000038,Pertamax Mobil,Lembar,Lembar,master
+1010399999000039,Pertamax Motor,Lembar,Lembar,master
+1010399999000040,Solar DEX (Genset),Lembar,Lembar,master
+1010399999000041,Kotak LHP,Buah,Buah,master
+1010399999000042,Medical Regulator,Buah,Buah,master
+1010399999000043,Tempat Kartu,Buah,Buah,master
+1010399999000044,Solar DEX (Mobil),Lembar,Lembar,master
+1010399999000045,Pupuk Kandang,Buah,Buah,master
+1010399999000046,Jazz Detergen,Buah,Buah,master
+1010399999000047,Tas Kantong Belanjaan,Pcs,Pcs,master
+1010399999000048,Number Brass Finish 4 Inc (Nomor Rumah Dinas),Buah,Buah,master
+1010399999000049,Air Aki Basa,Pcs,Pcs,master
+1010399999000050,Pupuk MPK Nitrea 25 Kg,Karung,Karung,master
+1010399999000051,Springkle Plastik,Buah,Buah,master
+1010399999000052,Starlink Mini Internet Perangkat 50GB,Paket,Paket,master
+1010401001000001,Alkohol 70 %,Botol,Botol,master
+1010401001000002,Aroma Therapy,Botol,Botol,master
+1010401001000003,Betadin 15 ml,Botol,Botol,master
+1010401001000004,Biostrum Syrup 100 ml,Botol,Botol,master
+1010401001000005,Balsem Cap K 3,Botol,Botol,master
+1010401001000006,Caladine Lotion 95 ml,Botol,Botol,master
+1010401001000007,Caladine Lotion 60 ml,Botol,Botol,master
+1010401001000008,Dhavit Syrup 60 ml,Botol,Botol,master
+1010401001000009,Enkasari 120 ml,Botol,Botol,master
+1010401001000010,Forifec,Botol,Botol,master
+1010401001000011,Imunos Syrup 60 ml,Botol,Botol,master
+1010401001000012,Listerin 80 ml,Botol,Botol,master
+1010401001000013,Listerin 250 ml,Botol,Botol,master
+1010401001000014,Minyak Kayu Putih Cap Lang 30 ml *,Botol,Botol,master
+1010401001000015,MKP Sidola 30 ml,Botol,Botol,master
+1010401001000016,MTL Lang 30 ml,Botol,Botol,master
+1010401001000017,Medicate Oil 12 ml,Botol,Botol,master
+1010401001000018,Medicate Oil 20 ml,Botol,Botol,master
+1010401001000019,Medicate Oil 40 ml,Botol,Botol,master
+1010401001000020,Minyak Beruang 18 ml,Botol,Botol,master
+1010401001000021,Minyak Beruang 27 ml,Botol,Botol,master
+1010401001000022,Minyak Angin Kapak 14 ml,Botol,Botol,master
+1010401001000023,Rivanol,Botol,Botol,master
+1010401001000024,Vitacur Syrup 100 ml,Botol,Botol,master
+1010401001000025,Die Da Yao Ging,Botol,Botol,master
+1010401001000026,Amoxsan Syrup 250 ml,Botol,Botol,master
+1010401001000027,Cupanol Syrup 60 ml,Botol,Botol,master
+1010401001000028,Erysanbe Syrup 60 ml,Botol,Botol,master
+1010401001000029,Epexol Syrup 120 ml,Botol,Botol,master
+1010401001000030,Inpepsa Syrup 100 ml,Botol,Botol,master
+1010401001000031,Inpepsa Syrup 200 ml,Botol,Botol,master
+1010401001000032,Lasal Ekspextoran 100 ml,Botol,Botol,master
+1010401001000033,Laserin Syrup 110 ml,Botol,Botol,master
+1010401001000034,Lagesil Syrup 170 ml,Botol,Botol,master
+1010401001000035,Lapifed DM Syrup 100 ml,Botol,Botol,master
+1010401001000036,Lapifed Ekspextoran 60 ml,Botol,Botol,master
+1010401001000037,Lapisiv Syrup 100 ml *,Botol,Botol,master
+1010401001000038,Rhelafen Forte,Botol,Botol,master
+1010401001000039,Sanprima Forte Syrup 60 ml,Botol,Botol,master
+1010401001000040,Q Cef Syrup 125 ml,Botol,Botol,master
+1010401001000041,Bralifex Plus ED,Botol,Botol,master
+1010401001000042,Genta ED,Botol,Botol,master
+1010401001000043,Forumen Ear Drops,Botol,Botol,master
+1010401001000044,Bisolvon Elexir 60ml,Botol,Botol,master
+1010401001000045,Betadin 5ml,Botol,Botol,master
+1010401001000046,Cendo Xytrol Eye Drop,Botol,Botol,master
+1010401001000047,Gastrucyd Syrup 60 ml,Botol,Botol,master
+1010401001000048,Mucos Syrup 60 ml *,Botol,Botol,master
+1010401001000049,MTL Konicare 30 ml,Botol,Botol,master
+1010401001000050,Nifural Syrup 60 ml,Botol,Botol,master
+1010401001000051,Nelco Special Syrup 60 ml,Botol,Botol,master
+1010401001000052,Visine Extra,Botol,Botol,master
+1010401001000053,Alco Drop,Botol,Botol,master
+1010401001000054,Alco Syrup,Botol,Botol,master
+1010401001000055,Albotyl 5 ml,Botol,Botol,master
+1010401001000056,Durol Syrup 330 ml,Botol,Botol,master
+1010401001000057,Insto,Botol,Botol,master
+1010401001000058,MKP Lang 15 ml,Botol,Botol,master
+1010401001000059,MTL My Baby 30 ml,Botol,Botol,master
+1010401001000060,Minyak Angin Kapak 3 ml,Botol,Botol,master
+1010401001000061,Omeproz,Botol,Botol,master
+1010401001000062,Stimuno Syrup 60 ml,Botol,Botol,master
+1010401001000063,Vicks F44 30 ml,Botol,Botol,master
+1010401001000064,Paratusin Syrup 60 ml,Botol,Botol,master
+1010401001000065,Bronchitin Syrup 60 ml,Botol,Botol,master
+1010401001000066,Hustarex Syrup,Botol,Botol,master
+1010401001000067,Vicks F44 54ml,Botol,Botol,master
+1010401001000068,Sanmol Syrup 60 ml,Botol,Botol,master
+1010401001000069,Laserin Syrup 60 ml,Botol,Botol,master
+1010401001000070,Mirapect Syrup 100 ml,Botol,Botol,master
+1010401001000071,Medicate Oil 10 ml,Botol,Botol,master
+1010401001000072,Yusimox Syrup 60 ml,Botol,Botol,master
+1010401001000073,Dexanta Syrup 60ml,Botol,Botol,master
+1010401001000074,Enggrix-B,Botol,Botol,master
+1010401001000075,Citoprim,Botol,Botol,master
+1010401001000076,Chloracol Syrup,Botol,Botol,master
+1010401001000077,Flutop-C Syrup,Botol,Botol,master
+1010401001000078,Neoasta,Botol,Botol,master
+1010401001000079,Quantidex Syrup,Botol,Botol,master
+1010401001000080,Neurobion 5000mg (inj),Botol,Botol,master
+1010401001000081,Imboost Force Kids Syr 60 ml *,Botol,Botol,master
+1010401001000082,Betadin Obat Kumur 175ml,Botol,Botol,master
+1010401001000083,Curcuma Plus Syrup,Botol,Botol,master
+1010401001000084,Vesperum Syrup 60ml,Botol,Botol,master
+1010401001000085,Proris Forte Syrup 60ml,Botol,Botol,master
+1010401001000086,OBH Combi,Botol,Botol,master
+1010401001000087,Polysilane Syrup,Botol,Botol,master
+1010401001000088,Betadin Kumur 100ml,Botol,Botol,master
+1010401001000089,Ifarsyl Syrup,Botol,Botol,master
+1010401001000090,Tolak Angin,Bungkus,Bungkus,master
+1010401001000091,Isprinol Syrup 60ml,Botol,Botol,master
+1010401001000092,Praxion Syrup 60ml,Botol,Botol,master
+1010401001000093,Rhinos Junior Syrup 60 ml*,Botol,Botol,master
+1010401001000094,Ryvel Syrup 60ml,Botol,Botol,master
+1010401001000095,Silex Syrup 100ml,Botol,Botol,master
+1010401001000096,Vometa Suspensi Syrup 60 ml *,Botol,Botol,master
+1010401001000097,Zinkid Syrup 60ml,Botol,Botol,master
+1010401001000098,Scoot Emulsion Syrup 100ml,Botol,Botol,master
+1010401001000099,Amoxsan Forte Syrup 60ml,Botol,Botol,master
+1010401001000100,Becefort Syrup 60ml,Botol,Botol,master
+1010401001000101,GPU 60ml,Botol,Botol,master
+1010401001000102,OBH Nutra,Botol,Botol,master
+1010401001000103,Sanadryl Syrup 120ml,Botol,Botol,master
+1010401001000104,Praxion Forte Syrup 250 mg/5 ml 60ml *,Botol,Botol,master
+1010401001000105,Hufagrip Merah,Botol,Botol,master
+1010401001000106,Hufagrip Hijau,Botol,Botol,master
+1010401001000107,Sakatonik Liver,Botol,Botol,master
+1010401001000108,Imboost Force Syrup Kids 60ml,Botol,Botol,master
+1010401001000109,Epexol Syrup 60 ml,Botol,Botol,master
+1010401001000110,Interhistin Syrup,Botol,Botol,master
+1010401001000111,Mylanta Syrup 50 ml,Botol,Botol,master
+1010401001000112,Cefadroxyl Syrup,Botol,Botol,master
+1010401001000113,Imboost Force Syrup 120 ml,Botol,Botol,master
+1010401001000114,Alco Plus Syrup 100 ml,Botol,Botol,master
+1010401001000115,Combantrin,Botol,Botol,master
+1010401001000116,Herbakof 60ml,Botol,Botol,master
+1010401001000117,Mucopect 60ml,Botol,Botol,master
+1010401001000118,Sangobion Syrup,Botol,Botol,master
+1010401001000119,Sangobion Kids 60ml,Botol,Botol,master
+1010401001000120,Mucos Drop,Botol,Botol,master
+1010401001000121,Sanmol Drop,Botol,Botol,master
+1010401001000122,Scoot Emulsion 400 ml,Botol,Botol,master
+1010401001000123,Proris 60ml,Botol,Botol,master
+1010401001000124,Erlamycetin Ear Drop,Botol,Botol,master
+1010401001000125,Erlamycetin Plus TM,Botol,Botol,master
+1010401001000126,MADU TJ EKSTRA 100 GR,Botol,Botol,master
+1010401001000128,Lostacef 250 mg Sirup Kering,Botol,Botol,master
+1010401001000129,Larutan NACL,Botol,Botol,master
+1010401001000130,Oroxin Syrup 60ml,Botol,Botol,master
+1010401001000131,Imboost Syrup 60 Ml,Botol,Botol,master
+1010401001000132,Alco Plus DMP 100 ml,Botol,Botol,master
+1010401001000133,L Zink 60 ml,Botol,Botol,master
+1010401001000134,I. Prox Syrup,Botol,Botol,master
+1010401001000135,OBH Herbal 60 Ml,Botol,Botol,master
+1010401001000136,Tempra 100 Ml,Botol,Botol,master
+1010401001000137,Dextral Syrup 60 ml,Botol,Botol,master
+1010401001000138,Pepsodent Obat Kumur,Botol,Botol,master
+1010401001000139,Otopain Tetes Telinga,Botol,Botol,master
+1010401001000140,Oxopect,Botol,Botol,master
+1010401001000141,Zidiar Syrup,Botol,Botol,master
+1010401001000142,Lifadrox Forte Syr 250mg,Botol,Botol,master
+1010401001000143,Plantacid Forte Syr,Botol,Botol,master
+1010401001000144,Intunal Syr,Botol,Botol,master
+1010401001000145,Sangobion Baby Drop,Botol,Botol,master
+1010401001000146,Tolak Angin Flu,Sachet,Sachet,master
+1010401001000147,Ventholin Nebule,Buah,Buah,master
+1010401001000148,Syrup Pemanis,Botol,Botol,master
+1010401001000149,Alletrol TM,Botol,Botol,master
+1010401001000150,Combivent Inj 20's,Vial,Vial,master
+1010401001000151,Lidocain Inj,Box,Box,master
+1010401001000152,Listerin 100 ml,Botol,Botol,master
+1010401001000153,Cendo Lyters,Dummy,-,master
+1010401001000154,Enkasari 100 Ml Mouth Wash,Botol,Botol,master
+1010401001000155,CDR 10' S,Botol,Botol,master
+1010401001000156,Tempra 60 ml,Pcs,Pcs,master
+1010401001000157,Alkohol 70 % - 100 ml,Botol,Botol,master
+1010401001000158,Minyak Beruang 8 ml,Botol,Botol,master
+1010401001000159,Alkohol 70% - 60 ml,Botol,Botol,master
+1010401001000160,Lostacef 125 Ml,Botol,Botol,master
+1010401001000161,Safe Care MKP,Pcs,Pcs,master
+1010401001000162,Oxycan,Botol,Botol,master
+1010401001000163,Madu Uray 450 ml,Botol,Botol,master
+1010401001000164,Madu TJ Murni 150 ml,Botol,Botol,master
+1010401001000165,Channafit Syrup 100 ml,Botol,Botol,master
+1010401001000166,Tolak Angin Linu,Bungkus,Bungkus,master
+1010401001000167,Promag Gazero 10 ml,Sachet,Sachet,master
+1010401001000168,Minyak Angin Kapak 5 ml,Botol,Botol,master
+1010401001000169,Tempra Syrup 30 ml,Botol,Botol,master
+1010401001000170,Halmezin Syrup,Botol,Botol,master
+1010401001000171,Prospan,Botol,Botol,master
+1010401001000172,Imunped Syr,Botol,Botol,master
+1010401001000173,Aseptic Plus 100mL Spray,Buah,Buah,master
+1010401001000174,oralit,Sachet,Sachet,master
+1010401001000175,Strepsils,Sachet,Sachet,master
+1010401001000176,Freshcare,Botol,Botol,master
+1010401001000177,Hand Sanitizer 5L,Dirigen,Derigen,master
+1010401001000178,Fitocare 30mL,Botol,Botol,master
+1010401001000179,Herbakof 100mL,Botol,Botol,master
+1010401001000180,Ondanestron Injeksi,Botol,Botol,master
+1010401001000181,Cefixime,Botol,Botol,master
+1010401001000182,Ranitidin Injeksi,Botol,Botol,master
+1010401001000183,Actifed Plus Cough Supressantt,Botol,Botol,master
+1010401001000184,Actifed Syrup Expectorant,Botol,Botol,master
+1010401001000185,Cefixime SK (Cair),Botol,Botol,master
+1010401001000186,Erlamycetin Eye Drops,Botol,Botol,master
+1010401001000187,Sucralfate Suspensi 500 mg isi 100 ml *,Botol,Botol,master
+1010401001000188,Cortamine 60mL,Botol,Botol,master
+1010401001000189,Sodium Chloride,Buah,Buah,master
+1010401001000190,Baymed Alkohol Swab,Buah,Buah,master
+1010401001000191,Sirplus,Buah,Buah,master
+1010401001000192,Laserin 100Ml,Botol,Botol,master
+1010401001000193,L-Bio,Sachet,Sachet,master
+1010401001000194,Sukralfat 100Ml,Botol,Botol,master
+1010401001000195,Minyak Kayu Putih Cap Lang 60 mL *,Botol,Botol,master
+1010401001000196,Siladex Expectorant,Botol,Botol,master
+1010401001000197,Eucalyptus Spray Cap Lang,Botol,Botol,master
+1010401001000198,OBH Herbal Syrup 60ml,Botol,Botol,master
+1010401001000199,Ringer Lactat Infus 500 ml,Buah,Buah,master
+1010401001000200,Minyak Angin 18 ml Polar Bear,Botol,Botol,master
+1010401001000201,Plossa Bluemountain 8 ml *,Botol,Botol,master
+1010401001000202,Plossa Dus Citrus 8 ml *,Botol,botol,master
+1010401001000203,Plossa Eucaliyptus 8 ml *,Botol,Botol,master
+1010401001000204,Sagestam Cr 10 Gr,Botol,Botol,master
+1010401001000205,MInyak Tawon,Botol,Botol,master
+1010401001000206,OBH Herbal sirup 100 ml,Botol,Botol,master
+1010401001000207,Nutrimax Vitamin D3 400,Botol,Botol,master
+1010401001000208,Lameson Suspensi 30 ML,Botol,Botol,master
+1010401001000209,Mediklin Gell,Tube,tube,master
+1010401001000210,Medi-Klin TR Gel 15 gr,Tube,Tube,master
+1010401001000211,OB Herbal Sirup 100 Ml *,Botol,Botol,master
+1010401001000212,Madu hutan trigona honey suhita,Botol,Botol,master
+1010401001000213,Polysilane susp 100ml,Pcs,Pcs,master
+1010401001000214,Polysilane tab,Pcs,Pcs,master
+1010401001000215,Ranivel syr 60ml,Pcs,Pcs,master
+1010401001000216,Sankorbin 200mg,Pcs,Pcs,master
+1010401001000217,cap lang mkp 30 ml,Dummy,dummy,master
+1010401001000218,imunped syr 60 ml,Dummy,dummy,master
+1010401001000219,inpepsa susp 100ml (FAH),Dummy,dummy,master
+1010401001000220,intunal syrup,Dummy,dummy,master
+1010401001000221,lapisiv syr 100ml,Dummy,dummy,master
+1010401001000222,L-zinc syr 100ml,Dummy,dummy,master
+1010401001000223,Madu tj murni 150gr,Dummy,dummy,master
+1010401001000224,mucos 15mg/15ml syr 60ml,Dummy,dummy,master
+1010401001000225,mylanta syrup 50ml,Dummy,dummy,master
+1010401001000226,neurobion 5000mg inj@20,Dummy,dummy,master
+1010401001000227,ob herbal 5yr 100ml,Dummy,dummy,master
+1010401001000228,otopain ear drop 8ml,Dummy,dummy,master
+1010401001000229,plantacid susp forte 100ml,Dummy,dummy,master
+1010401001000230,plossa bluemountain 8ml,Dummy,dummy,master
+1010401001000231,plossa dus citruss,Dummy,dummy,master
+1010401001000232,plossa eucalyptus 8ml,Dummy,dummy,master
+1010401001000233,proris forte syr 50ml susp (eth),Dummy,dummy,master
+1010401001000234,rhinos junior syr 60ml,Dummy,dummy,master
+1010401001000235,ringer lactat 500ml b.braun,Dummy,dummy,master
+1010401001000236,sangobion syr 100ml kids,Dummy,dummy,master
+1010401001000237,sido m tolak angin + madu 15 mk@12,Dummy,dummy,master
+1010401001000238,siladex dmp 60ml,Dummy,dummy,master
+1010401001000239,siladex m & e syr 60ml,Dummy,dummy,master
+1010401001000240,sodium chloride 0.9% 100ml ots,Dummy,dummy,master
+1010401001000241,sucralfate 500mg/5ml susp 100ml,Dummy,dummy,master
+1010401001000242,venflon no. 24,Dummy,dummy,master
+1010401001000243,vometa 1mg/ml syr,Dummy,dummy,master
+1010401001000244,polar bear 18 ml,Dummy,dummy,master
+1010401001000245,curcuma plus sharpy syrup 60ml *,Botol,botol,master
+1010401001000246,four season medicated oil 12 ml,Dummy,dummy,master
+1010401001000247,sangobion syr 100ml,Dummy,dummy,master
+1010401001000248,larce (ascorbic acid injeksi) @5ampl,Dummy,dummy,master
+1010401001000249,Komix jeruk nipis,Sachet,Sachet,master
+1010401001000250,Domperidone susp 60 ml,Botol,botol,master
+1010401001000251,L-Cal Gow,Botol,Botol,master
+1010401001000252,Salonpas Jetspray,Botol,Botol,master
+1010401001000253,Madu Uray 150 Gr,Botol,Botol,master
+1010401001000254,Antis Spray 55 ml,Dummy,dummy,master
+1010401001000255,Cerini syr 60 ml,Dummy,dummy,master
+1010401001000256,Claneksi Forte syr 60 ml,Dummy,dummy,master
+1010401001000257,Elkana Syr 60 ml,Dummy,dummy,master
+1010401001000258,Pumpisel Inj,Dummy,dummy,master
+1010401001000259,Sanadryl syr 60 ml,Dummy,dummy,master
+1010401001000260,Ventolin N 2.5,Dummy,dummy,master
+1010401001000261,Konicare M Telon Plus 125 ml,Dummy,dummy,master
+1010401001000262,Otsu water inj. 25 ml,Dummy,dummy,master
+1010401001000263,Alco Flu Plus Batuk Syr 100 Ml,Botol,Botol,master
+1010401001000264,Freshcare Smash 8 ml,Pcs,Pcs,master
+1010401001000265,"Kloderma Cream 10 gr Krim 0,05%",Tube,Tube,master
+1010401001000266,Water Inj 25 Ml (satoria),Buah,Buah,master
+1010401001000267,Combantrin Syrup 10 ml,Botol,Botol,master
+1010401001000268,Tempra Forte Sirup 60 Ml,Botol,Botol,master
+1010401001000269,Actifed Plus Cough Supresant Sirup 60 ml,Botol,Botol,master
+1010401001000270,Actifed Syrup Expectorant 60 ml,Botol,botol,master
+1010401001000271,Cefixime Sirup Kering 100 mg (30 ml),Botol,Botol,master
+1010401001000272,Cendo Lyteers Eye Drop 15 ml,Botol,Botol,master
+1010401001000273,Erlamycetin Ear Drops 1% (10 ml),Botol,botol,master
+1010401001000274,Herbakof Sirup 100 ml Strong Mint,Botol,botol,master
+1010401001000275,"Insto Eye Drop 7,5 ml",Botol,botol,master
+1010401001000276,Nutrimax Vitamin D3 400 IU Syrup (120 ml),Botol,botol,master
+1010401001000277,Paracetamol Infus (100 ml),Botol,Botol,master
+1010401001000278,Freshcare Strong 10 ml,Botol,botol,master
+1010401001000279,Nu Health L-Cal Grow,Botol,Botol,master
+1010401001000280,OB Herbal 60 ml,Botol,Botol,master
+1010401001000281,Cairan Nacl 100 ml (satoria),Botol,botol,master
+1010401001000282,Siladex Attitusive 60 ml,Botol,Botol,master
+1010401001000283,Sanmol Forte Syr 60 ml,Botol,Botol,master
+1010401002000001,Amoxsan Forte 500 mg,Butir,Butir,master
+1010401002000002,Aclam 500 mg,Butir,Butir,master
+1010401002000003,Amadiab 4 mg,Butir,Butir,master
+1010401002000004,Amadiab 2 mg,Butir,Butir,master
+1010401002000005,Acran 300 mg,Butir,Butir,master
+1010401002000006,Ab-Vask 10 mg,Butir,Butir,master
+1010401002000007,Aldisa SR,Butir,Butir,master
+1010401002000008,Berry Vision,Butir,Butir,master
+1010401002000009,Blopress 8 mg,Butir,Butir,master
+1010401002000010,Becom Zet,Butir,Butir,master
+1010401002000011,Blopress Plus,Butir,Butir,master
+1010401002000012,Baquinor Forte,Butir,Butir,master
+1010401002000013,Cefila 100 mg,Butir,Butir,master
+1010401002000014,Cravox 500 mg,Butir,Butir,master
+1010401002000015,Clinmas 300 mg,Butir,Butir,master
+1010401002000016,Cal 95,Butir,Butir,master
+1010401002000017,Clarihis 10 mg,Butir,Butir,master
+1010401002000018,Diadium 2 mg,Butir,Butir,master
+1010401002000019,Eflagen 50 mg,Butir,Butir,master
+1010401002000020,Erysanbe 500 mg,Butir,Butir,master
+1010401002000021,Fg Troches Meiji,Butir,Butir,master
+1010401002000022,Forbetes 500 mg,Butir,Butir,master
+1010401002000023,Forasma,Butir,Butir,master
+1010401002000024,Folavit,Butir,Butir,master
+1010401002000025,Galflux 10 mg,Butir,Butir,master
+1010401002000026,Guarposid 5 mg,Butir,Butir,master
+1010401002000027,Hepatin,Butir,Butir,master
+1010401002000028,Imunos,Butir,Butir,master
+1010401002000029,Ibuprofen 400 mg,Butir,Butir,master
+1010401002000030,Lapibal 250 mg,Butir,Butir,master
+1010401002000031,Lameson 4 mg,Butir,Butir,master
+1010401002000032,Laxacod,Butir,Butir,master
+1010401002000033,Lansoprazole 30 mg,Butir,Butir,master
+1010401002000034,Lipitor 10 mg,Butir,Butir,master
+1010401002000035,Lapisiv T,Butir,Butir,master
+1010401002000036,Lagesil,Butir,Butir,master
+1010401002000037,Lapimuc,Butir,Butir,master
+1010401002000038,L-Bio,Butir,Butir,master
+1010401002000039,Mecola Forte,Butir,Butir,master
+1010401002000040,Movix 15 mg,Butir,Butir,master
+1010401002000041,Mefinal 500 mg,Butir,Butir,master
+1010401002000042,Neurosanbe 5000 mg,Butir,Butir,master
+1010401002000043,Nulacta Plus,Butir,Butir,master
+1010401002000044,Ocuson,Butir,Butir,master
+1010401002000045,Osteokom,Butir,Butir,master
+1010401002000046,Prenimia,Butir,Butir,master
+1010401002000047,Q Cef 500 mg,Butir,Butir,master
+1010401002000048,Sanmol 500 mg *,Butir,Butir,master
+1010401002000049,Simbado,Butir,Butir,master
+1010401002000050,Sanprima Forte 500 mg,Butir,Butir,master
+1010401002000051,Thrombo Aspilet,Butir,Butir,master
+1010401002000052,Tremenza,Butir,Butir,master
+1010401002000053,Trichol,Butir,Butir,master
+1010401002000054,Tripanzym 500 mg,Butir,Butir,master
+1010401002000055,Tiriz 10 mg,Butir,Butir,master
+1010401002000056,Urotractin,Butir,Butir,master
+1010401002000057,Unalium 5 mg,Butir,Butir,master
+1010401002000058,Venaron,Butir,Butir,master
+1010401002000059,Zibramax 500 mg,Butir,Butir,master
+1010401002000060,CDR,Botol,Botol,master
+1010401002000061,CDR Fortos,Botol,Botol,master
+1010401002000062,Degirol,Butir,Butir,master
+1010401002000063,Enervon C 4',Bungkus,Bungkus,master
+1010401002000065,Enervon C 30',Botol,Botol,master
+1010401002000066,Fitkom Gummy Kids,Kotak,Kotak,master
+1010401002000067,Fatigon Spirit,Butir,Butir,master
+1010401002000068,Hemaviton Stamina,Butir,Butir,master
+1010401002000069,Panadol Extra,Butir,Butir,master
+1010401002000070,Panadol Cold dan Flu,Butir,Butir,master
+1010401002000071,Panadol Biru,Butir,Butir,master
+1010401002000072,Redoxon,Botol,Botol,master
+1010401002000073,Supradyn,Botol,Botol,master
+1010401002000074,Sangobion 10x25,Butir,Butir,master
+1010401002000075,Vipro G,Box,Box,master
+1010401002000076,Vitacimin *,Butir,Butir,master
+1010401002000077,Vitalong C BR 30',Botol,Botol,master
+1010401002000078,Albiotin 300mg,Blister,Blister,master
+1010401002000079,Cataflam 50 mg,Blister,Blister,master
+1010401002000080,Disflatyl 40 mg,Butir,Butir,master
+1010401002000081,Frego 5 mg,Blister,Blister,master
+1010401002000082,Imodium 2 mg,Butir,Butir,master
+1010401002000083,Imboost Force,Butir,Butir,master
+1010401002000084,Intunal Forte,Blister,Blister,master
+1010401002000085,Lapibal 500 mg,Butir,Butir,master
+1010401002000086,Neurobion 5000,Blister,Blister,master
+1010401002000087,Neuralgin RX,Butir,Butir,master
+1010401002000088,Paratusin,Butir,Butir,master
+1010401002000089,Zyloric 100 mg,Blister,Blister,master
+1010401002000090,Magtral,Butir,Butir,master
+1010401002000091,Pharmaton Formula,Butir,Butir,master
+1010401002000092,Vegebland 21 Jr,Botol,Botol,master
+1010401002000093,Lodia,Butir,Butir,master
+1010401002000094,Rhinos SR *,Butir,Butir,master
+1010401002000095,Strepsil,Bungkus,Bungkus,master
+1010401002000096,Caviplex,Butir,Butir,master
+1010401002000097,Hufagrip Biru,Butir,Butir,master
+1010401002000098,Zevask 5 mg,Butir,Butir,master
+1010401002000099,Voltadex 50 mg,Butir,Butir,master
+1010401002000100,Anastan Forte,Butir,Butir,master
+1010401002000101,Yusimox,Butir,Butir,master
+1010401002000102,Atofar 20 MG,Tablet,tablet,master
+1010401002000103,Dulcolax 5 mg,Butir,Butir,master
+1010401002000104,Broadmox 500 mg,Butir,Butir,master
+1010401002000105,Alstein 200 mg,Butir,Butir,master
+1010401002000106,Cargesik,Butir,Butir,master
+1010401002000107,Caranal,Butir,Butir,master
+1010401002000108,Dexanta,Butir,Butir,master
+1010401002000109,Hi-Chol,Butir,Butir,master
+1010401002000110,Mirapect,Butir,Butir,master
+1010401002000111,Mirasic 500 mg,Butir,Butir,master
+1010401002000112,Miraneuro,Butir,Butir,master
+1010401002000113,Purinic,Butir,Butir,master
+1010401002000114,Coparcetin,Butir,Butir,master
+1010401002000115,Dalfarol,Butir,Butir,master
+1010401002000116,Lutenyl,Butir,Butir,master
+1010401002000117,Lostacef,Butir,Butir,master
+1010401002000118,Siobion,Butir,Butir,master
+1010401002000119,Urdahex,Butir,Butir,master
+1010401002000120,Viostin DS,Butir,Butir,master
+1010401002000121,Hufavicen E,Butir,Butir,master
+1010401002000122,Histigo 6 ml (Kaplet),Butir,Butir,master
+1010401002000123,Hufaxicam,Butir,Butir,master
+1010401002000124,Hufadon,Butir,Butir,master
+1010401002000125,Kalmoxilin 500 mg,Butir,Butir,master
+1010401002000126,Lesidas,Butir,Butir,master
+1010401002000127,Remelox,Butir,Butir,master
+1010401002000128,Spasmicine,Butir,Butir,master
+1010401002000129,Actapain,Butir,Butir,master
+1010401002000130,Ascardia,Butir,Butir,master
+1010401002000131,Becefort C,Butir,Butir,master
+1010401002000132,Demacoline,Butir,Butir,master
+1010401002000133,Dentacid,Butir,Butir,master
+1010401002000134,Fasiprim (Cotrimoxazole Forte),Butir,Butir,master
+1010401002000135,Glumin XR 500mg,Butir,Butir,master
+1010401002000136,Glucobay 50mg,Butir,Butir,master
+1010401002000137,"Harnal 0,2",Butir,Butir,master
+1010401002000138,Hyomida Plus,Butir,Butir,master
+1010401002000139,Kaflam 50mg,Butir,Butir,master
+1010401002000140,Levofluxaxin 500mg,Butir,Butir,master
+1010401002000141,Mirabion,Butir,Butir,master
+1010401002000142,Selvim,Butir,Butir,master
+1010401002000143,Spasminal,Butir,Butir,master
+1010401002000144,Ulceranin,Butir,Butir,master
+1010401002000145,Winatin,Butir,Butir,master
+1010401002000146,Becom-C,Butir,Butir,master
+1010401002000147,Nutrifar,Butir,Butir,master
+1010401002000148,Ester Holisticare C,Bungkus,Bungkus,master
+1010401002000149,Quantidex,Butir,Butir,master
+1010401002000150,Armox,Butir,Butir,master
+1010401002000151,Mexon,Butir,Butir,master
+1010401002000152,Cefixime Helixim,Butir,Butir,master
+1010401002000153,Harnal 400 mg,Butir,Butir,master
+1010401002000154,Obatine,Butir,Butir,master
+1010401002000155,Amaryl 2 mg,Butir,Butir,master
+1010401002000156,Biovision,Butir,Butir,master
+1010401002000157,Bamgetol,Butir,Butir,master
+1010401002000158,Polysilane,Butir,Butir,master
+1010401002000159,Vidoran Smart Yupi,Kotak,Kotak,master
+1010401002000160,Acyclovir 400mg,Butir,Butir,master
+1010401002000161,Arcoxia 60mg,Butir,Butir,master
+1010401002000162,Hufamicetin,Butir,Butir,master
+1010401002000163,Incidal,Butir,Butir,master
+1010401002000164,Myores,Butir,Butir,master
+1010401002000165,Mucosta,Butir,Butir,master
+1010401002000166,Nutriflam,Butir,Butir,master
+1010401002000167,Nonflamin,Butir,Butir,master
+1010401002000168,Rebone,Butir,Butir,master
+1010401002000169,Akrinor,Butir,Butir,master
+1010401002000170,Lapicef 500mg,Butir,Butir,master
+1010401002000171,Metyl Prednisolon,Butir,Butir,master
+1010401002000172,Dexteem Plus,Butir,Butir,master
+1010401002000173,Ponstan,Butir,Butir,master
+1010401002000174,Glucopage 500mg,Butir,Butir,master
+1010401002000175,Koleskol,Butir,Butir,master
+1010401002000176,Mecox 15 mg,Butir,Butir,master
+1010401002000177,Cefadroxyl 500 mg,Butir,Butir,master
+1010401002000178,Allopurinol 100 mg,Tablet,tablet,master
+1010401002000179,Cholespar 20 mg,Butir,Butir,master
+1010401002000180,Crestor 10mg,Butir,Butir,master
+1010401002000181,Imboost,Butir,Butir,master
+1010401002000182,Atorvastatin 10 mg,Tablet,tablet,master
+1010401002000183,Norvask 5 mg,Butir,Butir,master
+1010401002000184,Neurodex,Butir,Butir,master
+1010401002000185,Omeprazole,Butir,Butir,master
+1010401002000186,Tensicap 25 mg,Butir,Butir,master
+1010401002000187,Zink 20 mg,Butir,Butir,master
+1010401002000188,Vitanorm,Butir,Butir,master
+1010401002000189,Amcor,Butir,Butir,master
+1010401002000190,Alloris,Butir,Butir,master
+1010401002000191,Dexa Harsen,Butir,Butir,master
+1010401002000192,Ever E 250,Botol,Botol,master
+1010401002000193,Lotyn,Butir,Butir,master
+1010401002000194,Mertigo,Butir,Butir,master
+1010401002000195,Nutrafor Chol,Butir,Butir,master
+1010401002000196,Puricemia 300mg,Butir,Butir,master
+1010401002000197,Stimuno,Butir,Butir,master
+1010401002000198,Vicee,Butir,Butir,master
+1010401002000199,Mycoral 200mg,Butir,Butir,master
+1010401002000200,Lapistan 500mg,Butir,Butir,master
+1010401002000201,Teosal,Butir,Butir,master
+1010401002000202,Cetinal 10mg,Butir,Butir,master
+1010401002000203,Mucos 30mg,Butir,Butir,master
+1010401002000204,Metronidazole 500mg,Butir,Butir,master
+1010401002000205,Acifar 400 mg,Butir,Butir,master
+1010401002000207,Falergi,Butir,Butir,master
+1010401002000208,Intervask 5 mg,Butir,Butir,master
+1010401002000210,Simvastatin 20 mg,Butir,Butir,master
+1010401002000211,Asthin Force,Butir,Butir,master
+1010401002000212,Alofar,Butir,Butir,master
+1010401002000213,Lokev Tab,Butir,Butir,master
+1010401002000214,Lanamol 500 Mg,Butir,Butir,master
+1010401002000215,Ersolon 4 Mg,Butir,Butir,master
+1010401002000216,Gravas 10 Mg,Butir,Butir,master
+1010401002000217,Gasela,Butir,Butir,master
+1010401002000218,Ceterizin,Butir,Butir,master
+1010401002000220,Folamil Genio,Butir,Butir,master
+1010401002000221,Natrol Easy C-1000,Botol,Botol,master
+1010401002000222,Arcapec,Butir,Butir,master
+1010401002000223,Fixiphar,Butir,Butir,master
+1010401002000224,Ostin Forte,Butir,Butir,master
+1010401002000225,Ranitidine,Butir,Butir,master
+1010401002000226,Vesperum,Butir,Butir,master
+1010401002000227,Cameloc 15 mg,Butir,Butir,master
+1010401002000228,Ciprofloxacin 500 mg,Butir,Butir,master
+1010401002000229,Ketoconazole 200 mg,Butir,Butir,master
+1010401002000230,Meloxicam 15 mg,Butir,Butir,master
+1010401002000231,"Concor 2,5 mG",Butir,Butir,master
+1010401002000232,CPG 75mg 30's,Butir,Butir,master
+1010401002000233,ISDN,Butir,Butir,master
+1010401002000234,Zipha 20 mg,Butir,Butir,master
+1010401002000235,Cardio Aspirin 100 mg,Butir,Butir,master
+1010401002000236,Dextral F,Butir,Butir,master
+1010401002000237,Dobrizol,Butir,Butir,master
+1010401002000238,Myonep 500mg,Butir,Butir,master
+1010401002000239,Erphaflam 50 Mg,Butir,Butir,master
+1010401002000240,Fludane,Butir,Butir,master
+1010401002000241,Novaflox,Butir,Butir,master
+1010401002000242,Concor 5 Mg,Butir,Butir,master
+1010401002000243,ESTER C,Butir,Butir,master
+1010401002000244,"Pulmicort 0,25 Respulers 20'S",Buah,Buah,master
+1010401002000245,Theragran M,Tablet,Tablet,master
+1010401002000246,Myonep 100'S,Butir,Butir,master
+1010401002000247,Acarbose 100 mg,Butir,Butir,master
+1010401002000248,Candesartan Cilexetil 8 mg,Butir,Butir,master
+1010401002000249,Glimipiride 1 mg,Butir,Butir,master
+1010401002000250,Intunal Forte - butir,Butir,Butir,master
+1010401002000251,Neurobion 5000 - butir,Butir,Butir,master
+1010401002000252,Voltaren 50 mg,Butir,Butir,master
+1010401002000253,Metformin,Butir,Butir,master
+1010401002000254,Proza,Butir,Butir,master
+1010401002000255,Enervon C,Butir,Butir,master
+1010401002000256,Vitalong C 30'S,Butir,Butir,master
+1010401002000257,Aptor 100'S,Butir,Butir,master
+1010401002000258,Atofar 10 MG,Tablet,tablet,master
+1010401002000259,Cataflam 50 mg - butir,Butir,Butir,master
+1010401002000260,Myonep 50 mg,Butir,Butir,master
+1010401002000261,Q Ten 30' S,Butir,Butir,master
+1010401002000262,Unisia 20' S,Butir,Butir,master
+1010401002000263,Hyperchol 200 Mg,Butir,Butir,master
+1010401002000264,Etorvel,Butir,Butir,master
+1010401002000265,Ester C Botol 30 S,Botol,Botol,master
+1010401002000266,Frego 5 mg - butir,Butir,Butir,master
+1010401002000267,Azitromycin 500mg 20'S,Butir,Butir,master
+1010401002000268,Profibrat 200 mg,Butir,Butir,master
+1010401002000269,Proove D,Butir,Butir,master
+1010401002000270,Tivera V,Butir,Butir,master
+1010401002000271,Allopurinol 300 mg,Tablet,tablet,master
+1010401002000272,Pharmaton Vit,Kaplet,Kaplet,master
+1010401002000273,Sanmol Forte 650 mg *,Butir,Butir,master
+1010401002000274,Fluvir 10' S,Butir,Butir,master
+1010401002000275,Femy D 1000,Butir,Butir,master
+1010401002000276,Koyo Cabe,Sachet,Sachet,master
+1010401002000277,Emturnas Forte 650 mg,Butir,Butir,master
+1010401002000278,Diclovenac Sodium,Butir,Butir,master
+1010401002000279,Lanadexon,Butir,Butir,master
+1010401002000280,Emtrumnas 650,Butir,Butir,master
+1010401002000281,Salbutamol 2mg,Butir,Butir,master
+1010401002000282,Fenofibrate,Butir,Butir,master
+1010401002000283,Itraconazole 100mg,Butir,Butir,master
+1010401002000284,Rhillus,Butir,Butir,master
+1010401002000285,Geriavita,Butir,Butir,master
+1010401002000286,Amlodipine 10mg,Tablet,tablet,master
+1010401002000287,Cetirizine,Butir,Butir,master
+1010401002000288,Prove d3-1000,Butir,Butir,master
+1010401002000289,Rillus,Butir,Butir,master
+1010401002000290,Tuzalos,Butir,Butir,master
+1010401002000291,Calfera,Butir,Butir,master
+1010401002000292,Urinter,Butir,Butir,master
+1010401002000293,Natrium Diklofenak,Butir,Butir,master
+1010401002000294,Black Mores Vit. D3,Botol,Botol,master
+1010401002000295,Amlodipine 5mg,Tablet,tablet,master
+1010401002000296,Mirasic Forte,Butir,Butir,master
+1010401002000297,Simvastatin 10 mg*,Butir,Butir,master
+1010401002000298,Nutrimax,Botol,Botol,master
+1010401002000299,Zegavit,Butir,Butir,master
+1010401002000300,Alleron 4 mg,Kaplet,Kaplet,master
+1010401002000301,Guanifesin,Butir,Butir,master
+1010401002000302,Primadex Forte,Butir,Butir,master
+1010401002000303,Lostacef 250Mg,Butir,Butir,master
+1010401002000304,Maltofer Chew Tablet *,Butir,Butir,master
+1010401002000305,Natur E Soft,Butir,Butir,master
+1010401002000306,Napacin,Butir,Butir,master
+1010401002000307,Zegavt,Butir,Butir,master
+1010401002000308,Blackmores Vit C,Botol,Botol,master
+1010401002000309,Family Dr HB Strip,Kotak,Ktk,master
+1010401002000310,Easy Touch Strip Asam Urat,Kotak,Ktk,master
+1010401002000311,Easy Touch Strip Gula Darah,Kotak,Ktk,master
+1010401002000312,Isprinol Tab 500 Mg,Kotak,Ktk,master
+1010401002000313,Festaric 40 Mg,Tablet,Tab,master
+1010401002000314,Lameson Suspensi 30 Ml,Botol,Botol,master
+1010401002000315,Antimo,Butir,Butir,master
+1010401002000316,Easy Touch Cholesterol,Pak,Pack,master
+1010401002000317,Irbesartan,Butir,Butir,master
+1010401002000318,CTM,Butir,Butir,master
+1010401002000319,Cool Vita C 1 GR,Pcs,Pcs,master
+1010401002000320,Sucralfate,Botol,Botol,master
+1010401002000321,Vometa Flash Tab,Butir,Butir,master
+1010401002000322,Natur E White (box),Box,Box,master
+1010401002000323,Sirplus,Botol,Botol,master
+1010401002000324,Calcium D Redoxon,Pcs,Pcs,master
+1010401002000325,Hi-d 5000 IU,Pcs,Pcs,master
+1010401002000326,Prorenal kpl,Pcs,Pcs,master
+1010401002000327,Santa e 400 mg,Pcs,Pcs,master
+1010401002000328,Tafnat 25mg,Pcs,Pcs,master
+1010401002000329,Hp pro plus,Pcs,Pcs,master
+1010401002000330,Surevit D3 1000,Pcs,Pcs,master
+1010401002000331,cataflam 50 mg tab@50,Dummy,dummy,master
+1010401002000332,catgut chromic 2/0 w448,Dummy,dummy,master
+1010401002000333,intunal forte tablet 25x4 s,Dummy,dummy,master
+1010401002000334,irbesartan 150 mg tab@ 50 gdx,Dummy,dummy,master
+1010401002000335,isprinol 500 mg tab@8,Dummy,dummy,master
+1010401002000336,kenalog in orabase 5 gr,Dummy,dummy,master
+1010401002000337,lanadexon 0.5 mg kpl@100,Dummy,dummy,master
+1010401002000338,lapibal 500mcb cap@100,Dummy,dummy,master
+1010401002000339,L-Bio sach@30,Dummy,dummy,master
+1010401002000340,Lodia film-coated tab,Dummy,dummy,master
+1010401002000341,Lokev cap@50,Dummy,dummy,master
+1010401002000342,Lostacef 500mg cap@50,Dummy,dummy,master
+1010401002000343,maltofer chew tab@30,Dummy,dummy,master
+1010401002000344,mefinal 500mg kpl@100,Dummy,dummy,master
+1010401002000345,meloxicam 15mg tab@100 (hexa),Dummy,dummy,master
+1010401002000346,meloxicam 15mg tab@50 gnov,Dummy,dummy,master
+1010401002000347,metformin 500mg tab @100 (hexa),Dummy,dummy,master
+1010401002000348,myonep 50 mgtab@100,Dummy,dummy,master
+1010401002000349,neuralgin rx kpl@100,Dummy,dummy,master
+1010401002000350,Neurobion Forte *,Tablet,Tablet,master
+1010401002000351,nexcare micropore 0.5 inch x10,Dummy,dummy,master
+1010401002000352,surevit,Dummy,dummy,master
+1010401002000353,nutrimax vitamin d3+k2 cap@30,Dummy,dummy,master
+1010401002000354,onemed verban 5cm,Dummy,dummy,master
+1010401002000355,polysilane tab@40,Dummy,dummy,master
+1010401002000356,prorenal kpl@100,Dummy,dummy,master
+1010401002000357,ranitidine 150mg tab@100 ghex,Dummy,dummy,master
+1010401002000358,ranitidine 50mg inj amp@10 gno (nvll),Dummy,dummy,master
+1010401002000359,rhinos sr cap@50,Dummy,dummy,master
+1010401002000360,rillus tab@30,Dummy,dummy,master
+1010401002000361,salonpas koyo hot@10,Dummy,dummy,master
+1010401002000362,salonpas koyo@10 (5x2),Dummy,dummy,master
+1010401002000363,sanmol 500 mg tab,Dummy,dummy,master
+1010401002000364,sanmol forte tab@100,Tablet,tablet,master
+1010401002000365,santa e 400mg kap@100,Dummy,dummy,master
+1010401002000366,simvastatin 10mg tab@100 ghx,Dummy,dummy,master
+1010401002000367,spasminal tab@100,Dummy,dummy,master
+1010401002000368,tafnat 25 mg tab@30,Dummy,dummy,master
+1010401002000369,tremenza tab@100,Dummy,dummy,master
+1010401002000370,vitacimin sweet tab@100,Dummy,dummy,master
+1010401002000371,voltaren 50mg tab@50,Dummy,dummy,master
+1010401002000372,zegavit kpl @60,Dummy,dummy,master
+1010401002000373,Catgut c 2/0 W448,Dummy,dummy,master
+1010401002000374,W448,Dummy,dummy,master
+1010401002000375,cefixime 200mg cap@100 GDX,Dummy,dummy,master
+1010401002000376,N micropore 0.5 inch x10,Dummy,dummy,master
+1010401002000377,NEXCARE,Dummy,dummy,master
+1010401002000378,ketesse 25 mg,Tablet,tablet,master
+1010401002000379,koyo cabe sach@20,Dummy,dummy,master
+1010401002000380,sangobion kapsul @250,Dummy,dummy,master
+1010401002000381,sensi alkohol swab@100,Dummy,dummy,master
+1010401002000382,topicare+soothing cr 100gr ceramide,Dummy,dummy,master
+1010401002000383,kalnex tab,Dummy,dummy,master
+1010401002000384,Paramex TAB @200,Tablet,tablet,master
+1010401002000385,Zinc Plus Cap@60,Box,box,master
+1010401002000386,ALLETROL COMPOSITUM TM,Botol,Botol,master
+1010401002000387,Acetylcysteine 200 mg,Dummy,dummy,master
+1010401002000388,Domperidon 10 mg,Tablet,tablet,master
+1010401002000389,Methylprednisolone 4 mg,Dummy,dummy,master
+1010401002000390,Asam Mefenamat 500 gr,Dummy,dummy,master
+1010401002000391,Dexamethasone 0.5,Tablet,tablet,master
+1010401002000392,Sumagesic 600mg,Tablet,Tablet,master
+1010401002000393,Atorvastatin 20 mg,Tablet,Tablet,master
+1010401002000394,Gluxanthin-c,Strip,Strip,master
+1010401002000395,Clindamycin 300 mg,Dummy,dummy,master
+1010401002000396,Pantoprazole 40 mg,Dummy,dummy,master
+1010401002000397,Cortidex,Dummy,dummy,master
+1010401002000398,Prove Vit 757mg,Dummy,dummy,master
+1010401002000399,Glubio,Dummy,dummy,master
+1010401002000400,Poweroksi 25 mg,Tablet,tablet,master
+1010401002000401,Renadinac 50 mg,Dummy,dummy,master
+1010401002000402,Ketosteril 600 Mg,Tablet,tablet,master
+1010401002000403,Nutrimax Omega Complex isi 30,Tablet,Tablet,master
+1010401002000404,Renalof,Tablet,Tablet,master
+1010401002000405,Bisoprolol 5 mg,Tablet,tablet,master
+1010401002000406,Ardium 500 mg,Tablet,tablet,master
+1010401002000407,Becefort,Tablet,Tablet,master
+1010401002000408,Lodia 2 mg,Tablet,Tablet,master
+1010401002000409,CDR (isi 10),Tabung,Tabung,master
+1010401002000410,Aspilet,Tablet,tablet,master
+1010401002000411,Cefixime Sirup Kering 100 mg (30ml),Botol,Botol,master
+1010401002000412,Nutrimax Omega Complex 8 in 1 (satuan),Tablet,Tablet,master
+1010401002000413,VITAMIN D3 MPL 1000 IU MEDIKON,Tablet,Tablet,master
+1010401002000414,Voltaren Emulgee (20gram),Tube,Tube,master
+1010401003000001,YB. Aerosol Semprot,Botol,Botol,master
+1010401003000002,Oksigen Refill,Buah,Buah,master
+1010401003000003,Avamys 120 nasal spray,Pcs,Pcs,master
+1010401003000004,oxycan klg,Dummy,dummy,master
+1010401004000001,Herocyn Powder 100 gr,Botol,Botol,master
+1010401004000002,Purol Powder 110 ml,Botol,Botol,master
+1010401004000003,Caladine Powder 60 gr,Botol,Botol,master
+1010401004000004,Caladine Powder 100 gr,Botol,Botol,master
+1010401004000005,Lacto B,Bungkus,Bungkus,master
+1010401004000006,Oralit,Sachet,Sachet,master
+1010401004000007,Probio,Sachet,Saset,master
+1010401004000008,L-Bio,Sachet,Sachet,master
+1010401004000009,Lidocain,Pcs,Pcs,master
+1010401004000010,Ahfc sach,Sachet,sachet,master
+1010401004000011,"Pharolit 5,8gr sach",Sachet,Sachet,master
+1010401004000012,pharolit 5.8gr sach@60,Dummy,dummy,master
+1010401004000013,"Probio Force Serbuk 1,5 Gram",Sachet,Sachet,master
+1010401005000001,Counterpain 30 gr,Tube,Tube,master
+1010401005000002,Counterpain 60 gr,Tube,Tube,master
+1010401005000003,Geliga 20 gr,Botol,Botol,master
+1010401005000004,Geliga 40 gr,Botol,Botol,master
+1010401005000005,Osteokom Cream 114 gr,Tube,Tube,master
+1010401005000006,Vicks Vaporub 10 gr,Botol,Botol,master
+1010401005000007,Vicks Inhaler,Botol,Botol,master
+1010401005000008,Vicks Vaporub 50 gr,Botol,Botol,master
+1010401005000009,Bioderm Cream 5 gr,Tube,Tube,master
+1010401005000010,Cinolon N Cream 10 gr,Tube,Tube,master
+1010401005000011,Cinolon Cream 5 gr,Tube,Tube,master
+1010401005000012,Elox Cream 5 gr,Tube,Tube,master
+1010401005000013,Fuladic Cream 5 gr,Tube,Tube,master
+1010401005000014,Haemocaine Cream,Tube,Tube,master
+1010401005000015,Laxarec Supst,Tube,Tube,master
+1010401005800001,Pirofel Cream,Tube,Tube,master
+1010401005800002,Topcort Cream 10 gr,Tube,Tube,master
+1010401005800003,Thrombophop Jel 20 gr *,Tube,Tube,master
+1010401005800004,Bioplacenton,Tube,Tube,master
+1010401005800005,Betason N Cream,Tube,Tube,master
+1010401005800006,Counterpain 5 gr,Tube,Tube,master
+1010401005800007,Voltaren Cream 10 gr,Tube,Tube,master
+1010401005800008,Balsem Geliga 10 gr,Buah,Buah,master
+1010401005800009,Hico Cream,Tube,Tube,master
+1010401005800010,Acyclovir Cream,Tube,Tube,master
+1010401005800011,Balsem Lang 10gr,Botol,Botol,master
+1010401005800012,Chloramfecort Cream,Tube,Tube,master
+1010401005800013,Farsycol Cream,Tube,Tube,master
+1010401005800014,Farcycol Cream Trifamycetin,Tube,Tube,master
+1010401005800015,Balsem,Botol,Botol,master
+1010401005800016,Elomox Cream,Tube,Tube,master
+1010401005800017,Diprogenta Cream,Tube,Tube,master
+1010401005800018,Desolex Cream,Tube,Tube,master
+1010401005800019,Acifar Cream,Tube,Tube,master
+1010401005800020,Boraginol N Supos,Tube,Tube,master
+1010401005800021,Betason Cream,Tube,Tube,master
+1010401005800022,Microlax Supos 5ml,Tube,Tube,master
+1010401005800023,Sagestam Cream,Tube,Tube,master
+1010401005800024,Counterpain 15gr,Tube,Tube,master
+1010401005800025,Esperson Cream,Tube,Tube,master
+1010401005800026,Inerson Cream,Tube,Tube,master
+1010401005800027,Vitacid Cream,Tube,Tube,master
+1010401005800029,Mico Z Cream,Tube,Tube,master
+1010401005800030,Miconazol,Tube,Tube,master
+1010401005800031,Baycuten N,Tube,Tube,master
+1010401005800032,Scanovir,Tube,Tube,master
+1010401005800033,Mesone,Tube,Tube,master
+1010401005800034,Betadine Salf,Tube,Tube,master
+1010401005800035,Balpirik,Tube,Tube,master
+1010401005800036,Jelly 5 Liter,Galon,Galon,master
+1010401005800037,Jelly Dopler 250,Botol,Botol,master
+1010401005800039,Betadine Cream,Tube,Tube,master
+1010401005800040,Geliga Cream,Tube,Tube,master
+1010401005800041,Kenalog In Orbase,Tube,Tube,master
+1010401005800042,Hidrokortison Salep Kulit,Tube,Tube,master
+1010401005800043,Counterpain Cool 15 gram,Tube,Tube,master
+1010401005800044,Medi-Klin Gel 1%,Tube,Tube,master
+1010401005800045,Heliatech Sunscreen Lotion,Tube,Tube,master
+1010401005800046,Apolar Cream,Tube,Tube,master
+1010401005800047,Counterpain Hot,Tube,Tube,master
+1010401005800048,Ketoconazole 10 gram krim 2%,Tube,Tube,master
+1010401005800049,Betason,Tube,Tube,master
+1010401005800050,Mirasic,Butir,Butir,master
+1010401005800051,"Hydrocortisone (2,5 %) 5 mg",Tube,Tube,master
+1010401005800052,Erlamycetin Ear Drops,Pcs,Pcs,master
+1010401005800053,Polar Bear M Angin,Botol,Botol,master
+1010401005800054,Alletrol Compositum,Botol,Botol,master
+1010401005800055,Betadine 5ml,Botol,Botol,master
+1010401005800056,Salonpas Hot,Bungkus,Bungkus,master
+1010401005800057,Genoint,Tube,Tube,master
+1010401005800058,Balsem Lang 20Gr,Tube,Tube,master
+1010401005800059,Counterpain CR 120 gr,Buah,Buah,master
+1010401005800060,Daktarin,Tube,tube,master
+1010401005800061,thrombophob gel (nordmark),Dummy,dummy,master
+1010401005800062,ceramide,Dummy,dummy,master
+1010401005800063,tremenza tab @100,Dummy,dummy,master
+1010401005800064,Topicare,Botol,botol,master
+1010401005800065,L-Bio sachet,Sachet,sachet,master
+1010401005800066,Lostacef 250 gr syr 60 ml,Botol,Botol,master
+1010401005800067,Probio Force,Sachet,sach,master
+1010401005800068,Bevalex cr,Dummy,dummy,master
+1010401005800069,Painkilla 15 gr cr,Dummy,dummy,master
+1010401005800070,Kloderma cr 60 gr,Tube,Tube,master
+1010401005800071,Voltaren Emulge 10 gr,Tube,Tube,master
+1010401005800072,"Kloderma Cream 10 gr Krim 0,05% *",Tube,Tube,master
+1010401005800073,Thrombopop Gel 20 gram,Tube,Tube,master
+1010401005800074,"Desolex Cream 10 gr (0,05%)",Tube,Tube,master
+1010401005800075,"Genoint 0.3% (3,5 gr)",Tube,tube,master
+1010401005800076,Kenalog In Orbase 5 gr,Tube,Tube,master
+1010401005800077,Sagestam 10 gram,Tube,Tube,master
+1010401005800078,Voltaren Emulge (20 gram),Tube,Tube,master
+1010401999000001,Kapas Gulung,Gulung,Gulung,master
+1010401999000002,Kotak P3K,Kotak,Kotak,master
+1010401999000003,Kasa Steril,Kotak,Kotak,master
+1010401999000004,Leukoprec Leukoplas,Gulung,Gulung,master
+1010401999000006,Handscond Uk S,Kotak,Kotak,master
+1010401999000007,Masker - Covid 19,Buah,Buah,master
+1010401999000008,Betadine Plaster Antiseptik,Lembar,Lembar,master
+1010401999000009,"Chili Plester 1,25 x 1",Gulung,Gulung,master
+1010401999000010,Salonpas Hot,Lembar,Lembar,master
+1010401999000011,Strip EZ Cholestrol,Box,Box,master
+1010401999000012,spuit 1 CC,Buah,Buah,master
+1010401999000013,Strip EZ Cevla,Box,Box,master
+1010401999000014,Strip EZ UA,Box,Box,master
+1010401999000015,Alat Easy Touch,Unit,Unit,master
+1010401999000016,Nal,Pcs,Pcs,master
+1010401999000017,Hypafix Plester,Pcs,Pcs,master
+1010401999000018,Bye Bye Fever Baby,Bungkus,Bungkus,master
+1010401999000019,Bye Bye Fever Anak,Bungkus,Bungkus,master
+1010401999000020,Minyak Tawon CC,Botol,Botol,master
+1010401999000021,Fresh Care (Varian),Botol,Botol,master
+1010401999000022,MTL My Baby 60ml,Botol,Botol,master
+1010401999000023,Vitalong C,Bungkus,Bungkus,master
+1010401999000024,Blood Lancets,Buah,Buah,master
+1010401999000025,Pads Alkohol,Bungkus,Bungkus,master
+1010401999000026,Strep EZ Asam Urat,Buah,Buah,master
+1010401999000027,Strep EZ Glucosa,Buah,Buah,master
+1010401999000028,Strep EZ Cholestrol,Buah,Buah,master
+1010401999000029,Johnson Baby Oil 50 ml,Botol,Botol,master
+1010401999000030,Kapsul Kosong,Buah,Buah,master
+1010401999000031,MKP Lang 60 ml,Botol,Botol,master
+1010401999000032,MTL Konicare 60 ml,Botol,Botol,master
+1010401999000033,Speet 3 cc,Buah,Buah,master
+1010401999000034,Strep Lipid Pro,Buah,Buah,master
+1010401999000035,MTL My Baby 90ml,Botol,Botol,master
+1010401999000036,Save T For Uno,Pcs,Pcs,master
+1010401999000037,Tabung Hematokrit,Tube,Tube,master
+1010401999000038,Sensodyne 120gr,Tube,Tube,master
+1010401999000039,Sensodyne 100gr,Tube,Tube,master
+1010401999000040,Pasta Gigi Enzim,Tube,Tube,master
+1010401999000043,Balsem Lang 20gr,Buah,Buah,master
+1010401999000044,Pot Salep,Buah,Buah,master
+1010401999000045,Salonpas,Lembar,Lembar,master
+1010401999000046,Strep HB Family Dr,Buah,Buah,master
+1010401999000047,Plester Bening,Buah,Buah,master
+1010401999000048,Tas Medical Kit,Pcs,Pcs,master
+1010401999000049,Hand Sanitizer Refiil,Liter,Liter,master
+1010401999000050,Hand Sanitizer Spray,Liter,Liter,master
+1010401999000051,Masker KN 95 - Covid 19,Kotak,Kotak,master
+1010401999000052,APD Gown - Covid 19,Pcs,Pcs,master
+1010401999000053,Face Shield - Covid 19,Pcs,Pcs,master
+1010401999000054,Masker Kain Sritex - Covid 19,Pcs,Pcs,master
+1010401999000055,Masker Sensi - Covid 19,Pcs,Pcs,master
+1010401999000056,Masker Karet SO - Covid 19,Kotak,Kotak,master
+1010401999000057,Masker 3 Play - Covid 19,Kotak,Kotak,master
+1010401999000058,Masker Premium - Covid 19,Pcs,Pcs,master
+1010401999000059,Rapid Test Lungene - Covid 19,Pcs,Pcs,master
+1010401999000060,Handscond M - Covid 19,Pasang,Pasang,master
+1010401999000061,Hand Sanitizer 55 ml - Covid 19,Botol,Botol,master
+1010401999000062,Hand Sanitizer Spray Antis Jeruk Nipis 200 ml,Botol,Botol,master
+1010401999000063,Hand Sanitizer Cair Antis Jeruk Nipis 5 Liter,Dirigen,Dirijen,master
+1010401999000064,Alkohol 100 ml - Covid 19,Botol,Botol,master
+1010401999000065,Disinfektan Spray 200 ml - Covid 19,Botol,Botol,master
+1010401999000066,White Tip,Buah,Buah,master
+1010401999000067,Plastik Klip Biru,Bungkus,Bungkus,master
+1010401999000068,APD SET - Covid 19,Set,SET,master
+1010401999000069,APD LEVEL 1 (JUBAH APRON) - Covid 19,Pcs,PCS,master
+1010401999000070,Masker KF 94 - Covid (Box),Box,Box,master
+1010401999000071,Masker Earloop Sensi 50'S - Covid 19,Kotak,Kotak,master
+1010401999000072,Disinfektan Spray 250 ml - Covid 19,Botol,Botol,master
+1010401999000073,Masker KF 94 (Satuan),Buah,Buah,master
+1010401999000074,Aseptic Plus 100 ml - Covid 19,Botol,Botol,master
+1010401999000075,Masker KF 94 - Covid 19 (Pack),Pak,Pack,master
+1010401999000076,Hand Sanitizer 60 ml - Covid 19,Botol,Botol,master
+1010401999000077,Masker KF 94 Convex (Box) - Covid 19,Box,Box,master
+1010401999000078,Ultrafix 5x10,Roll,roll,master
+1010401999000079,Vaselin Swab,Buah,Buah,master
+1010401999000080,Selang Oxygen,Buah,Buah,master
+1010401999000081,Thrombopop Gel,Tube,Tube,master
+1010401999000082,DC Glove,Pak,Pack,master
+1010401999000083,Disinfectan Spray Eagles 280 ml,Botol,Botol,master
+1010401999000084,Masker Earloop 4ply Sensi,Kotak,Kotak,master
+1010401999000085,Duckbill Face Mask,Box,Box,master
+1010401999000086,Masker Earlop Thankful,Box,Box,master
+1010401999000087,Masker Earlop Daily Facemask,Box,Box,master
+1010401999000088,Family Dr Aktivsafe Lancet,Buah,Buah,master
+1010401999000089,Kertas Puyer,Buah,Buah,master
+1010401999000090,Venflon,Buah,Buah,master
+1010401999000091,Infuset,Buah,Buah,master
+1010401999000092,Family Dr Ace Band,Pcs,Pcs,master
+1010401999000093,Ranitidin Injeksi,Pcs,Pcs,master
+1010401999000094,Salonpas Koyo Hot,Pcs,Pcs,master
+1010401999000095,Press Puyer,Pcs,Pcs,master
+1010401999000096,Sendok Obat Press,Pak,Pack,master
+1010401999000097,Kertas Puyer Press,Pak,Pack,master
+1010401999000098,Latex Powder Gloves,Box,Box,master
+1010401999000099,Bisturi No. 11,Pcs,Pcs,master
+1010401999000100,Family Dr Ace Band (Box),Box,Box,master
+1010401999000101,Strep HB Family Dr (Box),Box,Box,master
+1010401999000102,Daryantulle,Kotak,KTK,master
+1010401999000103,Onemed One Swabs,Kotak,Kotak,master
+1010401999000104,Xabi Nitrile Powder,Buah,Buah,master
+1010401999000105,Easy Touch Strip Asam Urat,Pak,Pack,master
+1010401999000106,Easy Touch Strip Gula Darah,Pak,Pack,master
+1010401999000107,Oxican KLG,Botol,Botol,master
+1010401999000108,KIfamed Alkohol Swab,Pcs,Pcs,master
+1010401999000109,Abocath No. 24,Tube,Tube,master
+1010401999000110,Wing Needle 25 TRM,Buah,Buah,master
+1010401999000111,Sarung Tangan ukuran S (box),Box,Box,master
+1010401999000112,Baymed alkohol swab 2 ply,Pcs,Pcs,master
+1010401999000113,Disposible syringe 10cc,Pcs,Pcs,master
+1010401999000114,Disposible syringe 5cc,Pcs,Pcs,master
+1010401999000115,Catgut Chromic 2/0,Dummy,dummy,master
+1010401999000116,nexcare micropore 0.5 inc x10,Dummy,dummy,master
+1010401999000117,onemed verban 5 cm,Dummy,dummy,master
+1010401999000118,Hansaplast Rol kain,Buah,buah,master
+1010401999000119,Onemed kasa steril 16 x16,Dummy,dummy,master
+1010401999000120,Oxycan 2,Dummy,dummy,master
+1010401999000121,Salonpas super @10,Dummy,dummy,master
+1010401999000122,Onemed,Dummy,dummy,master
+1010401999000123,Salonpas super,Dummy,dummy,master
+1010401999000124,Kimia Farma Cotton bud,Dummy,dummy,master
+1010401999000125,Double spike transfusion,Dummy,dummy,master
+1010401999000126,Masker Nebulizer Dewasa,Buah,buah,master
+1010401999000127,Alkohol Swab BD (Isi 100),Kotak,Kotak,master
+1010401999000128,Easy Touch Strip Asam Urat (satuan),Pcs,Pcs,master
+1010401999000129,Easy Touch Strip Gula Darah (Satuan),Pcs,Pcs,master
+1010401999000130,Kasa Steril 16x16 Narita Hijau isi 10,Kotak,Kotak,master
+1010401999000131,Plesterin AA (satuan),Pcs,Pcs,master
+1010401999000132,Kaca Mata Google,Buah,Buah,master
+1010401999000133,Masker Dukbil Sensi,Kotak,Kotak,master
+1010401999000134,Masker KF94 IMOQ (20 Pcs) White,Kotak,Kotak,master
+1010401999000135,Masker KF94 IMOQ (20 Pcs) Grey,Kotak,Kotak,master
+1010501001000001,Materai 6000,Buah,Buah,master
+1010501001000002,Materai 3000,Buah,Buah,master
+1010501001000003,Materai 10000,Buah,Buah,master
+1010501008000000,Buku Company Profile BPK RI Perwakilan Lampung,Buah,Buah,master
+1011001007000001,Multi Refill 1000gr,Buah,Buah,master
+1020205002000001,pipa paralon 3 4,Dummy,-,master
+1020205002000002,pipa paralon 1 1 2,Dummy,-,master
+1020206001000001,Pipa PVC 2x1 2 inch,Batang,Batang,master
+1020206001000002,Pipa PVC 1 inch,Batang,Batang,master
+1010301010000055,Joyko Stationery Tape STT-30 (Isi 12 uk.12mm x 33m),Buah,Buah,saldo awal
+1010302003000005,Kertas Buffalo Orange,Pak,pack,saldo awal
+1010302003000006,Kertas Buffalo Kuning,Pak,Pack,saldo awal
+1010306005000008,Stecker T dan Saklar Tofuda (3 Lubang),Buah,Buah,saldo awal
+1010306005000009,Stecker T Broco (3 Lubang),Buah,Buah,saldo awal
+1010306010000014,Batu Baterai ABC Alkaline AA (isi 4+2),Set,Set,saldo awal
+1010306010000015,Batu baterai AA Energizer (isi 2),Set,Set,saldo awal

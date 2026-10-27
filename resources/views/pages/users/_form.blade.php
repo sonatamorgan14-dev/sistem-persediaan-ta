@@ -28,6 +28,15 @@
         <x-form.text-field name="unit" label="Unit Kerja" :value="$user->unit" required
             placeholder="mis. Subbagian Umum dan TU" />
 
+        {{-- NIP dan jabatan tercetak di blok identitas BAST pengadaan, sama
+             seperti nama lengkap, sehingga hanya Admin yang mengubahnya
+             (ADR 0042). --}}
+        <x-form.text-field name="nip" label="NIP" :value="$user->nip" inputmode="numeric"
+            placeholder="mis. 198506142003121001" />
+
+        <x-form.text-field name="position" label="Jabatan" :value="$user->position"
+            placeholder="mis. Pengelola Pengadaan Barang/Jasa Ahli Pertama" />
+
         <x-form.select-field name="role" label="Peran" :options="\App\Enums\UserRole::options()"
             :selected="$user->role?->value" required placeholder="Pilih peran"
             :disabled="$isSelf" :help="$isSelf ? 'Peran akun sendiri tidak dapat diubah.' : null" />

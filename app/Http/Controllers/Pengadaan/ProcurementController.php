@@ -382,18 +382,20 @@ class ProcurementController extends Controller
     }
 
     /**
-     * BAST siap tanda tangan, dicetak dari sistem.
+     * BAST siap tanda tangan, dicetak dari sistem dengan format resmi BPK:
+     * serah terima dari Pelaksana Belanja kepada Petugas Persediaan, rincian
+     * barangnya di lampiran. Lihat ADR 0042.
      *
      * Isinya memakai `amount_received` — yang benar-benar datang — bukan
      * `amount` yang dipesan. Menandatangani jumlah pesanan atas barang yang
      * datang kurang justru membuat dokumennya berbohong. Lihat ADR 0017.
      *
-     * Baru tersedia setelah penerimaan dikonfirmasi: sebelum itu tidak ada
-     * yang diserahterimakan, dan nomor BAST-nya pun belum ada.
+     * Baru tersedia setelah penerimaan dikonfirmasi dan nomornya diisi —
+     * nomor itu diisi lewat `ProcurementReceiptController::nomorBast()`.
      */
-    public function bast(Request $request, Procurement $procurement): Response|RedirectResponse
+    public function bast(Procurement $procurement): Response|RedirectResponse
     {
-        $procurement->load(['supplier', 'details.item', 'receipt.receivedBy']);
+        $procurement->load(['supplier', 'details.item', 'receipt.receivedBy', 'purchasedBy', 'user']);
 
         if ($procurement->receipt === null) {
             return redirect()
@@ -401,13 +403,20 @@ class ProcurementController extends Controller
                 ->with('error', 'BAST baru dapat dicetak setelah penerimaan barang dikonfirmasi.');
         }
 
+        if ($procurement->receipt->bast_number === null) {
+            return redirect()
+                ->route('procurements.show', $procurement)
+                ->with('error', 'Isi nomor BAST terlebih dahulu.');
+        }
+
         $pdf = Pdf::loadView('pdf.bast-pengadaan', [
             'procurement' => $procurement,
             'receipt' => $procurement->receipt,
-            'dicetakOleh' => $request->user()->fullname,
         ])->setPaper('a4', 'portrait');
 
-        return $pdf->stream('bast-'.Str::slug($procurement->receipt->bast_number).'.pdf');
+        // Garis miring diganti lebih dulu: Str::slug membuangnya begitu saja,
+        // sehingga "001/UP_TUP/445237/2026" menjadi satu deret angka.
+        return $pdf->stream('bast-'.Str::slug(str_replace('/', '-', $procurement->receipt->bast_number)).'.pdf');
     }
 
     public function exportPdf(Request $request): Response|RedirectResponse
