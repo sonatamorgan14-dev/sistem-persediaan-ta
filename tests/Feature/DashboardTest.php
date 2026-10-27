@@ -328,6 +328,51 @@ describe('kondisi stok', function () {
     });
 });
 
+describe('alur permintaan', function () {
+    beforeEach(function () {
+        $this->pemohon = penggunaDasbor(UserRole::Pengguna, ['unit' => UnitKerja::BidangPemeriksaanLampungI]);
+        $rekanSeunit = penggunaDasbor(UserRole::Pengguna, ['unit' => UnitKerja::BidangPemeriksaanLampungI]);
+        $unitLain = penggunaDasbor(UserRole::Pengguna, ['unit' => UnitKerja::SekretariatPerwakilan]);
+
+        permintaanDasbor($this->pemohon, 'submitted');
+        permintaanDasbor($this->pemohon, 'completed');
+        permintaanDasbor($this->pemohon, 'rejected');
+        permintaanDasbor($rekanSeunit, 'approved_by_head');
+        permintaanDasbor($unitLain, 'processed_by_staff');
+        permintaanDasbor($unitLain, 'in_issuance');
+        permintaanDasbor($unitLain, 'rejected');
+        // Permintaan umum punya daftarnya sendiri, jadi tidak ikut dihitung.
+        permintaanDasbor($unitLain, 'submitted', 'umum');
+    });
+
+    it('menghitung tiap tahap sesuai cakupan peran, dengan penolakan di tahap selesai', function () {
+        $alur = fn (User $user) => $this->actingAs($user)->get('/dasbor')->assertOk()->viewData('alurPermintaan');
+        $kepalaUnit = penggunaDasbor(UserRole::KepalaUnit, ['unit' => UnitKerja::BidangPemeriksaanLampungI]);
+        $admin = penggunaDasbor(UserRole::Admin);
+
+        expect(collect($alur($this->pemohon))->pluck('jumlah')->all())->toBe([1, 0, 0, 0, 1])
+            ->and($alur($this->pemohon)[4]['ditolak']['jumlah'])->toBe(1)
+            ->and(collect($alur($kepalaUnit))->pluck('jumlah')->all())->toBe([1, 1, 0, 0, 1])
+            ->and(collect($alur($admin))->pluck('jumlah')->all())->toBe([1, 1, 1, 1, 1])
+            ->and($alur($admin)[4]['ditolak'])->toBe(['jumlah' => 2, 'url' => route('request.index', ['status' => 'rejected'])]);
+    });
+
+    it('menautkan tiap tahap ke daftar permintaan dengan angka yang sama', function () {
+        $alur = $this->actingAs($this->pemohon)->get('/dasbor')->viewData('alurPermintaan');
+        $tautan = [...$alur, $alur[4]['ditolak']];
+
+        foreach ($tautan as $tahap) {
+            expect($this->get($tahap['url'])->assertOk()->viewData('requests')->total())->toBe($tahap['jumlah']);
+        }
+    });
+
+    it('ditampilkan bagi Pengguna', function () {
+        $this->actingAs($this->pemohon)->get('/dasbor')
+            ->assertSee('Alur Permintaan')
+            ->assertDontSee('Alur Pengadaan');
+    });
+});
+
 describe('alur pengadaan', function () {
     it('menghitung tiap tahap tanpa draf, dengan penolakan terpisah', function () {
         ProcurementRequest::create([

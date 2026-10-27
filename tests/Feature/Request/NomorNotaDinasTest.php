@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Support\RequestDocumentGenerator;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 
 /*
@@ -149,6 +150,40 @@ describe('ubah kuantitas', function () {
 
         expect($request->refresh()->nd_number)->toBe('51/B/ND/DJPKN-V.BLP.1.5/KEU.02.02/10/2026');
     });
+
+    it('menolak barang yang tidak ada di permintaan awal', function () {
+        $this->generator->shouldNotReceive('renumberNotaDinas');
+        $request = permintaanNd();
+        $detail = $request->item()->first();
+        $tambahan = Item::factory()->create(['stock_current' => 50]);
+
+        $this->actingAs($this->gudang);
+        ubahKuantitasNd($request, ['items' => [
+            ['source' => 'item', 'item_id' => $detail->item_id, 'qty' => 3],
+            ['source' => 'item', 'item_id' => $tambahan->item_id, 'qty' => 2],
+        ]])
+            ->assertRedirect(route('request.edit', $request))
+            ->assertSessionHas('error', 'Barang yang tidak ada dalam permintaan tidak dapat ditambahkan.');
+
+        expect($request->refresh()->status)->toBe('approved_by_head')
+            ->and($request->item()->count())->toBe(1);
+    });
+
+    it('menolak jumlah disetujui yang melebihi jumlah diminta', function () {
+        $this->generator->shouldNotReceive('renumberNotaDinas');
+        $request = permintaanNd();
+        $detail = $request->item()->first();
+
+        $this->actingAs($this->gudang);
+        ubahKuantitasNd($request, ['items' => [
+            ['source' => 'item', 'item_id' => $detail->item_id, 'qty' => 6],
+        ]])
+            ->assertRedirect(route('request.edit', $request))
+            ->assertSessionHas('error', 'Jumlah disetujui tidak boleh melebihi jumlah yang diminta.');
+
+        expect($request->refresh()->status)->toBe('approved_by_head')
+            ->and($request->item()->first()->quantity_approved)->toBe(0);
+    });
 });
 
 describe('tombol setujui', function () {
@@ -231,5 +266,36 @@ describe('dokumen Nota Dinas', function () {
 
         $request->nd_number = '3/B/ND/DJPKN-V.BLP/KEU.02.02/10/2026';
         expect($html($kepala))->toContain('No. 3/B/ND/DJPKN-V.BLP/KEU.02.02/10/2026');
+    });
+
+    it('mencari penanda tangan aktif dari unit peminta', function () {
+        $kepala = User::factory()->role(UserRole::KepalaUnit)->create(['unit' => UnitKerja::SubbagianHukum]);
+        User::factory()->role(UserRole::KepalaUnit)->inactive()->create(['unit' => UnitKerja::SubbagianKeuangan]);
+        User::factory()->role(UserRole::KepalaUnit)->create(['unit' => UnitKerja::SubbagianSdm]);
+        $kasubbag = User::factory()->role(UserRole::KasubbagUmumTi)->create(['unit' => UnitKerja::SubbagianUmumTi]);
+
+        expect(permintaanNd(unit: UnitKerja::SubbagianHukum)->kepalaUnit()?->is($kepala))->toBeTrue()
+            ->and(permintaanNd(unit: UnitKerja::SubbagianUmumTi)->kepalaUnit()?->is($kasubbag))->toBeTrue()
+            ->and(permintaanNd(unit: UnitKerja::SubbagianKeuangan)->kepalaUnit())->toBeNull();
+    });
+
+    it('mencetak nama dan NIP kepala unit sebelum disetujui', function () {
+        Storage::fake('local');
+        User::factory()->role(UserRole::KepalaUnit)->create([
+            'unit' => UnitKerja::SubbagianHukum,
+            'fullname' => 'Siti Kepala Hukum',
+            'nip' => '198001012005012001',
+        ]);
+        $request = permintaanNd(unit: UnitKerja::SubbagianHukum);
+
+        $data = null;
+        View::composer('pdf.notadinas-permintaan', function ($view) use (&$data) {
+            $data = $view->getData();
+        });
+        (new RequestDocumentGenerator)->generateNotaDinas($request);
+
+        expect(view('pdf.notadinas-permintaan', $data)->render())
+            ->toContain('Siti Kepala Hukum')
+            ->toContain('NIP: 198001012005012001');
     });
 });

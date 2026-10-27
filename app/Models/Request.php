@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Enums\UnitKerja;
+use App\Enums\UserRole;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -99,6 +102,42 @@ class Request extends Model
     public function hasItemProposals(): bool
     {
         return $this->item()->whereNotNull('item_proposal_id')->exists();
+    }
+
+    /**
+     * Penanda tangan Nota Dinas dari unit peminta, yaitu akun yang berhak
+     * menyetujuinya. Subbagian Umum dan TI disetujui Kasubbag Umum dan TI,
+     * bukan peran Kepala Unit.
+     */
+    public function kepalaUnit(): ?User
+    {
+        $unit = $this->user?->unit;
+
+        if ($unit === null) {
+            return null;
+        }
+
+        $role = $unit === UnitKerja::SubbagianUmumTi ? UserRole::KasubbagUmumTi : UserRole::KepalaUnit;
+
+        return User::query()
+            ->where('is_active', true)
+            ->where('role', $role->value)
+            ->where('unit', $unit)
+            ->first();
+    }
+
+    /**
+     * Permintaan yang boleh dilihat akun ini: Kepala Unit hanya permintaan
+     * dari unitnya, Pengguna hanya miliknya sendiri, peran lain semuanya.
+     * Dipakai daftar permintaan dan dasbor supaya angkanya selalu sama.
+     */
+    public function scopeTerlihatOleh(Builder $query, User $user): Builder
+    {
+        return match (true) {
+            $user->hasRole(UserRole::KepalaUnit) => $query->whereHas('user', fn (Builder $userQuery) => $userQuery->where('unit', $user->unit)),
+            $user->hasRole(UserRole::Pengguna) => $query->where('user_id', $user->user_id),
+            default => $query,
+        };
     }
 
     /**

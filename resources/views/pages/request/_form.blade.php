@@ -8,6 +8,8 @@
             'item_id' => $detail->item_id,
             'item_name' => $detail->item?->item_name ?? 'Barang',
             'qty' => (int) $detail->quantity_requested,
+            // Batas atas jumlah disetujui adalah jumlah yang diminta.
+            'max' => (int) $detail->quantity_requested,
         ])->values()->all()
         : [];
 
@@ -67,6 +69,9 @@
                 :help="'Nomor lengkap: '.$request->documentNumber('ND')" />
         @endif
 
+        {{-- Saat mengubah, hanya kuantitas barang yang diminta yang dapat diubah;
+             barang baru tidak dapat ditambahkan. --}}
+        @unless ($isEdit)
         <!-- Input Form Section -->
         <div class="grid grid-cols-1 gap-5">
             
@@ -169,6 +174,7 @@
                 Tambah Barang
             </button>
         </div>
+        @endunless
 
         <!-- Requested Items Table/List -->
         <div>
@@ -190,6 +196,7 @@
                                 <div>
                                     <span class="font-medium text-gray-800 dark:text-white" x-text="item.item_name"></span>
                                     <span x-show="item.source === 'proposal'" class="ml-2 text-xs text-warning-600">Barang baru</span>
+                                    <span x-show="item.max !== undefined" class="block text-xs text-gray-500 dark:text-gray-400" x-text="`Diminta: ${item.max}`"></span>
                                     <input type="hidden" :name="`items[${index}][source]`" :value="item.source">
                                     <input type="hidden" :name="`items[${index}][item_id]`" :value="item.item_id" :disabled="item.source !== 'item'">
                                     <input type="hidden" :name="`items[${index}][item_name]`" :value="item.item_name" :disabled="item.source !== 'proposal'">
@@ -197,7 +204,7 @@
                                     <input type="hidden" :name="`items[${index}][purpose_note]`" :value="item.purpose_note" :disabled="item.source !== 'proposal'">
                                 </div>
                                 <div class="flex items-center gap-4">
-                                    <input type="number" min="1" max="999999" :name="`items[${index}][qty]`"
+                                    <input type="number" min="1" :max="item.max ?? 999999" :name="`items[${index}][qty]`"
                                         x-model.number="item.qty" @change="updateQty(index, item.qty)"
                                         class="h-9 w-24 rounded-md border border-gray-300 px-3 text-right text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
                                         aria-label="Jumlah barang">
@@ -266,6 +273,7 @@
                     const current = mergedItems.get(item.item_id);
                     if (current) {
                         current.qty += parseInt(item.qty, 10) || 0;
+                        current.max += parseInt(item.max, 10) || 0;
                     } else {
                         mergedItems.set(item.item_id, {
                             ...item,
@@ -371,9 +379,12 @@
             },
 
             updateQty(index, value) {
+                const item = this.requestedList[index];
                 const qty = parseInt(value, 10);
                 if (!Number.isInteger(qty) || qty < 1) {
-                    this.requestedList[index].qty = 1;
+                    item.qty = 1;
+                } else if (item.max !== undefined && qty > item.max) {
+                    item.qty = item.max;
                 }
             }
         }
