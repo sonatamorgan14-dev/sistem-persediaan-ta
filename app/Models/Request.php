@@ -46,6 +46,7 @@ class Request extends Model
         'request_number',
         'bast_number',
         'nd_number',
+        'merged_into_request_id',
         // TODO: Tambahkan Description field di sini nanti ditambah juga di show request 
     ];
 
@@ -66,6 +67,11 @@ class Request extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
+    public function mergedInto(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'merged_into_request_id', 'request_id');
     }
 
     // `details()` dan `procurementRequests()` dibuang 5 September 2026: keduanya

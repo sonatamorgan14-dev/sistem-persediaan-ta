@@ -159,15 +159,20 @@ class RequestController extends Controller
     {
         abort_unless($request->user()->hasRole(UserRole::Admin, UserRole::PengelolaGudang), 403);
 
-        $requests = ModelsRequest::with(['user', 'item.item'])
+        $isHistory = $request->query('view') === 'histori';
+
+        $requests = ModelsRequest::with(['user', 'item.item', 'mergedInto'])
             ->where('type', 'umum')
+            ->where('status', $isHistory ? '=' : '!=', 'merged')
             ->latest('date')
             ->latest('created_at')
-            ->paginate(15);
+            ->paginate(15)
+            ->withQueryString();
 
         return view('pages.request.umum.index', [
             'title' => 'Permintaan Umum',
             'requests' => $requests,
+            'isHistory' => $isHistory,
         ]);
     }
 
@@ -269,7 +274,10 @@ class RequestController extends Controller
                 'updated_at' => $now,
             ])->values()->all());
 
-            ModelsRequest::whereIn('request_id', $requests->pluck('request_id'))->delete();
+            ModelsRequest::whereIn('request_id', $requests->pluck('request_id'))->update([
+                'status' => 'merged',
+                'merged_into_request_id' => $mergedRequest->request_id,
+            ]);
 
             return $mergedRequest;
         });
